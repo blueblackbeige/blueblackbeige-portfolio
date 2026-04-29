@@ -96,3 +96,4 @@ Create a new folder `app/work/[slug]/page.tsx` for individual project pages. The
 - Sections fade-up on scroll via IntersectionObserver
 - Live time and world clocks update every second
 - Marquee uses pure CSS animation (no JS)
+# blueblackbeige-portfolio
