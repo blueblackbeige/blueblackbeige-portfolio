@@ -84,13 +84,13 @@ export default function Hero() {
                 <div className="font-mono text-[9px] tracking-[0.2em] uppercase text-ink/60 mb-2">
                   Based
                 </div>
-                <div className="font-serif text-2xl text-ink">BLR</div>
+                <div className="font-serif text-2xl text-ink">PATNA</div>
               </div>
               <div>
                 <div className="font-mono text-[9px] tracking-[0.2em] uppercase text-ink/60 mb-2">
                   Team
                 </div>
-                <div className="font-serif text-2xl text-ink">02</div>
+                <div className="font-serif text-2xl text-ink">03</div>
               </div>
             </div>
 

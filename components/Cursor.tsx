@@ -31,26 +31,34 @@ export default function Cursor() {
 
     window.addEventListener("mousemove", move);
 
-    const enter = () => {
-      cursor.classList.add("hov");
-      ring.classList.add("hov");
-    };
-    const leave = () => {
-      cursor.classList.remove("hov");
-      ring.classList.remove("hov");
-    };
+    const enterHov = () => { cursor.classList.add("hov"); ring.classList.add("hov"); };
+    const leaveHov = () => { cursor.classList.remove("hov"); ring.classList.remove("hov"); };
 
     const interactive = document.querySelectorAll("a, button, input, textarea, select, [data-cursor='hover']");
     interactive.forEach((el) => {
-      el.addEventListener("mouseenter", enter);
-      el.addEventListener("mouseleave", leave);
+      el.addEventListener("mouseenter", enterHov);
+      el.addEventListener("mouseleave", leaveHov);
+    });
+
+    // Light mode: white cursor over dark backgrounds
+    const enterLight = () => { cursor.classList.add("light"); ring.classList.add("light"); };
+    const leaveLight = () => { cursor.classList.remove("light"); ring.classList.remove("light"); };
+
+    const lightZones = document.querySelectorAll("[data-cursor='light']");
+    lightZones.forEach((el) => {
+      el.addEventListener("mouseenter", enterLight);
+      el.addEventListener("mouseleave", leaveLight);
     });
 
     return () => {
       window.removeEventListener("mousemove", move);
       interactive.forEach((el) => {
-        el.removeEventListener("mouseenter", enter);
-        el.removeEventListener("mouseleave", leave);
+        el.removeEventListener("mouseenter", enterHov);
+        el.removeEventListener("mouseleave", leaveHov);
+      });
+      lightZones.forEach((el) => {
+        el.removeEventListener("mouseenter", enterLight);
+        el.removeEventListener("mouseleave", leaveLight);
       });
     };
   }, []);
@@ -75,6 +83,12 @@ export default function Cursor() {
           height: 56px !important;
           border-color: #2952CC !important;
           background: rgba(41, 82, 204, 0.1);
+        }
+        .custom-cursor.light:first-of-type {
+          background: #ffffff !important;
+        }
+        .custom-cursor.light:last-of-type {
+          border-color: rgba(255,255,255,0.5) !important;
         }
       `}</style>
     </>
