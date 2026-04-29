@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+// import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 // ─── Validation schema ────────────────────────────────────────────────────────
 const ContactSchema = z.object({
@@ -141,21 +141,23 @@ export async function POST(req: NextRequest) {
     const from = process.env.CONTACT_FROM_EMAIL ?? "hello@blueblackbeige.in";
 
     // 1. Internal notification email
-    await resend.emails.send({
-      from,
-      to,
-      reply_to: data.email,
-      subject: `New enquiry from ${data.name}${data.company ? ` · ${data.company}` : ""}`,
-      html: internalEmail(data),
-    });
+    // await resend.emails.send({
+    //   from,
+    //   to,
+    //   reply_to: data.email,
+    //   subject: `New enquiry from ${data.name}${data.company ? ` · ${data.company}` : ""}`,
+    //   html: internalEmail(data),
+    // });
 
     // 2. Auto-reply to client
-    await resend.emails.send({
-      from,
-      to:      data.email,
-      subject: "We received your brief — Blue Black Beige",
-      html:    autoReplyEmail(data.name),
-    });
+    // await resend.emails.send({
+    //   from,
+    //   to:      data.email,
+    //   subject: "We received your brief — Blue Black Beige",
+    //   html:    autoReplyEmail(data.name),
+    // });
+    
+    console.log("[contact] Form submitted (Resend disabled):", data);
 
     return NextResponse.json({ success: true });
 
