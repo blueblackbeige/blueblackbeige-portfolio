@@ -46,7 +46,7 @@ export default function MegaCta() {
   };
 
   const inputBase =
-    "w-full bg-transparent text-lg text-ink outline-none placeholder:text-stone-light py-2 focus:placeholder:opacity-0 transition-all";
+    "w-full bg-transparent text-lg text-ink outline-none placeholder:text-black py-2 focus:placeholder:opacity-0 transition-all";
 
   return (
     <section id="contact" className="relative py-32 md:py-48 fade-up">
@@ -55,7 +55,7 @@ export default function MegaCta() {
         {/* ── Header ──────────────────────────────────────────────── */}
         <div className="grid grid-cols-12 gap-6 mb-20">
           <div className="col-span-12 md:col-span-3">
-            <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.3em] uppercase text-stone">
+            <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.3em] uppercase text-blue">
               <span className="w-8 h-px bg-electric" />
               04 — Contact
             </div>

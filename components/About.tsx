@@ -30,9 +30,9 @@ export default function About() {
         {/* Header */}
         <div className="grid grid-cols-12 gap-6 mb-20">
           <div className="col-span-12 md:col-span-3">
-            <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.3em] uppercase text-stone">
+            <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.3em] uppercase text-ink/45">
               <span className="w-8 h-px bg-electric" />
-              01 — Studio
+              01 - Studio
             </div>
           </div>
           <div className="col-span-12 md:col-span-9">
@@ -40,9 +40,9 @@ export default function About() {
               className="font-serif font-normal leading-[0.95] tracking-tightest text-ink"
               style={{ fontSize: "clamp(40px, 7vw, 120px)" }}
             >
-              A studio of <span className="italic">three,</span>
+              An agency built for <span className="italic">results,</span>
               <br />
-              three colours,{" "}
+              three experts,{" "}
               <span className="text-electric italic">one promise.</span>
             </h2>
           </div>
@@ -88,13 +88,13 @@ export default function About() {
         <div className="grid grid-cols-12 gap-6 md:gap-12">
           <div className="col-span-12 md:col-span-7">
             <p className="text-lg md:text-xl leading-relaxed text-ink/80 mb-6">
-              Blue Black Beige is a three-person agency taking briefs from founders, product teams,
-              and ambitious brands. We work in focused sprints — no layers, no handoffs, no middlemen.
-              You talk directly to the people doing the work.
+              Blue Black Beige is a digital agency taking briefs from founders, product teams,
+              and ambitious brands. We work in focused sprints — no layers, no account managers,
+              no handoffs. You talk directly to the people building your product.
             </p>
-            <p className="text-lg md:text-xl leading-relaxed text-stone-dark mb-10">
-              Every project gets the same care. We&apos;d rather do fewer things properly than
-              spread thin across everything.
+            <p className="text-lg md:text-xl leading-relaxed text-ink/55 mb-10">
+              We take on 3 to 4 projects per quarter. Every client gets the full team,
+              full attention, and a delivery date we actually keep.
             </p>
 
             {/* Service chips */}
@@ -117,7 +117,7 @@ export default function About() {
 
             {/* Stack table */}
             <div>
-              <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.3em] uppercase text-stone mb-6">
+              <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.3em] uppercase text-ink/45 mb-6">
                 <span className="w-6 h-px bg-electric" />
                 Full-stack capability
               </div>
@@ -127,7 +127,7 @@ export default function About() {
                     key={category}
                     className="grid grid-cols-[100px_1fr] gap-6 py-3.5 border-b border-stone-light items-baseline"
                   >
-                    <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-stone">
+                    <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-ink/45">
                       {category}
                     </span>
                     <span className="text-sm text-ink/80 leading-relaxed">{items}</span>
@@ -152,7 +152,7 @@ export default function About() {
                 key={k}
                 className={`flex justify-between py-4 text-sm ${i === 0 ? "border-t" : ""} border-b border-stone-light`}
               >
-                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-stone">{k}</span>
+                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-ink/45">{k}</span>
                 <span className={`text-ink text-right ${v === "Open to projects" ? "text-sage-dark font-medium" : ""}`}>
                   {v}
                 </span>
