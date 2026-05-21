@@ -1,163 +1,183 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-const cities = [
-  { id: "BLR", name: "Bengaluru", tz: "Asia/Kolkata"     },
-  { id: "LDN", name: "London",    tz: "Europe/London"     },
-  { id: "NYC", name: "New York",  tz: "America/New_York"  },
-  { id: "TYO", name: "Tokyo",     tz: "Asia/Tokyo"        },
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
 ];
 
-function timeIn(tz: string) {
-  return new Intl.DateTimeFormat("en-GB", {
-    timeZone: tz, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false,
-  }).format(new Date());
-}
+const serviceLinks = [
+  "Strategy & Branding",
+  "Digital Experience",
+  "Web Development",
+  "Motion & Interaction",
+  "Growth & Optimization",
+];
+
+const socials = [
+  { label: "LinkedIn", href: "#" },
+  { label: "Instagram", href: "#" },
+  { label: "Dribbble", href: "#" },
+  { label: "Behance", href: "#" },
+];
 
 export default function Footer() {
-  const [times, setTimes] = useState<Record<string, string>>({});
-
-  useEffect(() => {
-    const tick = () => {
-      const next: Record<string, string> = {};
-      cities.forEach((c) => (next[c.id] = timeIn(c.tz)));
-      setTimes(next);
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <footer className="relative bg-ink text-beige pt-24 pb-10" data-cursor="light">
-      <div className="max-w-[1600px] mx-auto px-8">
+    <footer className="relative bg-bg-primary pt-32 overflow-hidden border-t border-border-subtle">
+      {/* Background Glow */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent-blue/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
-        {/* Six-colour bar at top — three core + three accents */}
-        <div className="grid grid-cols-6 gap-px mb-16 h-1.5">
-          <div className="bg-electric" />
-          <div className="bg-ink-mid border-t border-beige/10" />
-          <div className="bg-beige-dark" />
-          <div className="bg-sage" />
-          <div className="bg-slate" />
-          <div className="bg-stone" />
-        </div>
+      <div className="max-w-[1440px] mx-auto px-6 relative z-10">
 
-        {/* Wordmark */}
-        <div className="border-b border-beige/10 pb-12 mb-12">
-          <h2
-            className="font-serif font-normal leading-[0.85] tracking-tightest text-beige"
-            style={{ fontSize: "clamp(64px, 16vw, 280px)" }}
-          >
-            Blue Black <span className="italic text-beige-dark">Beige</span>
-          </h2>
-          <div className="flex items-end justify-between flex-wrap gap-4 mt-6">
-            <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-stone">
-              Design &amp; development studio · Est. 2026
-            </p>
-            <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-stone">
-              Made in India 🇮🇳
-            </p>
-          </div>
-        </div>
+        {/* Main Grid */}
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-8 mb-24">
 
-        {/* Links */}
-        <div className="grid grid-cols-12 gap-6 mb-16">
-          <div className="col-span-12 md:col-span-5">
-            <p className="text-base leading-relaxed text-beige/70 max-w-md">
-              A three-person agency working at the intersection of design and
-              engineering. Based in Patna, working remotely for clients
-              worldwide.
-            </p>
-          </div>
+          {/* Brand Column (Spans 5 cols) */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <Image
+                  src="/logo.png"
+                  alt="Blue Black Beige Logo"
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-xl md:text-2xl text-text-secondary font-serif italic max-w-md leading-relaxed">
+                We engineer intelligent, premium digital experiences for ambitious brands worldwide.
+              </p>
+            </div>
 
-          <div className="col-span-6 md:col-span-2">
-            <h5 className="font-mono text-[10px] tracking-[0.3em] uppercase text-slate mb-5">
-              Studio
-            </h5>
-            <ul className="space-y-3 text-sm">
-              {["Work", "About", "Approach", "Contact"].map((l) => (
-                <li key={l}>
-                  <a href={`#${l.toLowerCase()}`}
-                     className="link-line text-beige/70 hover:text-beige transition-colors">
-                    {l}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="col-span-6 md:col-span-2">
-            <h5 className="font-mono text-[10px] tracking-[0.3em] uppercase text-sage mb-5">
-              Reach us
-            </h5>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a href="mailto:nayan@blueblackbeige.in"
-                   className="link-line text-beige/70 hover:text-beige transition-colors">
-                  nayan@blueblackbeige.in
-                </a>
-              </li>
-              <li>
-                <a href="mailto:alok@blueblackbeige.in"
-                   className="link-line text-beige/70 hover:text-beige transition-colors">
-                  alok@blueblackbeige.in
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="col-span-12 md:col-span-3">
-            <h5 className="font-mono text-[10px] tracking-[0.3em] uppercase text-stone mb-5">
-              Networks
-            </h5>
-            <ul className="space-y-3 text-sm">
-              {["LinkedIn ↗", "Instagram ↗", "GitHub ↗"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="link-line text-beige/70 hover:text-beige transition-colors">
-                    {l}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            {/* Mini swatch */}
-            <div className="mt-8 flex gap-1.5">
-              {[
-                { bg: "bg-electric",   title: "Blue"   },
-                { bg: "bg-beige-dark", title: "Beige"  },
-                { bg: "bg-sage",       title: "Sage"   },
-                { bg: "bg-slate",      title: "Slate"  },
-                { bg: "bg-stone",      title: "Stone"  },
-              ].map((s) => (
-                <div key={s.title} title={s.title}
-                     className={`w-5 h-5 rounded-sm ${s.bg} transition-transform duration-300 hover:scale-110`} />
-              ))}
+            {/* Newsletter or Contact Button */}
+            <div className="mt-12">
+              <a
+                href="/#contact"
+                className="inline-flex items-center gap-4 text-sm font-semibold uppercase tracking-widest group"
+              >
+                <span className="w-12 h-12 rounded-full border border-border-subtle flex items-center justify-center group-hover:border-accent-blue transition-colors">
+                  <ArrowRight className="w-4 h-4 group-hover:text-accent-blue transition-colors" />
+                </span>
+                Let's Start a Project
+              </a>
             </div>
           </div>
+
+          {/* Spacer */}
+          <div className="hidden lg:block lg:col-span-1" />
+
+          {/* Links Grid (Spans 6 cols) */}
+          <div className="lg:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-10">
+
+            {/* Nav */}
+            <div>
+              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-8">
+                Navigation
+              </h4>
+              <ul className="space-y-4">
+                {quickLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-lg text-text-secondary hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-8">
+                Services
+              </h4>
+              <ul className="space-y-4">
+                {serviceLinks.map((s) => (
+                  <li key={s}>
+                    <a
+                      href="/#services"
+                      className="text-lg text-text-secondary hover:text-white transition-colors"
+                    >
+                      {s}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Socials & Connect */}
+            <div className="col-span-2 md:col-span-1">
+              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-8">
+                Connect
+              </h4>
+              <ul className="space-y-4 mb-10">
+                {socials.map((s) => (
+                  <li key={s.label}>
+                    <a
+                      href={s.href}
+                      className="text-lg text-text-secondary hover:text-white transition-colors"
+                    >
+                      {s.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-4">
+                Direct
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="mailto:hello@blueblackbeige.com" className="text-sm text-text-secondary hover:text-white transition-colors">
+                    hello@blueblackbeige.com
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+917667649211" className="text-sm text-text-secondary hover:text-white transition-colors">
+                    +91 76676 49211
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
         </div>
 
-        {/* World clocks — labels in their accent color */}
-        <div className="pt-8 border-t border-beige/10 flex gap-12 flex-wrap mb-12">
-          {cities.map((c, i) => {
-            const colors = ["text-electric", "text-slate", "text-sage", "text-stone"];
-            return (
-              <div key={c.id} className="font-serif text-[22px] italic flex items-baseline gap-3">
-                <span className="tabular-nums text-beige">
-                  {times[c.id] || "—:—:—"}
-                </span>
-                <span className={`font-sans not-italic text-[10px] tracking-[0.25em] uppercase ${colors[i]}`}>
-                  {c.name}
-                </span>
+        {/* Massive Brand Name Footer */}
+        <div className="w-full border-t border-border-subtle pt-12 pb-6">
+          {/* Giant Typography */}
+          <div className="w-full mb-12">
+            <h1 className="w-full flex justify-center text-[7vw] sm:text-[8vw] leading-none font-serif font-bold tracking-tighter select-none">
+              <span className="text-accent-blue">BLUE</span>
+              <span style={{ WebkitTextStroke: "2px rgba(255,255,255,0.8)", color: "transparent" }}>BLACK</span>
+              <span className="text-accent-beige italic pr-2">BEIGE</span>
+            </h1>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-text-secondary/50 font-medium">
+            <p>
+              © {new Date().getFullYear()} Blue Black Beige. All rights reserved.
+            </p>
+            <div className="flex items-center gap-8">
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-accent-blue animate-pulse" />
+                Based in Patna, Global Reach
+              </span>
+              <div className="hidden md:flex items-center gap-6">
+                <a href="#" className="hover:text-white transition-colors">Privacy</a>
+                <a href="#" className="hover:text-white transition-colors">Terms</a>
               </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom */}
-        <div className="pt-8 border-t border-beige/10 flex justify-between flex-wrap gap-4 text-[11px] text-stone font-mono tracking-wider">
-          <span>© 2026 Blue Black Beige. All rights reserved.</span>
-          <span>Made in India · Patna, Bihar</span>
+            </div>
+          </div>
         </div>
 
       </div>

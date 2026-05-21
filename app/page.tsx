@@ -1,41 +1,27 @@
-import Loader       from "@/components/Loader";
-import Cursor       from "@/components/Cursor";
-import Header       from "@/components/Header";
-import Hero         from "@/components/Hero";
-import TrustBar     from "@/components/TrustBar";
-import Marquee      from "@/components/Marquee";
-import About        from "@/components/About";
-import Work         from "@/components/Work";
-import Testimonials from "@/components/Testimonials";
-import Process      from "@/components/Process";
-import Manifesto    from "@/components/Manifesto";
-import FAQ          from "@/components/FAQ";
-import MegaCta      from "@/components/MegaCta";
-import Footer       from "@/components/Footer";
-import SmoothScroll from "@/components/SmoothScroll";
-import WhatsApp     from "@/components/WhatsApp";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatsSection from "@/components/StatsSection";
+import ServicesSection from "@/components/ServicesSection";
+import FeaturedProjects from "@/components/FeaturedProjects";
+import AboutSection from "@/components/AboutSection";
+import ProcessSection from "@/components/ProcessSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
-      <Loader />
-      <Cursor />
-      <SmoothScroll />
-      <Header />
-      <main>
-        <Hero />
-        <TrustBar />
-        <Marquee />
-        <About />
-        <Work />
-        <Testimonials />
-        <Process />
-        <Manifesto />
-        <FAQ />
-        <MegaCta />
-      </main>
+    <main>
+      <Navbar />
+      <HeroSection />
+      <StatsSection />
+      <ServicesSection />
+      <AboutSection />
+      <ProcessSection />
+      <TestimonialsSection />
+      <FeaturedProjects />
+      <CTASection />
       <Footer />
-      <WhatsApp />
-    </>
+    </main>
   );
 }
