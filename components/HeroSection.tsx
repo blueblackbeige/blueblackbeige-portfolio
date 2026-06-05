@@ -132,29 +132,8 @@ export default function HeroSection() {
         <div className="max-w-2xl">
           {/* Scroll Indicator */}
           <div className="hidden lg:flex absolute -left-4 xl:left-4 top-1/2 -translate-y-1/2 flex-col items-center gap-3">
-            <div className="w-2.5 h-2.5 rounded-full border border-white/40" />
-            <div className="w-2 h-2 rounded-full bg-white/30" />
-            <div className="w-2 h-2 rounded-full bg-white" />
-            <div className="w-2 h-2 rounded-full bg-white/30" />
-            <span className="text-[10px] tracking-[0.2em] text-text-secondary uppercase mt-3 [writing-mode:vertical-lr] rotate-180">
-              Scroll to Discover
-            </span>
-            <div className="w-1.5 h-1.5 rounded-full bg-accent-blue mt-2" />
+            
           </div>
-
-          {/* Label */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex items-center gap-3 mb-8"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-glow-pulse" />
-            <span className="text-xs tracking-[0.3em] text-text-secondary font-medium uppercase">
-              Convert Visits into Revenue
-            </span>
-          </motion.div>
-
           {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
