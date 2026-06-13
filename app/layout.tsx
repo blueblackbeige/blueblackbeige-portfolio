@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} font-sans bg-bg-primary text-text-primary antialiased`}>
         {children}
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX"} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
     </html>
   );
 }
