@@ -236,13 +236,13 @@ export default function BlogPage() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-5xl md:text-7xl font-serif font-medium mb-10">Ready to <span className="italic text-accent-blue">disrupt?</span></h2>
-          <a
+          <Link
             href="/#contact"
             className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-bg-primary rounded-full text-lg font-semibold hover:bg-accent-blue hover:text-white transition-colors duration-300 group"
           >
             Start a conversation
             <ArrowDownRight className="w-5 h-5 -rotate-90 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </a>
+          </Link>
         </motion.div>
       </section>
 

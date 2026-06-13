@@ -30,14 +30,14 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-bg-primary pt-32 overflow-hidden border-t border-border-subtle">
+    <footer className="relative bg-bg-primary pt-20 lg:pt-32 overflow-hidden border-t border-border-subtle">
       {/* Background Glow */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent-blue/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1440px] mx-auto px-6 relative z-10">
 
         {/* Main Grid */}
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-8 mb-24">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 mb-16 lg:mb-24">
 
           {/* Brand Column (Spans 5 cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between">
@@ -51,22 +51,21 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <p className="text-xl md:text-2xl text-text-secondary font-serif italic max-w-md leading-relaxed">
+              <p className="text-lg md:text-2xl text-text-secondary font-serif italic max-w-md leading-relaxed">
                 We engineer intelligent, premium digital experiences for ambitious brands worldwide.
               </p>
             </div>
 
-            {/* Newsletter or Contact Button */}
-            <div className="mt-12">
-              <a
+            <div className="mt-10 lg:mt-12">
+              <Link
                 href="/#contact"
                 className="inline-flex items-center gap-4 text-sm font-semibold uppercase tracking-widest group"
               >
                 <span className="w-12 h-12 rounded-full border border-border-subtle flex items-center justify-center group-hover:border-accent-blue transition-colors">
                   <ArrowRight className="w-4 h-4 group-hover:text-accent-blue transition-colors" />
                 </span>
-                Let's Start a Project
-              </a>
+                Let&apos;s Start a Project
+              </Link>
             </div>
           </div>
 
@@ -74,19 +73,19 @@ export default function Footer() {
           <div className="hidden lg:block lg:col-span-1" />
 
           {/* Links Grid (Spans 6 cols) */}
-          <div className="lg:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-10">
+          <div className="lg:col-span-6 grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10">
 
             {/* Nav */}
             <div>
-              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-8">
+              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-6 lg:mb-8">
                 Navigation
               </h4>
-              <ul className="space-y-4">
+              <ul className="space-y-3 lg:space-y-4">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-lg text-text-secondary hover:text-white transition-colors"
+                      className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -97,18 +96,18 @@ export default function Footer() {
 
             {/* Services */}
             <div>
-              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-8">
+              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-6 lg:mb-8">
                 Services
               </h4>
-              <ul className="space-y-4">
+              <ul className="space-y-3 lg:space-y-4">
                 {serviceLinks.map((s) => (
                   <li key={s}>
-                    <a
+                    <Link
                       href="/#services"
-                      className="text-lg text-text-secondary hover:text-white transition-colors"
+                      className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors"
                     >
                       {s}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -116,15 +115,15 @@ export default function Footer() {
 
             {/* Socials & Connect */}
             <div className="col-span-2 md:col-span-1">
-              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-8">
+              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-6 lg:mb-8">
                 Connect
               </h4>
-              <ul className="space-y-4 mb-10">
+              <ul className="space-y-3 lg:space-y-4 mb-8 lg:mb-10">
                 {socials.map((s) => (
                   <li key={s.label}>
                     <a
                       href={s.href}
-                      className="text-lg text-text-secondary hover:text-white transition-colors"
+                      className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors"
                     >
                       {s.label}
                     </a>
@@ -153,9 +152,9 @@ export default function Footer() {
         </div>
 
         {/* Massive Brand Name Footer */}
-        <div className="w-full border-t border-border-subtle pt-12 pb-6">
+        <div className="w-full border-t border-border-subtle pt-10 lg:pt-12 pb-6">
           {/* Giant Typography */}
-          <div className="w-full mb-12">
+          <div className="w-full mb-8 lg:mb-12">
             <h1 className="w-full flex justify-center text-[7vw] sm:text-[8vw] leading-none font-serif font-bold tracking-tighter select-none">
               <span className="text-accent-blue">BLUE</span>
               <span style={{ WebkitTextStroke: "2px rgba(255,255,255,0.8)", color: "transparent" }}>BLACK</span>

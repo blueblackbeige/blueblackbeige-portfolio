@@ -154,11 +154,11 @@ export default function Blog2() {
               
               <h2>Enter Agentic AI</h2>
               <p>
-                Agentic AI models don't just wait for instructions; they observe, analyze, and act autonomously. In the context of premium web experiences, these AI agents constantly monitor user flows, identifying micro-frictions such as cursor hesitation, slow scroll rates, or drop-offs at specific form fields.
+                Agentic AI models don&apos;t just wait for instructions; they observe, analyze, and act autonomously. In the context of premium web experiences, these AI agents constantly monitor user flows, identifying micro-frictions such as cursor hesitation, slow scroll rates, or drop-offs at specific form fields.
               </p>
               
               <blockquote>
-                "Instead of simply reporting issues to a dashboard, Agentic AI predictively optimizes the interface, running thousands of micro-experiments simultaneously."
+                &quot;Instead of simply reporting issues to a dashboard, Agentic AI predictively optimizes the interface, running thousands of micro-experiments simultaneously.&quot;
               </blockquote>
               
               <h2>Hyper-Personalized Journeys</h2>
@@ -245,7 +245,7 @@ export default function Blog2() {
               </ul>
               
               <p>
-                At Blue Black Beige, we are implementing these predictive models to ensure that our premium designs aren't just visually stunning, but functionally perfect, offering a uniquely tailored journey for every single visitor.
+                At Blue Black Beige, we are implementing these predictive models to ensure that our premium designs aren&apos;t just visually stunning, but functionally perfect, offering a uniquely tailored journey for every single visitor.
               </p>
             </div>
           </div>

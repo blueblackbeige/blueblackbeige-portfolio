@@ -20,6 +20,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  touch-action: pan-y;
+  overflow-x: hidden;
 }
 
 body {
@@ -92,7 +94,7 @@ body::before {
 
 /* ─── Section Padding ─── */
 .section-padding {
-  @apply px-6 md:px-12 lg:px-20 xl:px-28;
+  @apply px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28;
 }
 
 /* ─── Animated Underline ─── */

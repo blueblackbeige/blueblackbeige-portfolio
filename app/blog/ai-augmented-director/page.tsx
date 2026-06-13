@@ -162,7 +162,7 @@ export default function Blog1() {
               
               <h2>The Human Touch Advantage</h2>
               <p>
-                It is a common misconception that AI creates a homogenized web. In reality, when applied correctly, AI frees us from the "grunt work" of development. This liberation allows us to craft deeper, more meaningful brand identities. 
+                It is a common misconception that AI creates a homogenized web. In reality, when applied correctly, AI frees us from the &quot;grunt work&quot; of development. This liberation allows us to craft deeper, more meaningful brand identities. 
               </p>
               
               {/* Custom Bar Chart */}
@@ -199,7 +199,7 @@ export default function Blog1() {
               </div>
 
               <blockquote>
-                "AI doesn't lower the ceiling of what's possible; it raises the floor of what's expected. The difference between good and great is still purely human."
+                &quot;AI doesn&apos;t lower the ceiling of what&apos;s possible; it raises the floor of what&apos;s expected. The difference between good and great is still purely human.&quot;
               </blockquote>
               
               <p>

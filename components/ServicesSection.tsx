@@ -64,13 +64,13 @@ export default function ServicesSection() {
   const toggle = (i: number) => setActive(active === i ? null : i);
 
   return (
-    <section id="services" className="relative py-24 lg:py-36">
+    <section id="services" className="relative py-20 lg:py-36">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
       <div className="max-w-[1440px] mx-auto section-padding">
 
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 lg:mb-20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14 lg:mb-20">
           <ScrollReveal>
             <div>
               <span className="text-xs tracking-[0.3em] text-accent-blue font-semibold uppercase mb-5 block">
@@ -110,7 +110,7 @@ export default function ServicesSection() {
                   {/* Row button */}
                   <button
                     onClick={() => toggle(i)}
-                    className="group w-full flex items-center gap-6 lg:gap-10 py-6 lg:py-7 text-left"
+                    className="group w-full flex items-center gap-4 lg:gap-10 py-5 lg:py-7 text-left"
                   >
                     {/* Number */}
                     <span className="text-xs tracking-[0.3em] text-text-secondary/30 font-medium w-8 flex-shrink-0 group-hover:text-text-secondary/60 transition-colors duration-300">
@@ -119,7 +119,7 @@ export default function ServicesSection() {
 
                     {/* Title */}
                     <span
-                      className={`flex-1 text-2xl sm:text-3xl lg:text-[2.5rem] font-serif font-medium leading-none transition-colors duration-400 ${
+                      className={`flex-1 text-xl sm:text-3xl lg:text-[2.5rem] font-serif font-medium leading-none transition-colors duration-400 ${
                         isActive ? "text-white" : "text-white/60 group-hover:text-white/90"
                       }`}
                     >
@@ -133,7 +133,7 @@ export default function ServicesSection() {
 
                     {/* Icon */}
                     <div
-                      className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-400 ${
+                      className={`flex-shrink-0 w-9 h-9 lg:w-10 lg:h-10 rounded-full border flex items-center justify-center transition-all duration-400 ${
                         isActive
                           ? "border-accent-blue/40 bg-accent-blue/10 rotate-45"
                           : "border-white/10 group-hover:border-white/25"
@@ -157,7 +157,7 @@ export default function ServicesSection() {
                         transition={{ duration: 0.45, ease: [0.25, 0, 0, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-10 lg:pb-14 pl-[3.5rem] lg:pl-[4.5rem]">
+                        <div className="pb-8 lg:pb-14 pl-6 sm:pl-[3.5rem] lg:pl-[4.5rem]">
                           <div className="grid lg:grid-cols-[1fr_340px] gap-8 lg:gap-16">
 
                             {/* Left: description */}

@@ -79,12 +79,18 @@ export default function StatsSection() {
           {stats.map((stat, i) => (
             <ScrollReveal key={stat.label} delay={i * 0.08}>
               <div
-                className={`py-12 lg:py-16 px-6 lg:px-10 ${
-                  i > 0 ? "border-l border-white/[0.06]" : ""
+                className={`py-10 lg:py-16 px-4 sm:px-6 lg:px-10 ${
+                  i === 1
+                    ? "border-l border-white/[0.06]"
+                    : i === 2
+                    ? "border-t border-white/[0.06] lg:border-t-0 lg:border-l"
+                    : i === 3
+                    ? "border-t border-l border-white/[0.06] lg:border-t-0"
+                    : ""
                 }`}
               >
                 {/* Giant number */}
-                <div className="text-5xl sm:text-6xl xl:text-7xl font-serif font-medium tracking-tight text-white leading-none mb-4">
+                <div className="text-4xl sm:text-5xl xl:text-7xl font-serif font-medium tracking-tight text-white leading-none mb-3 lg:mb-4">
                   <AnimatedCounter
                     target={stat.value}
                     suffix={stat.suffix}
@@ -93,10 +99,10 @@ export default function StatsSection() {
                 </div>
 
                 {/* Label */}
-                <p className="text-sm font-medium text-white/70 mb-1">
+                <p className="text-xs sm:text-sm font-medium text-white/70 mb-1">
                   {stat.label}
                 </p>
-                <p className="text-xs text-text-secondary/40 tracking-wide">
+                <p className="text-[10px] sm:text-xs text-text-secondary/40 tracking-wide">
                   {stat.sub}
                 </p>
               </div>

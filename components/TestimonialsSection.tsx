@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
     setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="relative py-28 lg:py-36">
+    <section className="relative py-20 lg:py-36">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
       {/* Ambient glow */}
@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto section-padding">
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 lg:mb-16">
             <span className="text-xs tracking-[0.3em] text-accent-blue font-semibold uppercase mb-5 block">
               Client Voices
             </span>
@@ -58,9 +58,9 @@ export default function TestimonialsSection() {
 
         {/* Testimonial Card */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative luxury-border rounded-3xl p-8 md:p-12 lg:p-16 bg-bg-secondary/20">
+          <div className="relative luxury-border rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 bg-bg-secondary/20">
             {/* Quote icon */}
-            <Quote className="w-10 h-10 text-accent-blue/20 mb-8" strokeWidth={1} />
+            <Quote className="w-8 h-8 lg:w-10 lg:h-10 text-accent-blue/20 mb-6 lg:mb-8" strokeWidth={1} />
 
             {/* Animated quote */}
             <AnimatePresence mode="wait">
@@ -71,13 +71,13 @@ export default function TestimonialsSection() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <blockquote className="text-xl md:text-2xl lg:text-[1.75rem] font-serif text-white/90 leading-relaxed mb-10">
+                <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] font-serif text-white/90 leading-relaxed mb-8 lg:mb-10">
                   &ldquo;{testimonials[current].quote}&rdquo;
                 </blockquote>
 
                 <div className="flex items-center gap-4">
                   {/* Avatar placeholder */}
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-blue/30 to-accent-beige/30 flex items-center justify-center">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-accent-blue/30 to-accent-beige/30 flex items-center justify-center">
                     <span className="text-sm font-semibold text-white">
                       {testimonials[current].author
                         .split(" ")
@@ -98,7 +98,7 @@ export default function TestimonialsSection() {
             </AnimatePresence>
 
             {/* Navigation */}
-            <div className="flex items-center gap-3 mt-10 pt-8 border-t border-border-subtle">
+            <div className="flex items-center gap-3 mt-8 lg:mt-10 pt-6 lg:pt-8 border-t border-border-subtle">
               <button
                 onClick={prev}
                 className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-white/30 hover:bg-white/5 transition-all"

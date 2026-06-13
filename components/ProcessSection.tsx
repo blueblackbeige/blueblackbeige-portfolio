@@ -52,13 +52,13 @@ export default function ProcessSection() {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="relative py-28 lg:py-36">
+    <section className="relative py-20 lg:py-36">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
       <div className="max-w-[1440px] mx-auto section-padding">
 
         {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end mb-20 lg:mb-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-end mb-12 lg:mb-24">
           <ScrollReveal>
             <div>
               <span className="text-xs tracking-[0.3em] text-accent-blue font-semibold uppercase mb-5 block">
@@ -101,7 +101,7 @@ export default function ProcessSection() {
 
                   <button
                     onClick={() => setActive(isActive ? null : i)}
-                    className="group w-full flex items-center gap-6 lg:gap-10 py-7 lg:py-8 text-left"
+                    className="group w-full flex items-center gap-4 lg:gap-10 py-5 lg:py-8 text-left"
                   >
                     {/* Number */}
                     <span className="text-xs tracking-[0.3em] text-text-secondary/30 w-8 flex-shrink-0 group-hover:text-text-secondary/60 transition-colors duration-300">
@@ -115,7 +115,7 @@ export default function ProcessSection() {
 
                     {/* Title */}
                     <span
-                      className={`flex-1 text-2xl sm:text-3xl lg:text-[2.5rem] font-serif font-medium leading-none transition-colors duration-300 ${
+                      className={`flex-1 text-xl sm:text-3xl lg:text-[2.5rem] font-serif font-medium leading-none transition-colors duration-300 ${
                         isActive ? "text-white" : "text-white/55 group-hover:text-white/85"
                       }`}
                     >
@@ -155,7 +155,7 @@ export default function ProcessSection() {
                         transition={{ duration: 0.45, ease: [0.25, 0, 0, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-10 lg:pb-14 pl-[3.5rem] lg:pl-[7rem]">
+                        <div className="pb-8 lg:pb-14 pl-6 sm:pl-[3.5rem] lg:pl-[7rem]">
                           <div className="grid lg:grid-cols-[1fr_300px] gap-8 lg:gap-16">
 
                             {/* Description + outcome */}

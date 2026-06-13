@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowDownRight, Sparkles, Globe, Zap, Cpu } from "lucide-react";
@@ -133,7 +134,7 @@ export default function AboutPage() {
                   Built for the <span className="italic">Ambitious</span>.
                 </h2>
                 <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
-                  Our partners are founders who refuse to settle. They understand that their digital presence is their most important physical asset. We don't just execute their vision; we challenge, refine, and elevate it.
+                  Our partners are founders who refuse to settle. They understand that their digital presence is their most important physical asset. We don&apos;t just execute their vision; we challenge, refine, and elevate it.
                 </p>
               </motion.div>
             </div>
@@ -227,13 +228,13 @@ export default function AboutPage() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-5xl md:text-7xl font-serif font-medium mb-10">Ready to <span className="italic text-accent-beige">build?</span></h2>
-          <a
+          <Link
             href="/#contact"
             className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-bg-primary rounded-full text-lg font-semibold hover:bg-accent-beige transition-colors duration-300 group"
           >
             Start a project
             <ArrowDownRight className="w-5 h-5 -rotate-90 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </a>
+          </Link>
         </motion.div>
       </section>
 

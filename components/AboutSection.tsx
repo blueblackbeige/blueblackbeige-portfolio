@@ -46,7 +46,7 @@ const team = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative py-28 lg:py-36 overflow-hidden">
+    <section id="about" className="relative py-20 lg:py-36 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
       {/* Ambient glows */}
@@ -55,7 +55,7 @@ export default function AboutSection() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto section-padding">
         {/* Top: label + headline */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20 items-end">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 mb-12 lg:mb-20 items-end">
           <ScrollReveal>
             <div>
               <span className="text-xs tracking-[0.3em] text-accent-blue font-semibold uppercase mb-5 block">
@@ -107,8 +107,8 @@ export default function AboutSection() {
 
         {/* Studio image + stats bar */}
         <ScrollReveal>
-          <div className="relative rounded-2xl overflow-hidden luxury-border mb-20">
-            <div className="relative aspect-[21/8] lg:aspect-[21/7]">
+          <div className="relative rounded-2xl overflow-hidden luxury-border mb-12 lg:mb-20">
+            <div className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/7]">
               <Image
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop"
                 alt="Blue Black Beige Studio"
@@ -121,7 +121,7 @@ export default function AboutSection() {
             </div>
 
             {/* Floating stat pills */}
-            <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-3">
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-wrap gap-2 sm:gap-3">
               {[
                 { value: "40+", label: "Projects Delivered" },
                 { value: "3×", label: "Avg. Conversion Uplift" },
@@ -130,12 +130,12 @@ export default function AboutSection() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-bg-primary/70 backdrop-blur-md border border-white/10"
+                  className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-bg-primary/70 backdrop-blur-md border border-white/10"
                 >
-                  <span className="text-sm font-semibold text-white">
+                  <span className="text-xs sm:text-sm font-semibold text-white">
                     {item.value}
                   </span>
-                  <span className="text-xs text-text-secondary">
+                  <span className="text-[10px] sm:text-xs text-text-secondary">
                     {item.label}
                   </span>
                 </div>

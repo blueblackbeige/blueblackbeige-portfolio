@@ -139,7 +139,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-            className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-serif font-medium leading-[1.1] tracking-tight mb-8"
+            className="text-[1.875rem] sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-serif font-medium leading-[1.1] tracking-tight mb-6 lg:mb-8"
           >
             We design digital <br />
             <em className="gradient-text not-italic font-serif italic">
@@ -155,7 +155,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-text-secondary text-base md:text-lg leading-relaxed max-w-lg mb-10"
+            className="text-text-secondary text-sm md:text-lg leading-relaxed max-w-lg mb-8 lg:mb-10"
           >
             We combine strategy, design, motion and technology
             <br className="hidden md:block" />
@@ -167,18 +167,18 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6 }}
-            className="flex flex-wrap items-center gap-4"
+            className="flex flex-wrap items-center gap-3 lg:gap-4"
           >
             <a
               href="#work"
-              className="group flex items-center gap-3 px-7 py-3.5 bg-accent-beige text-bg-primary rounded-full text-sm font-semibold tracking-wide hover:bg-accent-beige/90 transition-all duration-300"
+              className="group flex items-center gap-3 px-6 py-3 lg:px-7 lg:py-3.5 bg-accent-beige text-bg-primary rounded-full text-sm font-semibold tracking-wide hover:bg-accent-beige/90 transition-all duration-300"
             >
               View Our Work
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
               href="#services"
-              className="group flex items-center gap-3 px-7 py-3.5 border border-white/15 rounded-full text-sm font-medium tracking-wide text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+              className="group flex items-center gap-3 px-6 py-3 lg:px-7 lg:py-3.5 border border-white/15 rounded-full text-sm font-medium tracking-wide text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
             >
               Explore Services
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -191,9 +191,9 @@ export default function HeroSection() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-12 right-12 lg:right-20 z-20 w-14 h-14 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center cursor-pointer hover:bg-white/20 transition-all duration-300 group"
+        className="absolute bottom-8 right-6 lg:bottom-12 lg:right-20 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center cursor-pointer hover:bg-white/20 transition-all duration-300 group"
       >
-        <Play className="w-5 h-5 text-white ml-0.5 group-hover:scale-110 transition-transform" />
+        <Play className="w-4 h-4 lg:w-5 lg:h-5 text-white ml-0.5 group-hover:scale-110 transition-transform" />
       </motion.div>
 
       {/* ── Vertical Text ── */}
