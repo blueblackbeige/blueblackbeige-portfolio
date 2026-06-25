@@ -19,6 +19,8 @@ const serviceLinks = [
   "Web Development",
   "Motion & Interaction",
   "Growth & Optimization",
+  "Digital Marketing",
+  "Social Media Marketing",
 ];
 
 const socials = [
@@ -52,7 +54,7 @@ export default function Footer() {
                 />
               </div>
               <p className="text-lg md:text-2xl text-text-secondary font-serif italic max-w-md leading-relaxed">
-                We engineer intelligent, premium digital experiences for ambitious brands worldwide.
+                We design, build and grow ambitious brands — through premium digital experiences, marketing and social strategy.
               </p>
             </div>
 
@@ -136,8 +138,8 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="mailto:hello@blueblackbeige.com" className="text-sm text-text-secondary hover:text-white transition-colors">
-                    hello@blueblackbeige.com
+                  <a href="mailto:nayan@blueblackbeige.in" className="text-sm text-text-secondary hover:text-white transition-colors">
+                    nayan@blueblackbeige.in
                   </a>
                 </li>
                 <li>

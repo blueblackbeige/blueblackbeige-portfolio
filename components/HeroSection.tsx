@@ -157,9 +157,9 @@ export default function HeroSection() {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="text-text-secondary text-sm md:text-lg leading-relaxed max-w-lg mb-8 lg:mb-10"
           >
-            We combine strategy, design, motion and technology
+            We combine strategy, design, digital marketing, and technology
             <br className="hidden md:block" />
-            to create intelligent digital products for ambitious brands.
+            to create and grow intelligent digital products for ambitious brands.
           </motion.p>
 
           {/* Buttons */}

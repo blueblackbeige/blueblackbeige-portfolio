@@ -18,10 +18,10 @@ const stats = [
     sub: "Rank-ready from day one",
   },
   {
-    value: 99,
-    suffix: ".9%",
-    label: "Uptime Commitment",
-    sub: "Always online",
+    value: 50,
+    suffix: "+",
+    label: "Campaigns Managed",
+    sub: "Proven growth engines",
   },
   {
     value: 3,

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Target, Layout, Code2, Waves, TrendingUp } from "lucide-react";
+import { ArrowUpRight, Target, Layout, Code2, Waves, TrendingUp, Megaphone, Share2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const services = [
@@ -55,6 +55,26 @@ const services = [
     icon: TrendingUp,
     deliverables: ["Technical SEO", "CRO Audits", "Analytics Setup", "A/B Testing", "Growth Strategy"],
     result: "Clients on our growth plan see 3× more organic leads within 6 months.",
+  },
+  {
+    number: "06",
+    title: "Digital Marketing",
+    tagline: "Drive measurable growth.",
+    description:
+      "Data-driven SEO, Google Ads/PPC, email campaigns, and performance reporting designed to dominate search and maximize ROI.",
+    icon: Megaphone,
+    deliverables: ["Technical SEO", "Google Ads / PPC", "Email Marketing", "Performance Analytics", "Conversion Tracking"],
+    result: "Clients see an average 250% ROI on paid campaigns within the first quarter.",
+  },
+  {
+    number: "07",
+    title: "Social Media Marketing",
+    tagline: "Build vibrant communities.",
+    description:
+      "End-to-end social strategy, from viral short-form content (Reels/TikTok) to robust community management and analytics.",
+    icon: Share2,
+    deliverables: ["Content Strategy", "Reels & Post Production", "Community Management", "Social Analytics", "Influencer Partnerships"],
+    result: "Consistent engagement growth and 40% increase in brand awareness metrics.",
   },
 ];
 
