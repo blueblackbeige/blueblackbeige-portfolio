@@ -17,7 +17,7 @@ export default function CTASection() {
     e.preventDefault();
     const text = `Hi! I'm ${formData.name}.\nEmail: ${formData.email}\nInterested in: ${formData.service}\n\n${formData.message}`;
     const encodedText = encodeURIComponent(text);
-    window.open(`https://wa.me/917667649211?text=${encodedText}`, '_blank');
+    window.open(`https://wa.me/919288182862?text=${encodedText}`, '_blank');
   };
 
   return (
@@ -67,12 +67,12 @@ export default function CTASection() {
                 <div className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent-blue" />
                   <a
-                    href="https://wa.me/917667649211"
+                    href="https://wa.me/919288182862"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
                   >
-                    +91 76676 49211 (WhatsApp)
+                    +91 92881 82862 (WhatsApp)
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
