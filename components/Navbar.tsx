@@ -132,9 +132,9 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-bg-primary/98 backdrop-blur-xl pt-24 px-8"
+            className="fixed inset-0 z-40 bg-bg-primary/98 backdrop-blur-xl pt-20 sm:pt-24 px-8 pb-10 overflow-y-auto"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 sm:gap-6">
               {navLinks.map((link, i) => (
                 <Link
                   key={link.label}
@@ -143,7 +143,7 @@ export default function Navbar() {
                     setActiveLink(link.label);
                     setMobileOpen(false);
                   }}
-                  className={`text-3xl font-serif ${
+                  className={`text-2xl sm:text-3xl font-serif ${
                     activeLink === link.label ? "text-white" : "text-text-secondary"
                   }`}
                 >

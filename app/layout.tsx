@@ -1,10 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -18,7 +16,7 @@ export const metadata: Metadata = {
     "We combine strategy, design, motion and technology to create intelligent digital products for ambitious brands.",
   keywords: ["digital agency", "AI studio", "web design", "branding", "web development"],
   openGraph: {
-    title: "Blue Black Beige — AI-Powered Digital Studio",
+    title: "Blue Black Beige - AI-Powered Digital Studio",
     description:
       "We combine strategy, design, motion and technology to create intelligent digital products for ambitious brands.",
     type: "website",
@@ -32,9 +30,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-      </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans bg-bg-primary text-text-primary antialiased`}>
+      <head />
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans bg-black text-white antialiased`}>
         {children}
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />

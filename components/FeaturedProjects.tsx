@@ -102,21 +102,21 @@ export default function FeaturedProjects() {
             <ScrollReveal key={p.number} delay={i * 0.08}>
               <div>
                 <div className="h-px bg-white/[0.05]" />
-                <div className="flex items-center gap-4 lg:gap-10 py-5 lg:py-7">
+                <div className="flex items-center gap-2.5 sm:gap-4 lg:gap-10 py-5 lg:py-7">
                   {/* Number */}
-                  <span className="text-xs tracking-[0.3em] text-text-secondary/20 w-8 flex-shrink-0">
+                  <span className="hidden sm:inline text-xs tracking-[0.3em] text-text-secondary/20 w-8 flex-shrink-0">
                     {p.number}
                   </span>
 
                   {/* Placeholder image slot */}
-                  <div className="w-14 h-10 lg:w-20 lg:h-14 rounded-lg flex-shrink-0 bg-white/[0.03] border border-white/[0.04] flex items-center justify-center">
-                    <span className="text-[8px] tracking-[0.2em] text-white/15 uppercase font-sans">Soon</span>
+                  <div className="w-11 h-9 sm:w-14 sm:h-10 lg:w-20 lg:h-14 rounded-lg flex-shrink-0 bg-white/[0.03] border border-white/[0.04] flex items-center justify-center">
+                    <span className="text-[7px] sm:text-[8px] tracking-[0.15em] sm:tracking-[0.2em] text-white/15 uppercase font-sans">Soon</span>
                   </div>
 
                   {/* Name placeholder */}
                   <div className="flex-1 min-w-0">
-                    <div className="h-4 w-28 sm:w-36 rounded bg-white/[0.04] mb-2" />
-                    <div className="h-2.5 w-36 sm:w-52 rounded bg-white/[0.025]" />
+                    <div className="h-4 w-20 sm:w-28 md:w-36 rounded bg-white/[0.04] mb-2" />
+                    <div className="h-2.5 w-24 sm:w-36 md:w-52 rounded bg-white/[0.025]" />
                   </div>
 
                   {/* Category + tags */}
@@ -137,8 +137,8 @@ export default function FeaturedProjects() {
                   </div>
 
                   {/* Coming soon badge */}
-                  <div className="flex-shrink-0 px-2.5 sm:px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02]">
-                    <span className="text-[9px] tracking-[0.2em] text-text-secondary/30 uppercase font-sans">
+                  <div className="flex-shrink-0 px-2 sm:px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02]">
+                    <span className="text-[8px] sm:text-[9px] tracking-[0.15em] sm:tracking-[0.2em] text-text-secondary/30 uppercase font-sans whitespace-nowrap">
                       Coming soon
                     </span>
                   </div>

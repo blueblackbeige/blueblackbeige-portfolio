@@ -23,7 +23,7 @@ export default function Blog1() {
       <Navbar />
       
       {/* Editorial Header */}
-      <article className="pt-32 pb-24 max-w-[1440px] mx-auto px-6">
+      <article className="pt-24 pb-16 sm:pt-32 sm:pb-24 max-w-[1440px] mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function Blog1() {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-medium leading-[1.1] mb-8">
+          <h1 className="text-[2.25rem] xs:text-5xl md:text-7xl lg:text-8xl font-serif font-medium leading-[1.15] md:leading-[1.1] mb-6 sm:mb-8">
             The AI-Augmented <br className="hidden md:block"/> Director
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary font-serif italic max-w-2xl mx-auto">
@@ -50,7 +50,7 @@ export default function Blog1() {
         </motion.div>
 
         {/* Hero Image with Parallax */}
-        <div ref={containerRef} className="relative w-full aspect-[21/9] md:aspect-[2.5/1] rounded-3xl overflow-hidden mb-24 luxury-border">
+        <div ref={containerRef} className="relative w-full aspect-[4/3] sm:aspect-[21/9] md:aspect-[2.5/1] rounded-3xl overflow-hidden mb-14 sm:mb-24 luxury-border">
           <motion.div style={{ y, opacity }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
             <Image
               src="https://images.unsplash.com/photo-1633424683050-61ba4f40f0cd?q=80&w=2400&auto=format&fit=crop"
@@ -95,13 +95,13 @@ export default function Blog1() {
 
           {/* Main Prose Content */}
           <div className="lg:col-span-8">
-            <div className="prose prose-invert prose-lg md:prose-xl max-w-none 
+            <div className="prose prose-invert prose-base sm:prose-lg md:prose-xl max-w-none 
               prose-p:text-text-secondary prose-p:leading-relaxed
               prose-headings:font-serif prose-headings:font-medium prose-headings:text-white
-              prose-h2:text-4xl prose-h2:mt-16 prose-h2:mb-8
+              prose-h2:text-2xl sm:prose-h2:text-4xl prose-h2:mt-10 sm:prose-h2:mt-16 prose-h2:mb-5 sm:prose-h2:mb-8
               prose-a:text-accent-blue hover:prose-a:text-accent-beige prose-a:transition-colors
-              prose-blockquote:border-l-accent-beige prose-blockquote:bg-bg-secondary/30 prose-blockquote:p-8 prose-blockquote:rounded-r-2xl prose-blockquote:my-12 prose-blockquote:font-serif prose-blockquote:text-2xl prose-blockquote:leading-snug prose-blockquote:not-italic
-              first-letter:float-left first-letter:text-7xl first-letter:pr-4 first-letter:font-serif first-letter:text-white first-letter:mt-2 first-letter:leading-[0.8]
+              prose-blockquote:border-l-accent-beige prose-blockquote:bg-bg-secondary/30 prose-blockquote:p-5 sm:prose-blockquote:p-8 prose-blockquote:rounded-r-2xl prose-blockquote:my-8 sm:prose-blockquote:my-12 prose-blockquote:font-serif prose-blockquote:text-lg sm:prose-blockquote:text-2xl prose-blockquote:leading-snug prose-blockquote:not-italic
+              first-letter:float-left first-letter:text-5xl sm:first-letter:text-7xl first-letter:pr-3 sm:first-letter:pr-4 first-letter:font-serif first-letter:text-white first-letter:mt-1 sm:first-letter:mt-2 first-letter:leading-[0.8]
             ">
               <p>
                 For decades, achieving a truly premium digital experience required sacrificing speed for quality. Every layout change, every micro-animation, and every responsive breakpoint required manual, painstaking execution. But we are entering a new era where Artificial Intelligence acts as a foundational partner.
@@ -211,12 +211,12 @@ export default function Blog1() {
       </article>
 
       {/* Next Article CTA */}
-      <section className="py-24 border-t border-border-subtle bg-bg-secondary/10 hover:bg-bg-secondary/30 transition-colors duration-500 group">
+      <section className="py-16 sm:py-24 border-t border-border-subtle bg-bg-secondary/10 hover:bg-bg-secondary/30 transition-colors duration-500 group">
         <Link href="/blog/predictive-optimization" className="block max-w-[1440px] mx-auto px-6 text-center">
           <span className="text-xs tracking-[0.3em] font-semibold uppercase text-text-secondary group-hover:text-accent-blue transition-colors mb-6 block">
             Next Article
           </span>
-          <h2 className="text-4xl md:text-6xl font-serif font-medium text-white group-hover:text-accent-beige transition-colors duration-500 max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-medium text-white group-hover:text-accent-beige transition-colors duration-500 max-w-4xl mx-auto">
             Agentic AI & Predictive Optimization
           </h2>
         </Link>

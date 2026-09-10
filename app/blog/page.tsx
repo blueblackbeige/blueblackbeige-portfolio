@@ -55,7 +55,7 @@ export default function BlogPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100svh] lg:h-screen w-full flex items-center justify-center overflow-hidden">
         <motion.div
           style={{ y, opacity }}
           className="absolute inset-0 z-0"
@@ -70,7 +70,7 @@ export default function BlogPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/80 to-transparent" />
         </motion.div>
 
-        <div className="relative z-10 w-full max-w-[1440px] px-6 flex flex-col items-center mt-20">
+        <div className="relative z-10 w-full max-w-[1440px] px-6 flex flex-col items-center mt-16 sm:mt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-            className="text-5xl md:text-7xl lg:text-[7rem] font-serif font-medium leading-[1.1] md:leading-[0.9] tracking-tight text-center max-w-5xl"
+            className="text-[2.5rem] xs:text-5xl md:text-7xl lg:text-[7rem] font-serif font-medium leading-[1.15] md:leading-[0.9] tracking-tight text-center max-w-5xl"
           >
             Ideas that shape <br className="hidden md:block" /> the <em className="italic text-accent-beige">digital frontier</em>.
           </motion.h1>
@@ -93,7 +93,7 @@ export default function BlogPage() {
       </section>
 
       {/* Sticky Scroll Featured Article */}
-      <section ref={containerRef} className="relative w-full bg-bg-primary pt-10 lg:pt-32 pb-32">
+      <section ref={containerRef} className="relative w-full bg-bg-primary pt-10 lg:pt-32 pb-20 lg:pb-32">
         <div className="max-w-[1440px] mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
@@ -165,7 +165,7 @@ export default function BlogPage() {
       </section>
 
       {/* Archive Bento Grid */}
-      <section className="py-32 bg-bg-secondary/10 border-t border-border-subtle relative">
+      <section className="py-20 lg:py-32 bg-bg-secondary/10 border-t border-border-subtle relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
         <div className="max-w-[1440px] mx-auto px-6">
           <motion.div
@@ -203,7 +203,7 @@ export default function BlogPage() {
                       className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0"
                     />
                   </div>
-                  <div className="p-8 flex flex-col flex-grow">
+                  <div className="p-6 sm:p-8 flex flex-col flex-grow">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-[10px] tracking-[0.2em] font-semibold uppercase text-accent-blue">
                         {post.tag}
@@ -228,14 +228,14 @@ export default function BlogPage() {
       </section>
 
       {/* Final Massive CTA */}
-      <section className="py-32 bg-bg-secondary/20 border-t border-border-subtle text-center px-6">
+      <section className="py-20 lg:py-32 bg-bg-secondary/20 border-t border-border-subtle text-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-7xl font-serif font-medium mb-10">Ready to <span className="italic text-accent-blue">disrupt?</span></h2>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif font-medium mb-8 lg:mb-10">Ready to <span className="italic text-accent-blue">disrupt?</span></h2>
           <Link
             href="/#contact"
             className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-bg-primary rounded-full text-lg font-semibold hover:bg-accent-blue hover:text-white transition-colors duration-300 group"

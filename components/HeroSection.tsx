@@ -69,7 +69,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-[100svh] lg:min-h-screen flex items-center overflow-hidden"
     >
       {/* ── Full-bleed Video Background ── */}
       <div className="absolute inset-0">
@@ -78,7 +78,7 @@ export default function HeroSection() {
           muted
           playsInline
           preload="auto"
-          className="absolute top-0 right-0 w-full lg:w-[80%] h-full object-cover object-center"
+          className="absolute top-0 right-0 w-full lg:w-[80%] h-full object-cover object-[65%_center] lg:object-center"
           poster="/frames/hero-video_000.svg"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
@@ -120,6 +120,15 @@ export default function HeroSection() {
               "radial-gradient(ellipse 85% 80% at 65% 50%, transparent 35%, rgba(5,5,5,0.5) 75%, #050505 100%)",
           }}
         />
+
+        {/* Mobile-only readability overlay: video is full-bleed on small screens (unlike the 80%-width desktop split), so text needs stronger contrast here */}
+        <div
+          className="absolute inset-0 lg:hidden"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.35) 30%, rgba(5,5,5,0.75) 68%, #050505 100%)",
+          }}
+        />
       </div>
 
       {/* ── Ambient Glow ── */}
@@ -128,7 +137,7 @@ export default function HeroSection() {
       </div>
 
       {/* ── Content ── */}
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full section-padding pt-32 pb-20 lg:pt-36 lg:pb-28">
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full section-padding pt-24 pb-24 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-28">
         <div className="max-w-2xl">
           {/* Scroll Indicator */}
           <div className="hidden lg:flex absolute -left-4 xl:left-4 top-1/2 -translate-y-1/2 flex-col items-center gap-3">
@@ -139,7 +148,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-            className="text-[1.875rem] sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-serif font-medium leading-[1.1] tracking-tight mb-6 lg:mb-8"
+            className="text-[1.7rem] xs:text-[1.9rem] sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-serif font-medium leading-[1.15] sm:leading-[1.1] tracking-tight mb-5 lg:mb-8"
           >
             We design digital <br />
             <em className="gradient-text not-italic font-serif italic">
@@ -155,7 +164,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-text-secondary text-sm md:text-lg leading-relaxed max-w-lg mb-8 lg:mb-10"
+            className="text-text-secondary text-sm md:text-lg leading-relaxed max-w-lg mb-7 lg:mb-10"
           >
             We combine strategy, design, digital marketing, and technology
             <br className="hidden md:block" />
@@ -171,14 +180,14 @@ export default function HeroSection() {
           >
             <a
               href="#work"
-              className="group flex items-center gap-3 px-6 py-3 lg:px-7 lg:py-3.5 bg-accent-beige text-bg-primary rounded-full text-sm font-semibold tracking-wide hover:bg-accent-beige/90 transition-all duration-300"
+              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3.5 lg:py-3.5 lg:px-7 bg-accent-beige text-bg-primary rounded-full text-sm font-semibold tracking-wide hover:bg-accent-beige/90 transition-all duration-300"
             >
               View Our Work
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
               href="#services"
-              className="group flex items-center gap-3 px-6 py-3 lg:px-7 lg:py-3.5 border border-white/15 rounded-full text-sm font-medium tracking-wide text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+              className="group flex items-center justify-center gap-3 w-full sm:w-auto px-6 py-3.5 lg:py-3.5 lg:px-7 border border-white/15 rounded-full text-sm font-medium tracking-wide text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
             >
               Explore Services
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -191,7 +200,7 @@ export default function HeroSection() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 right-6 lg:bottom-12 lg:right-20 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/20 bg-white/10 backdrop-blur-md flex items-center justify-center cursor-pointer hover:bg-white/20 transition-all duration-300 group"
+        className="hidden sm:flex absolute bottom-8 right-6 lg:bottom-12 lg:right-20 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/20 bg-white/10 backdrop-blur-md items-center justify-center cursor-pointer hover:bg-white/20 transition-all duration-300 group"
       >
         <Play className="w-4 h-4 lg:w-5 lg:h-5 text-white ml-0.5 group-hover:scale-110 transition-transform" />
       </motion.div>
