@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
-  { label: "Work", href: "/#work" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
@@ -27,11 +27,12 @@ export default function Navbar() {
       setActiveLink("About");
     } else if (pathname.startsWith("/blog")) {
       setActiveLink("Blog");
+    } else if (pathname.startsWith("/work")) {
+      setActiveLink("Work");
     } else if (pathname === "/") {
       // Check hash if we are on the home page
       const hash = window.location.hash;
       if (hash === "#services") setActiveLink("Services");
-      else if (hash === "#work") setActiveLink("Work");
       else if (hash === "#contact") setActiveLink("Contact");
       else if (!hash || hash === "#home") setActiveLink("Home");
     }

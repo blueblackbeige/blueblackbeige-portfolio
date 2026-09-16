@@ -47,22 +47,66 @@ export default function HeroSection() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Don't use native playback — we control currentTime manually
-    video.pause();
+    // Match the lg breakpoint used for the video crop below (1024px)
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+    let cleanupDesktopAnim: (() => void) | null = null;
 
-    const startAnimation = () => {
-      prevTimestampRef.current = 0;
-      rafRef.current = requestAnimationFrame(animate);
+    const setupForMode = (isDesktop: boolean) => {
+      // Tear down whatever mode was previously running
+      if (cleanupDesktopAnim) {
+        cleanupDesktopAnim();
+        cleanupDesktopAnim = null;
+      }
+
+      if (!isDesktop) {
+        // Mobile/tablet: manually scrubbing currentTime while the video stays
+        // paused doesn't reliably repaint on iOS Safari / mobile Chrome — the
+        // decoder needs the element to actually be playing to keep painting
+        // frames, otherwise it visually freezes ("gets stuck"). A plain native
+        // forward loop is smooth, reliable, and cheaper on battery.
+        video.loop = true;
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {
+            // Autoplay can be blocked in rare cases (e.g. low-power mode);
+            // the poster frame remains visible, which is an acceptable fallback.
+          });
+        }
+        return;
+      }
+
+      // Desktop: custom reverse/forward ping-pong scrub for a cinematic loop
+      video.loop = false;
+      video.pause();
+
+      const startAnimation = () => {
+        prevTimestampRef.current = 0;
+        rafRef.current = requestAnimationFrame(animate);
+      };
+
+      if (video.readyState >= 2) {
+        startAnimation();
+      } else {
+        video.addEventListener("loadeddata", startAnimation, { once: true });
+      }
+
+      cleanupDesktopAnim = () => {
+        if (rafRef.current) {
+          cancelAnimationFrame(rafRef.current);
+          rafRef.current = null;
+        }
+        video.removeEventListener("loadeddata", startAnimation);
+      };
     };
 
-    if (video.readyState >= 2) {
-      startAnimation();
-    } else {
-      video.addEventListener("loadeddata", startAnimation, { once: true });
-    }
+    setupForMode(desktopQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => setupForMode(e.matches);
+    desktopQuery.addEventListener("change", handleChange);
 
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      desktopQuery.removeEventListener("change", handleChange);
+      if (cleanupDesktopAnim) cleanupDesktopAnim();
     };
   }, [animate]);
 

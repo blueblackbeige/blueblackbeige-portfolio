@@ -1,24 +1,17 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
-const placeholders = [
-  {
-    number: "01",
-    category: "B2B Platform",
-    tags: ["Strategy", "Web Dev", "UI/UX"],
-  },
-  {
-    number: "02",
-    category: "Fintech / Web App",
-    tags: ["UI/UX", "Motion", "Dev"],
-  },
-  {
-    number: "03",
-    category: "Luxury E-Commerce",
-    tags: ["Branding", "UI/UX", "Dev"],
-  },
+// Small homepage teaser pulled from the full gallery — keep this in sync
+// with the featured items in app/work/page.tsx if you want the same
+// projects highlighted in both places.
+const preview = [
+  { image: "/images/work/001.png", title: "Project One", category: "Website" },
+  { image: "/images/work/003.png", title: "Project Three", category: "Marketing" },
+  { image: "/images/work/005.png", title: "Project Five", category: "Branding" },
 ];
 
 export default function FeaturedProjects() {
@@ -43,111 +36,58 @@ export default function FeaturedProjects() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
-            <a
-              href="#contact"
+            <Link
+              href="/work"
               className="group inline-flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-white transition-colors"
             >
-              Work with us
+              View All Work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </ScrollReveal>
         </div>
 
-        {/* Featured hero — coming soon */}
-        <ScrollReveal>
-          <div className="relative rounded-2xl overflow-hidden border border-white/[0.06] bg-bg-secondary/20 mb-5 aspect-[3/2] sm:aspect-[16/9] lg:aspect-[16/7]">
-            {/* Ambient glow inside card */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-accent-blue/[0.06] rounded-full blur-[120px]" />
-
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-8">
-              {/* Coming soon pill */}
-              <div className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-accent-blue/25 bg-accent-blue/[0.06] mb-5 sm:mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-glow-pulse" />
-                <span className="text-[9px] sm:text-[10px] tracking-[0.3em] text-accent-blue font-semibold uppercase">
-                  Case studies coming soon
-                </span>
-              </div>
-
-              <h3 className="text-2xl sm:text-4xl lg:text-6xl font-serif font-medium text-white/80 mb-3 sm:mb-4 leading-tight">
-                Our work speaks
-                <br />
-                for itself<span className="text-accent-blue">.</span>
-              </h3>
-              <p className="text-text-secondary/60 text-xs sm:text-sm lg:text-base max-w-xs sm:max-w-md leading-relaxed mb-5 sm:mb-8">
-                Detailed case studies with results, process and deliverables are
-                being prepared. Reach out to see portfolio samples directly.
-              </p>
-              <a
-                href="#contact"
-                className="group inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border border-white/15 rounded-full text-sm font-medium text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+        {/* Preview grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-10 lg:mb-12">
+          {preview.map((item, i) => (
+            <ScrollReveal key={item.image} delay={i * 0.08}>
+              <Link
+                href="/work"
+                className="group relative block rounded-2xl overflow-hidden border border-white/[0.06] bg-bg-secondary/20 hover:border-white/20 transition-all duration-500"
               >
-                Request Portfolio
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-
-            {/* Decorative corner numbers */}
-            <span className="absolute top-6 left-8 text-xs tracking-[0.3em] text-white/10 font-sans">
-              01
-            </span>
-            <span className="absolute bottom-6 right-8 text-[6rem] font-serif font-medium text-white/[0.02] leading-none select-none">
-              ★
-            </span>
-          </div>
-        </ScrollReveal>
-
-        {/* Placeholder rows */}
-        <div>
-          {placeholders.map((p, i) => (
-            <ScrollReveal key={p.number} delay={i * 0.08}>
-              <div>
-                <div className="h-px bg-white/[0.05]" />
-                <div className="flex items-center gap-2.5 sm:gap-4 lg:gap-10 py-5 lg:py-7">
-                  {/* Number */}
-                  <span className="hidden sm:inline text-xs tracking-[0.3em] text-text-secondary/20 w-8 flex-shrink-0">
-                    {p.number}
-                  </span>
-
-                  {/* Placeholder image slot */}
-                  <div className="w-11 h-9 sm:w-14 sm:h-10 lg:w-20 lg:h-14 rounded-lg flex-shrink-0 bg-white/[0.03] border border-white/[0.04] flex items-center justify-center">
-                    <span className="text-[7px] sm:text-[8px] tracking-[0.15em] sm:tracking-[0.2em] text-white/15 uppercase font-sans">Soon</span>
-                  </div>
-
-                  {/* Name placeholder */}
-                  <div className="flex-1 min-w-0">
-                    <div className="h-4 w-20 sm:w-28 md:w-36 rounded bg-white/[0.04] mb-2" />
-                    <div className="h-2.5 w-24 sm:w-36 md:w-52 rounded bg-white/[0.025]" />
-                  </div>
-
-                  {/* Category + tags */}
-                  <div className="hidden lg:flex items-center gap-6 flex-shrink-0">
-                    <span className="text-xs tracking-[0.15em] text-text-secondary/25 uppercase">
-                      {p.category}
-                    </span>
-                    <div className="flex gap-2">
-                      {p.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[9px] tracking-[0.1em] uppercase text-white/15 px-2 py-0.5 rounded border border-white/[0.05]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Coming soon badge */}
-                  <div className="flex-shrink-0 px-2 sm:px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02]">
-                    <span className="text-[8px] sm:text-[9px] tracking-[0.15em] sm:tracking-[0.2em] text-text-secondary/30 uppercase font-sans whitespace-nowrap">
-                      Coming soon
-                    </span>
-                  </div>
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/90 via-bg-primary/10 to-transparent" />
                 </div>
-              </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                  <span className="text-[10px] tracking-[0.25em] text-accent-blue font-semibold uppercase mb-2 block">
+                    {item.category}
+                  </span>
+                  <h3 className="text-lg lg:text-xl font-serif font-medium text-white">
+                    {item.title}
+                  </h3>
+                </div>
+              </Link>
             </ScrollReveal>
           ))}
-          <div className="h-px bg-white/[0.05]" />
         </div>
+
+        <ScrollReveal delay={0.2}>
+          <div className="flex justify-center">
+            <Link
+              href="/work"
+              className="group inline-flex items-center gap-3 px-7 py-3.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300"
+            >
+              View Full Portfolio
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
