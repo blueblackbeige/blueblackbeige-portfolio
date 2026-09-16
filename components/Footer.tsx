@@ -23,12 +23,13 @@ const serviceLinks = [
   "Social Media Marketing",
 ];
 
-const socials = [
-  { label: "LinkedIn", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "Dribbble", href: "#" },
-  { label: "Behance", href: "#" },
-];
+// Social links — add real URLs here when profiles are live
+// const socials = [
+//   { label: "LinkedIn", href: "https://linkedin.com/company/blueblackbeige" },
+//   { label: "Instagram", href: "https://instagram.com/blueblackbeige" },
+//   { label: "Dribbble",  href: "https://dribbble.com/blueblackbeige" },
+//   { label: "Behance",   href: "https://behance.net/blueblackbeige" },
+// ];
 
 export default function Footer() {
   return (
@@ -115,35 +116,19 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Socials & Connect */}
+            {/* Contact */}
             <div className="col-span-2 md:col-span-1">
               <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-6 lg:mb-8">
-                Connect
+                Contact
               </h4>
-              <ul className="space-y-3 lg:space-y-4 mb-8 lg:mb-10">
-                {socials.map((s) => (
-                  <li key={s.label}>
-                    <a
-                      href={s.href}
-                      className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors"
-                    >
-                      {s.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-
-              <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-4">
-                Direct
-              </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3 lg:space-y-4">
                 <li>
-                  <a href="mailto:nayan@blueblackbeige.in" className="text-sm text-text-secondary hover:text-white transition-colors">
+                  <a href="mailto:nayan@blueblackbeige.in" className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
                     nayan@blueblackbeige.in
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+919288182862" className="text-sm text-text-secondary hover:text-white transition-colors">
+                  <a href="tel:+919288182862" className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
                     +91 92881 82862
                   </a>
                 </li>
@@ -174,8 +159,8 @@ export default function Footer() {
                 Based in Patna, Global Reach
               </span>
               <div className="hidden md:flex items-center gap-6">
-                <a href="#" className="hover:text-white transition-colors">Privacy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms</a>
+                <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+                <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
               </div>
             </div>
           </div>

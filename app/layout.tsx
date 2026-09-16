@@ -15,12 +15,20 @@ export const metadata: Metadata = {
   description:
     "We combine strategy, design, motion and technology to create intelligent digital products for ambitious brands.",
   keywords: ["digital agency", "AI studio", "web design", "branding", "web development"],
+  icons: {
+    icon: [{ url: "/logo.png" }],
+    apple: [{ url: "/logo.png" }],
+    shortcut: "/logo.png",
+  },
   openGraph: {
     title: "Blue Black Beige - AI-Powered Digital Studio",
     description:
       "We combine strategy, design, motion and technology to create intelligent digital products for ambitious brands.",
     type: "website",
+    url: "https://blueblackbeige.in",
+    siteName: "Blue Black Beige",
   },
+  metadataBase: new URL("https://blueblackbeige.in"),
 };
 
 export default function RootLayout({
