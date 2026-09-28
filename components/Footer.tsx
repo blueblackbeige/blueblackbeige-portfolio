@@ -128,6 +128,11 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a href="mailto:alok@blueblackbeige.in" className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
+                    alok@blueblackbeige.in
+                  </a>
+                </li>
+                <li>
                   <a href="tel:+919288182862" className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
                     +91 92881 82862
                   </a>
