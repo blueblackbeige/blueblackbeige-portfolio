@@ -4,15 +4,8 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
-
-// Small homepage teaser pulled from the full gallery — keep this in sync
-// with the featured items in app/work/page.tsx if you want the same
-// projects highlighted in both places.
-const preview = [
-  { image: "/images/work/001.png", title: "Project One", category: "Website" },
-  { image: "/images/work/003.png", title: "Project Three", category: "Marketing" },
-  { image: "/images/work/005.png", title: "Project Five", category: "Branding" },
-];
+import { featuredProjects } from "@/data/projects";
+import MarketingPreview from "./MarketingPreview";
 
 export default function FeaturedProjects() {
   return (
@@ -47,35 +40,39 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Preview grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-10 lg:mb-12">
-          {preview.map((item, i) => (
-            <ScrollReveal key={item.image} delay={i * 0.08}>
+        <div className="grid sm:grid-cols-2 gap-5 lg:gap-6 mb-10 lg:mb-12">
+          {featuredProjects.map((item, i) => (
+            <ScrollReveal key={item.image} delay={i * 0.08} className="h-full">
               <Link
-                href="/work"
-                className="group relative block rounded-2xl overflow-hidden border border-white/[0.06] bg-bg-secondary/20 hover:border-white/20 transition-all duration-500"
+                href={`/work#${item.title.toLowerCase().replaceAll(" ", "-")}`}
+                className="group relative block h-full rounded-2xl overflow-hidden border border-white/[0.06] bg-bg-secondary/20 hover:border-white/20 transition-all duration-500"
               >
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[2/1] bg-white/5 overflow-hidden">
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={`${item.title} website homepage`}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-contain"
+                    sizes="(max-width: 640px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/90 via-bg-primary/10 to-transparent" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                <div className="p-5 lg:p-6">
                   <span className="text-[10px] tracking-[0.25em] text-accent-blue font-semibold uppercase mb-2 block">
                     {item.category}
                   </span>
                   <h3 className="text-lg lg:text-xl font-serif font-medium text-white">
                     {item.title}
                   </h3>
+                  <p className="mt-3 text-sm text-text-secondary leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               </Link>
             </ScrollReveal>
           ))}
         </div>
+
+        <MarketingPreview />
 
         <ScrollReveal delay={0.2}>
           <div className="flex justify-center">

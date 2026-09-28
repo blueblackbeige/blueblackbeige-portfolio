@@ -41,10 +41,10 @@ const steps = [
     title: "Grow",
     phase: "Ongoing",
     description:
-      "We optimise, iterate and scale your product for long-term success. From analytics to SEO and conversion — we ensure growth compounds well beyond launch day.",
+      "We optimise, iterate and scale your product for long-term success. Through analytics, SEO and conversion optimisation, we ensure growth compounds well beyond launch day.",
     icon: Rocket,
     deliverables: ["Technical SEO", "Analytics Setup", "CRO Audits", "Growth Strategy"],
-    outcome: "Measurable, compounding growth — with a partner who treats your metrics like their own.",
+    outcome: "Measurable, compounding growth with a partner who treats your metrics like their own.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function ProcessSection() {
           </ScrollReveal>
         </div>
 
-        {/* Steps — accordion rows */}
+        {/* Steps - accordion rows */}
         <div>
           {steps.map((step, i) => {
             const isActive = active === i;

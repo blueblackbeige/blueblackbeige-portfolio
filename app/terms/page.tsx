@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Blue Black Beige",
+  title: "Terms of Service - Blue Black Beige",
   description:
     "Terms governing your use of the Blue Black Beige website and engagement with our design, development, and marketing services.",
 };
@@ -20,7 +20,7 @@ const sections = [
   },
   {
     title: "Intellectual Property",
-    body: `All content on this website — including text, images, motion graphics, and code — is owned by or licensed to Blue Black Beige and protected under applicable copyright law. You may not reproduce, distribute, or create derivative works from our content without prior written consent.\n\nFor client projects: upon full payment, ownership of final agreed deliverables transfers to the client as outlined in the project agreement. Working files and source assets remain the property of Blue Black Beige unless explicitly included in the agreement.`,
+    body: `All content on this website, including text, images, motion graphics, and code, is owned by or licensed to Blue Black Beige and protected under applicable copyright law. You may not reproduce, distribute, or create derivative works from our content without prior written consent.\n\nFor client projects: upon full payment, ownership of final agreed deliverables transfers to the client as outlined in the project agreement. Working files and source assets remain the property of Blue Black Beige unless explicitly included in the agreement.`,
   },
   {
     title: "Use of the Website",

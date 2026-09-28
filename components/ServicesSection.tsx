@@ -1,14 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Target, Layout, Code2, Waves, TrendingUp, Megaphone, Share2 } from "lucide-react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import Image from "next/image";
+import { ArrowUpRight, Plus, Target, Layout, Code2, Waves, TrendingUp, Megaphone, Share2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const services = [
   {
     number: "01",
     title: "Strategy & Branding",
+    image: "/images/services/branding.webp",
+    imageAlt: "Sculptural brand materials, stationery and cobalt colour swatches",
     tagline: "Define before you design.",
     description:
       "We build strong foundations through deep discovery, market positioning and brand identity systems that make your business immediately recognisable and deeply trusted.",
@@ -19,6 +22,8 @@ const services = [
   {
     number: "02",
     title: "Digital Experience",
+    image: "/images/services/digital-experience.webp",
+    imageAlt: "Layered glass interface panels with tactile controls",
     tagline: "Design that moves people.",
     description:
       "Human-centred UI/UX crafted to guide users through experiences that feel effortless. Every screen is designed to reduce friction and drive meaningful action.",
@@ -29,9 +34,11 @@ const services = [
   {
     number: "03",
     title: "Web Development",
+    image: "/images/services/web-development.webp",
+    imageAlt: "Modular browser architecture built from blue and ivory blocks",
     tagline: "Fast, scalable, future-proof.",
     description:
-      "We engineer high-performance web products using Next.js, React and modern stacks — optimised for speed, SEO and scale from day one.",
+      "We engineer high-performance web products using Next.js, React and modern stacks, optimised for speed, SEO and scale from day one.",
     icon: Code2,
     deliverables: ["Next.js / React", "CMS Integration", "API Development", "Performance Optimisation", "QA & Testing"],
     result: "100/100 Lighthouse scores. Sub-second load times. Production-grade security.",
@@ -39,9 +46,11 @@ const services = [
   {
     number: "04",
     title: "Motion & Interaction",
+    image: "/images/services/motion-interaction.webp",
+    imageAlt: "A flowing blue ribbon moving through sculptural metal rings",
     tagline: "Animation that earns attention.",
     description:
-      "Purposeful motion design that brings interfaces to life — from micro-interactions to full page transitions — creating moments that elevate your brand story.",
+      "Purposeful motion design that brings interfaces to life, from micro-interactions to full page transitions, creating moments that elevate your brand story.",
     icon: Waves,
     deliverables: ["Micro-interactions", "Page Transitions", "Scroll Animations", "Lottie / SVG", "Video Direction"],
     result: "Motion-first sites see 35% longer session durations on average.",
@@ -49,6 +58,8 @@ const services = [
   {
     number: "05",
     title: "Growth & Optimisation",
+    image: "/images/services/growth-optimisation.webp",
+    imageAlt: "Rising sculptural columns and a glass magnifying lens",
     tagline: "Launch is just the beginning.",
     description:
       "Data-driven SEO, conversion rate optimisation and marketing infrastructure that turns traffic into revenue and keeps compounding over time.",
@@ -59,6 +70,8 @@ const services = [
   {
     number: "06",
     title: "Digital Marketing",
+    image: "/images/services/digital-marketing.webp",
+    imageAlt: "A cobalt megaphone surrounded by abstract campaign panels",
     tagline: "Drive measurable growth.",
     description:
       "Data-driven SEO, Google Ads/PPC, email campaigns, and performance reporting designed to dominate search and maximize ROI.",
@@ -69,6 +82,8 @@ const services = [
   {
     number: "07",
     title: "Social Media Marketing",
+    image: "/images/services/social-media.webp",
+    imageAlt: "Connected speech bubbles and a glass phone frame",
     tagline: "Build vibrant communities.",
     description:
       "End-to-end social strategy, from viral short-form content (Reels/TikTok) to robust community management and analytics.",
@@ -80,149 +95,111 @@ const services = [
 
 export default function ServicesSection() {
   const [active, setActive] = useState<number | null>(null);
-
-  const toggle = (i: number) => setActive(active === i ? null : i);
+  const reducedMotion = useReducedMotion();
 
   return (
-    <section id="services" className="relative py-20 lg:py-36">
+    <section id="services" className="relative py-20 lg:py-36 scroll-mt-24">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
-
       <div className="max-w-[1440px] mx-auto section-padding">
-
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14 lg:mb-20">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 lg:mb-16">
           <ScrollReveal>
-            <div>
-              <span className="text-xs tracking-[0.3em] text-accent-blue font-semibold uppercase mb-5 block">
-                What We Do
-              </span>
-              <h2 className="text-4xl lg:text-6xl font-serif font-medium leading-[1.05]">
-                End-to-end digital
-                <br />
-                <em className="italic text-white/50 not-italic">craftsmanship</em>
-                <span className="text-accent-blue">.</span>
-              </h2>
-            </div>
+            <span className="text-xs tracking-[0.3em] text-accent-blue font-semibold uppercase mb-5 block">
+              What We Do
+            </span>
+            <h2 className="text-4xl lg:text-6xl font-serif font-medium leading-[1.05]">
+              End-to-end digital<br />
+              <span className="text-accent-beige">craftsmanship</span>
+              <span className="text-accent-blue">.</span>
+            </h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.15}>
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-white transition-colors"
-            >
+          <ScrollReveal delay={0.1} className="lg:max-w-sm">
+            <p className="text-text-secondary text-base leading-relaxed mb-5">
+              From your first brand idea to your next stage of growth, we bring
+              strategy, design, technology and marketing together.
+            </p>
+            <a href="#contact" className="group inline-flex items-center gap-2 text-sm font-medium text-white hover:text-accent-beige transition-colors">
               Start a Project
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight aria-hidden="true" className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </ScrollReveal>
         </div>
 
-        {/* Accordion rows */}
-        <div>
+        <div className="border-t border-white/10">
           {services.map((service, i) => {
             const isActive = active === i;
             const Icon = service.icon;
+            const panelId = `service-details-${service.number}`;
+            const buttonId = `service-toggle-${service.number}`;
 
             return (
-              <ScrollReveal key={service.number} delay={i * 0.06}>
-                <div>
-                  {/* Top divider */}
-                  <div className="h-px bg-white/[0.07]" />
+              <ScrollReveal key={service.number}>
+                <article className="grid md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.5fr)] gap-6 md:gap-10 lg:gap-14 py-8 lg:py-10 border-b border-white/10">
+                  <div className="relative aspect-[3/2] self-start overflow-hidden rounded-2xl border border-white/10 bg-[#101114]">
+                    <Image
+                      src={service.image}
+                      alt={service.imageAlt}
+                      fill
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 35vw, 420px"
+                      className="object-cover"
+                    />
+                  </div>
 
-                  {/* Row button */}
-                  <button
-                    onClick={() => toggle(i)}
-                    className="group w-full flex items-center gap-4 lg:gap-10 py-5 lg:py-7 text-left"
-                  >
-                    {/* Number */}
-                    <span className="text-xs tracking-[0.3em] text-text-secondary/30 font-medium w-8 flex-shrink-0 group-hover:text-text-secondary/60 transition-colors duration-300">
-                      {service.number}
-                    </span>
-
-                    {/* Title */}
-                    <span
-                      className={`flex-1 text-xl sm:text-3xl lg:text-[2.5rem] font-serif font-medium leading-none transition-colors duration-400 ${
-                        isActive ? "text-white" : "text-white/60 group-hover:text-white/90"
-                      }`}
-                    >
-                      {service.title}
-                    </span>
-
-                    {/* Tagline — visible on hover */}
-                    <span className="hidden lg:block text-sm text-text-secondary/40 font-light italic max-w-[200px] text-right opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {service.tagline}
-                    </span>
-
-                    {/* Icon */}
-                    <div
-                      className={`flex-shrink-0 w-9 h-9 lg:w-10 lg:h-10 rounded-full border flex items-center justify-center transition-all duration-400 ${
-                        isActive
-                          ? "border-accent-blue/40 bg-accent-blue/10 rotate-45"
-                          : "border-white/10 group-hover:border-white/25"
-                      }`}
-                    >
-                      <ArrowUpRight
-                        className={`w-4 h-4 transition-colors duration-300 ${
-                          isActive ? "text-accent-blue" : "text-text-secondary/40 group-hover:text-white/70"
-                        }`}
-                      />
+                  <div className="min-w-0 md:py-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-xs tracking-[0.15em] text-accent-beige font-medium">{service.number}</span>
+                      <span className="w-6 h-px bg-white/20" />
+                      <p className="text-xs sm:text-sm text-text-secondary">{service.tagline}</p>
                     </div>
-                  </button>
-
-                  {/* Expanded detail */}
-                  <AnimatePresence initial={false}>
-                    {isActive && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.45, ease: [0.25, 0, 0, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pb-8 lg:pb-14 pl-6 sm:pl-[3.5rem] lg:pl-[4.5rem]">
-                          <div className="grid lg:grid-cols-[1fr_340px] gap-8 lg:gap-16">
-
-                            {/* Left: description */}
-                            <div>
-                              <p className="text-sm tracking-[0.2em] text-accent-blue/80 uppercase font-semibold mb-5">
-                                {service.tagline}
-                              </p>
-                              <p className="text-text-secondary text-base lg:text-lg leading-relaxed mb-8 max-w-2xl">
-                                {service.description}
-                              </p>
-                              {/* Result */}
-                              <div className="flex items-center gap-3">
-                                <div className="w-8 h-px bg-accent-blue/50" />
-                                <p className="text-sm text-text-secondary/60 italic">
-                                  {service.result}
-                                </p>
-                              </div>
-                            </div>
-
-                            {/* Right: deliverables */}
-                            <div>
-                              <p className="text-[10px] tracking-[0.3em] text-text-secondary/30 uppercase font-semibold mb-4">
-                                Deliverables
-                              </p>
-                              <ul className="space-y-2.5">
-                                {service.deliverables.map((d) => (
-                                  <li key={d} className="flex items-center gap-3">
-                                    <Icon className="w-3 h-3 text-accent-blue/40 flex-shrink-0" strokeWidth={2} />
-                                    <span className="text-sm text-text-secondary/70">{d}</span>
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium leading-tight text-white mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-text-secondary text-sm sm:text-base leading-relaxed max-w-2xl">
+                      {service.description}
+                    </p>
+                    <button
+                      id={buttonId}
+                      type="button"
+                      aria-label={`${isActive ? "Hide" : "Show"} ${service.title} deliverables`}
+                      aria-expanded={isActive}
+                      aria-controls={panelId}
+                      onClick={() => setActive(isActive ? null : i)}
+                      className="group mt-5 inline-flex min-h-11 items-center gap-3 rounded-lg text-sm font-medium text-white hover:text-accent-beige focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-blue transition-colors"
+                    >
+                      {isActive ? "Hide deliverables" : "What's included"}
+                      <Plus aria-hidden="true" className={`w-4 h-4 transition-transform motion-reduce:transition-none ${isActive ? "rotate-45" : ""}`} />
+                    </button>
+                    <div id={panelId} role="region" aria-labelledby={buttonId}>
+                      <AnimatePresence initial={false}>
+                        {isActive && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: reducedMotion ? 0 : 0.25 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pt-4 pb-1">
+                              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                                {service.deliverables.map((deliverable) => (
+                                  <li key={deliverable} className="flex items-center gap-2.5 text-sm text-text-secondary">
+                                    <Icon aria-hidden="true" className="w-3.5 h-3.5 text-accent-beige shrink-0" />
+                                    {deliverable}
                                   </li>
                                 ))}
                               </ul>
+                              <p className="mt-5 pt-4 border-t border-white/10 text-sm leading-relaxed text-text-secondary">
+                                {service.result}
+                              </p>
                             </div>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                </article>
               </ScrollReveal>
             );
           })}
-
-          {/* Bottom divider */}
-          <div className="h-px bg-white/[0.07]" />
         </div>
       </div>
     </section>

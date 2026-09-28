@@ -57,7 +57,7 @@ export default function CTASection() {
             <ScrollReveal delay={0.2}>
               <p className="text-text-secondary text-base leading-relaxed max-w-md mb-8 lg:mb-10">
                 Whether you&apos;re launching a new brand, redesigning your
-                digital presence or scaling your product — we&apos;re here to
+                digital presence or scaling your product, we&apos;re here to
                 make it exceptional.
               </p>
             </ScrollReveal>

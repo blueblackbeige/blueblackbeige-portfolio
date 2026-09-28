@@ -1,4 +1,4 @@
-# Blue Black Beige — AI-Powered Digital Studio
+# Blue Black Beige - AI-Powered Digital Studio
 
 Premium digital agency website built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.
 

@@ -59,7 +59,7 @@ export default function NotFound() {
           <span className="text-accent-beige">.</span>
         </h1>
 
-        {/* Sub-text — no em-dashes */}
+        {/* Sub-text - no em-dashes */}
         <p className="text-text-secondary text-base md:text-lg leading-relaxed mb-12 max-w-sm">
           This page is still being built. Head back home while you wait.
         </p>

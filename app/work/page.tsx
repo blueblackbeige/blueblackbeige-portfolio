@@ -7,63 +7,14 @@ import CTASection from "@/components/CTASection";
 import ScrollReveal from "@/components/ScrollReveal";
 import Image from "next/image";
 import { ArrowRight, Volume2, VolumeX } from "lucide-react";
+import { featuredProjects } from "@/data/projects";
+import MarketingPortfolio from "@/components/MarketingPortfolio";
 
-// ─────────────────────────────────────────────────────────────
-// EDIT ME: replace title / category / description for each piece
-// as real projects are ready to publish. Category drives the
-// filter pills below — use "Website", "Marketing", or "Branding"
-// (or add a new one) to match what each image actually shows.
-// ─────────────────────────────────────────────────────────────
-const gallery = [
-  {
-    image: "/images/work/001.png",
-    title: "Project One",
-    category: "Website",
-    description: "Add a short description of this project.",
-  },
-  {
-    image: "/images/work/002.png",
-    title: "Project Two",
-    category: "Website",
-    description: "Add a short description of this project.",
-  },
-  {
-    image: "/images/work/003.png",
-    title: "Project Three",
-    category: "Marketing",
-    description: "Add a short description of this project.",
-  },
-  {
-    image: "/images/work/004.png",
-    title: "Project Four",
-    category: "Marketing",
-    description: "Add a short description of this project.",
-  },
-  {
-    image: "/images/work/005.png",
-    title: "Project Five",
-    category: "Branding",
-    description: "Add a short description of this project.",
-  },
-  {
-    image: "/images/work/006.png",
-    title: "Project Six",
-    category: "Branding",
-    description: "Add a short description of this project.",
-  },
-];
-
-const filters = ["All", "Website", "Marketing", "Branding"];
+const gallery = featuredProjects;
 
 export default function WorkPage() {
-  const [activeFilter, setActiveFilter] = useState("All");
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  const filtered =
-    activeFilter === "All"
-      ? gallery
-      : gallery.filter((item) => item.category === activeFilter);
 
   const toggleSound = () => {
     const video = videoRef.current;
@@ -94,10 +45,14 @@ export default function WorkPage() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-xl mt-6">
-              Websites, campaigns and brand work from the studio floor —
+              Websites, campaigns and brand work from the studio floor,
               updated as each project ships.
             </p>
           </ScrollReveal>
+          <nav aria-label="Portfolio categories" className="flex flex-wrap gap-3 mt-8">
+            <a href="#gallery" className="px-5 py-3 rounded-full border border-white/20 text-sm hover:bg-white/5">Websites</a>
+            <a href="#marketing-work" className="px-5 py-3 rounded-full border border-white/20 text-sm hover:bg-white/5">Marketing &amp; Social Media</a>
+          </nav>
         </div>
       </section>
 
@@ -148,7 +103,7 @@ export default function WorkPage() {
       </section>
 
       {/* ── Gallery ── */}
-      <section id="gallery" className="relative py-16 lg:py-24">
+      <section id="gallery" className="relative py-16 lg:py-24 scroll-mt-24">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
 
         <div className="max-w-[1440px] mx-auto section-padding">
@@ -156,52 +111,33 @@ export default function WorkPage() {
             <ScrollReveal>
               <div>
                 <span className="text-xs tracking-[0.3em] text-accent-blue font-semibold uppercase mb-5 block">
-                  Selected Projects
+                  Website Projects
                 </span>
                 <h2 className="text-3xl lg:text-5xl font-serif font-medium leading-[1.1]">
-                  Websites, campaigns
+                  Website design
                   <br />
-                  and brand systems<span className="text-accent-blue">.</span>
+                  &amp; development<span className="text-accent-blue">.</span>
                 </h2>
               </div>
             </ScrollReveal>
 
-            {/* Filter pills */}
-            <ScrollReveal delay={0.1}>
-              <div className="flex flex-wrap gap-2">
-                {filters.map((f) => (
-                  <button
-                    key={f}
-                    onClick={() => setActiveFilter(f)}
-                    className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide border transition-all duration-300 ${
-                      activeFilter === f
-                        ? "bg-white text-bg-primary border-white"
-                        : "border-white/15 text-text-secondary hover:border-white/30 hover:text-white"
-                    }`}
-                  >
-                    {f}
-                  </button>
-                ))}
-              </div>
-            </ScrollReveal>
           </div>
 
           {/* Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-            {filtered.map((item, i) => (
-              <ScrollReveal key={item.image} delay={i * 0.06}>
-                <div className="group relative rounded-2xl overflow-hidden luxury-border bg-bg-secondary/20 hover:border-white/20 transition-all duration-500">
-                  <div className="relative aspect-[4/3]">
+          <div className="grid sm:grid-cols-2 gap-5 lg:gap-6">
+            {gallery.map((item, i) => (
+              <ScrollReveal key={item.image} delay={i * 0.06} className="h-full">
+                <div id={item.title.toLowerCase().replaceAll(" ", "-")} className="group relative h-full scroll-mt-32 rounded-2xl overflow-hidden luxury-border bg-bg-secondary/20 hover:border-white/20 transition-all duration-500">
+                  <div className="relative aspect-[2/1] bg-white/5 overflow-hidden">
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={`${item.title} project preview`}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-contain"
+                      sizes="(max-width: 640px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/90 via-bg-primary/10 to-transparent" />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
+                  <div className="p-5 lg:p-6">
                     <span className="text-[10px] tracking-[0.25em] text-accent-blue font-semibold uppercase mb-2 block">
                       {item.category}
                     </span>
@@ -217,11 +153,6 @@ export default function WorkPage() {
             ))}
           </div>
 
-          {filtered.length === 0 && (
-            <p className="text-text-secondary text-sm text-center py-16">
-              Nothing here yet — check back soon.
-            </p>
-          )}
 
           <ScrollReveal delay={0.2}>
             <div className="flex justify-center mt-14 lg:mt-20">
@@ -237,6 +168,7 @@ export default function WorkPage() {
         </div>
       </section>
 
+      <MarketingPortfolio />
       <CTASection />
       <Footer />
     </main>

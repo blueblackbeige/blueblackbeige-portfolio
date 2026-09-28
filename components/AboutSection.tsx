@@ -16,7 +16,7 @@ const values = [
     icon: Globe,
     title: "Global thinking",
     description:
-      "We build for audiences worldwide — with a clear understanding of local context.",
+      "We build for audiences worldwide, with a clear understanding of local context.",
   },
   {
     icon: Zap,
@@ -83,7 +83,7 @@ export default function AboutSection() {
               </p>
               <p className="text-text-secondary text-base leading-relaxed">
                 Our process blends strategic thinking, premium design and
-                cutting-edge technology — delivered at a pace and quality that
+                cutting-edge technology, delivered at a pace and quality that
                 was previously reserved for teams 10× our size.
               </p>
               <div className="flex gap-6 mt-4">

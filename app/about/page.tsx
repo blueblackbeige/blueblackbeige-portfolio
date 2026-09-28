@@ -163,7 +163,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Sparkles, title: "Craft-First", desc: "Every pixel is intentional. We treat design as a discipline, not a decoration." },
-              { icon: Globe, title: "Global Thinking", desc: "We build for audiences worldwide — with a clear understanding of local context." },
+              { icon: Globe, title: "Global Thinking", desc: "We build for audiences worldwide, with a clear understanding of local context." },
               { icon: Zap, title: "Speed & Scale", desc: "AI-augmented workflows let us deliver premium quality faster than anyone else." },
               { icon: Cpu, title: "Tech Agnostic", desc: "We choose the right stack for the job, ensuring performance is never compromised. We leverage the edge to deliver lightning-fast experiences.", span: "md:col-span-2 lg:col-span-3 lg:flex lg:items-center lg:gap-12" }
             ].map((item, i) => (

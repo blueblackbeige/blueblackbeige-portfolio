@@ -56,7 +56,7 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        {/* Fixed height navbar — everything vertically centered inside */}
+        {/* Fixed height navbar - everything vertically centered inside */}
         <div className="max-w-[1440px] mx-auto section-padding h-[72px] flex items-center justify-between">
 
           {/* Logo */}

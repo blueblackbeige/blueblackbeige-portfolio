@@ -1,0 +1,48 @@
+{
+  "generator": "Built-in image_gen",
+  "format": "WebP, 1200px wide, quality 85",
+  "assets": [
+    {
+      "slug": "branding",
+      "path": "public/images/services/branding.webp",
+      "prompt": "Use case: stylized-concept. Asset type: editorial service illustration for the Blue Black Beige agency website. Generate ONE landscape 3:2 image, not a collage. Art direction: premium tactile 3D studio still life on a deep charcoal black seamless background, sculptural composition, restrained cobalt blue and warm ivory/beige accents, brushed aluminum and frosted glass details, subtle realistic shadows, sophisticated editorial art direction. Objects fill the central 75 percent, ample breathing room, no neon cyberpunk, no people, no words, letters, numbers, logos, watermarks or readable text. Keep the subject clear at small website sizes. Strategy and branding: a beautifully arranged physical brand toolkit with stacked warm ivory stationery cards, cobalt color swatches, a small sculptural geometric mark made of three interlocking blue and beige blocks, paper textures. Overhead three-quarter view, strong balanced composition.",
+      "source": "C:\\Users\\raj90\\.codex\\generated_images\\01a0e927-cf95-7d40-8c83-13e67ef5e989\\exec-52320cc7-6125-454f-bcee-3c05de9169aa.png"
+    },
+    {
+      "slug": "digital-experience",
+      "path": "public/images/services/digital-experience.webp",
+      "prompt": "Use case: stylized-concept. Asset type: editorial service illustration for the Blue Black Beige agency website. Generate ONE landscape 3:2 image, not a collage. Art direction: premium tactile 3D studio still life on a deep charcoal black seamless background, sculptural composition, restrained cobalt blue and warm ivory/beige accents, brushed aluminum and frosted glass details, subtle realistic shadows, sophisticated editorial art direction. Objects fill the central 75 percent, ample breathing room, no neon cyberpunk, no people, no words, letters, numbers, logos, watermarks or readable text. Keep the subject clear at small website sizes. UI and UX digital experience: layered frosted-glass interface panels with tactile ivory rounded modules, blue toggle controls and simple abstract image placeholders, one blue cursor-shaped sculptural object connecting the panels. Not a real software screenshot. Three-quarter view.",
+      "source": "C:\\Users\\raj90\\.codex\\generated_images\\01a0e927-cf95-7d40-8c83-13e67ef5e989\\exec-50937a43-18fa-41b2-8e17-44a604b4c8fd.png"
+    },
+    {
+      "slug": "web-development",
+      "path": "public/images/services/web-development.webp",
+      "prompt": "Use case: stylized-concept. Asset type: editorial service illustration for the Blue Black Beige agency website. Generate ONE landscape 3:2 image, not a collage. Art direction: premium tactile 3D studio still life on a deep charcoal black seamless background, sculptural composition, restrained cobalt blue and warm ivory/beige accents, brushed aluminum and frosted glass details, subtle realistic shadows, sophisticated editorial art direction. Objects fill the central 75 percent, ample breathing room, no neon cyberpunk, no people, no words, letters, numbers, logos, watermarks or readable text. Keep the subject clear at small website sizes. Web development: an elegant architectural assembly of interlocking cobalt and ivory modular blocks forming a dimensional browser window structure, fine silver connectors and glass layers implying an engineered system. Include a sculptural pair of angle brackets with a slash as abstract coding symbol. Three-quarter view.",
+      "source": "C:\\Users\\raj90\\.codex\\generated_images\\01a0e927-cf95-7d40-8c83-13e67ef5e989\\exec-14874839-2430-4153-a6bb-240ec34f28e5.png"
+    },
+    {
+      "slug": "motion-interaction",
+      "path": "public/images/services/motion-interaction.webp",
+      "prompt": "Use case: stylized-concept. Asset type: editorial service illustration for the Blue Black Beige agency website. Generate ONE landscape 3:2 image, not a collage. Art direction: premium tactile 3D studio still life on a deep charcoal black seamless background, sculptural composition, restrained cobalt blue and warm ivory/beige accents, brushed aluminum and frosted glass details, subtle realistic shadows, sophisticated editorial art direction. Objects fill the central 75 percent, ample breathing room, no neon cyberpunk, no people, no words, letters, numbers, logos, watermarks or readable text. Keep the subject clear at small website sizes. Motion and interaction: a flowing cobalt satin ribbon spiraling gracefully through three suspended brushed-aluminum rings, one warm ivory sphere, subtle trailing echoes suggesting frames of movement, dynamic but minimal physical sculpture.",
+      "source": "C:\\Users\\raj90\\.codex\\generated_images\\01a0e927-cf95-7d40-8c83-13e67ef5e989\\exec-a2aeb1a6-72f7-44d4-a11d-929b90abb179.png"
+    },
+    {
+      "slug": "growth-optimisation",
+      "path": "public/images/services/growth-optimisation.webp",
+      "prompt": "Use case: stylized-concept. Asset type: editorial service illustration for the Blue Black Beige agency website. Generate ONE landscape 3:2 image, not a collage. Art direction: premium tactile 3D studio still life on a deep charcoal black seamless background, sculptural composition, restrained cobalt blue and warm ivory/beige accents, brushed aluminum and frosted glass details, subtle realistic shadows, sophisticated editorial art direction. Objects fill the central 75 percent, ample breathing room, no neon cyberpunk, no people, no words, letters, numbers, logos, watermarks or readable text. Keep the subject clear at small website sizes. Growth and optimisation: a precise sculptural rising sequence of five cobalt and warm ivory columns with a fine brushed-silver arc passing over them and a small glass magnifying lens in the foreground. No axes, no numbers or promises, purely conceptual physical objects.",
+      "source": "C:\\Users\\raj90\\.codex\\generated_images\\01a0e927-cf95-7d40-8c83-13e67ef5e989\\exec-34ad3eb9-8572-4e5d-8d54-2ae7b563a8ca.png"
+    },
+    {
+      "slug": "digital-marketing",
+      "path": "public/images/services/digital-marketing.webp",
+      "prompt": "Use case: stylized-concept. Asset type: editorial service illustration for the Blue Black Beige agency website. Generate ONE landscape 3:2 image, not a collage. Art direction: premium tactile 3D studio still life on a deep charcoal black seamless background, sculptural composition, restrained cobalt blue and warm ivory/beige accents, brushed aluminum and frosted glass details, subtle realistic shadows, sophisticated editorial art direction. Objects fill the central 75 percent, ample breathing room, no neon cyberpunk, no people, no words, letters, numbers, logos, watermarks or readable text. Keep the subject clear at small website sizes. Digital marketing: a premium sculptural cobalt blue megaphone with warm ivory interior, angled beside three floating translucent campaign panels, subtle concentric silver rings conveying targeted reach. Sophisticated physical still life, no icons or text on panels.",
+      "source": "C:\\Users\\raj90\\.codex\\generated_images\\01a0e927-cf95-7d40-8c83-13e67ef5e989\\exec-6983be56-6d67-489a-8aa6-b010502bdeab.png"
+    },
+    {
+      "slug": "social-media",
+      "path": "public/images/services/social-media.webp",
+      "prompt": "Use case: stylized-concept. Asset type: editorial service illustration for the Blue Black Beige agency website. Generate ONE landscape 3:2 image, not a collage. Art direction: premium tactile 3D studio still life on a deep charcoal black seamless background, sculptural composition, restrained cobalt blue and warm ivory/beige accents, brushed aluminum and frosted glass details, subtle realistic shadows, sophisticated editorial art direction. Objects fill the central 75 percent, ample breathing room, no neon cyberpunk, no people, no words, letters, numbers, logos, watermarks or readable text. Keep the subject clear at small website sizes. Social media marketing: a cluster of sculptural cobalt and warm ivory rounded speech bubbles with a slim vertical frosted glass phone-shaped frame, small abstract picture tiles and delicate silver connections conveying community. No text, no logos, no actual platform branding.",
+      "source": "C:\\Users\\raj90\\.codex\\generated_images\\01a0e927-cf95-7d40-8c83-13e67ef5e989\\exec-8ac7efd2-05ee-4c4c-bc88-13a56872ef24.png"
+    }
+  ]
+}

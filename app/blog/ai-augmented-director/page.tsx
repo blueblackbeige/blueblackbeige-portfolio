@@ -157,7 +157,7 @@ export default function Blog1() {
               </div>
 
               <p>
-                At Blue Black Beige, we no longer start from an entirely blank canvas. Instead, we spend our time refining, curating, and injecting the <em>soul</em> into the output. As the data above illustrates, the hours previously spent pushing pixels are now reallocated to deep strategic thinking and high-end polish. We focus on storytelling and emotional connection—areas where human intuition is irreplaceable.
+                At Blue Black Beige, we no longer start from an entirely blank canvas. Instead, we spend our time refining, curating, and injecting the <em>soul</em> into the output. As the data above illustrates, the hours previously spent pushing pixels are now reallocated to deep strategic thinking and high-end polish. We focus on storytelling and emotional connection, areas where human intuition is irreplaceable.
               </p>
               
               <h2>The Human Touch Advantage</h2>

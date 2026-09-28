@@ -27,7 +27,7 @@ interface Props {
   pingPong?: boolean;
   /** Canvas CSS class */
   className?: string;
-  /** Invert colors — turns black paths white (for dark backgrounds) */
+  /** Invert colors - turns black paths white (for dark backgrounds) */
   invert?: boolean;
   /** Show scrub bar (default false) */
   showControls?: boolean;

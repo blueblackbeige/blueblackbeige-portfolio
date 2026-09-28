@@ -10,7 +10,7 @@ export default function HeroSection() {
   const directionRef = useRef<1 | -1>(1);
   const prevTimestampRef = useRef<number>(0);
 
-  // Single RAF loop controls EVERYTHING — no reliance on native play/ended events
+  // Single RAF loop controls EVERYTHING - no reliance on native play/ended events
   const animate = useCallback((timestamp: number) => {
     const video = videoRef.current;
     if (!video || video.readyState < 2) {
@@ -22,18 +22,18 @@ export default function HeroSection() {
     const delta = (timestamp - prevTimestampRef.current) / 1000;
     prevTimestampRef.current = timestamp;
 
-    // Speed multiplier — lower = slower (0.35 feels luxury cinematic)
+    // Speed multiplier - lower = slower (0.35 feels luxury cinematic)
     const speed = 0.8;
     const step = delta * speed;
 
     const newTime = video.currentTime + step * directionRef.current;
 
     if (newTime >= video.duration) {
-      // Hit the end — immediately reverse, no pause
+      // Hit the end - immediately reverse, no pause
       video.currentTime = video.duration;
       directionRef.current = -1;
     } else if (newTime <= 0) {
-      // Hit the start — immediately go forward, no pause
+      // Hit the start - immediately go forward, no pause
       video.currentTime = 0;
       directionRef.current = 1;
     } else {
@@ -60,7 +60,7 @@ export default function HeroSection() {
 
       if (!isDesktop) {
         // Mobile/tablet: manually scrubbing currentTime while the video stays
-        // paused doesn't reliably repaint on iOS Safari / mobile Chrome — the
+        // paused doesn't reliably repaint on iOS Safari / mobile Chrome - the
         // decoder needs the element to actually be playing to keep painting
         // frames, otherwise it visually freezes ("gets stuck"). A plain native
         // forward loop is smooth, reliable, and cheaper on battery.

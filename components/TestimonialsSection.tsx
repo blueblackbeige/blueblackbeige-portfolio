@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     quote:
-      "The level of craft is unmatched. Every interaction, every animation, every pixel was intentional. They don't just build websites — they create experiences that sell.",
+      "The level of craft is unmatched. Every interaction, every animation, every pixel was intentional. They don't just build websites; they create experiences that sell.",
     author: "Unknown",
     role: "",
     company: "Startup",
@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
                       {testimonials[current].author}
                     </p>
                     <p className="text-xs text-text-secondary">
-                      {testimonials[current].role} — {testimonials[current].company}
+                      {[testimonials[current].role, testimonials[current].company].filter(Boolean).join(", ")}
                     </p>
                   </div>
                 </div>

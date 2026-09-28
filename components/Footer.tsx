@@ -23,7 +23,7 @@ const serviceLinks = [
   "Social Media Marketing",
 ];
 
-// Social links — add real URLs here when profiles are live
+// Social links - add real URLs here when profiles are live
 // const socials = [
 //   { label: "LinkedIn", href: "https://linkedin.com/company/blueblackbeige" },
 //   { label: "Instagram", href: "https://instagram.com/blueblackbeige" },
@@ -55,7 +55,7 @@ export default function Footer() {
                 />
               </div>
               <p className="text-lg md:text-2xl text-text-secondary font-serif italic max-w-md leading-relaxed">
-                We design, build and grow ambitious brands — through premium digital experiences, marketing and social strategy.
+                We design, build and grow ambitious brands through premium digital experiences, marketing and social strategy.
               </p>
             </div>
 

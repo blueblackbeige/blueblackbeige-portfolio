@@ -105,7 +105,7 @@ export default function Blog2() {
               first-letter:float-left first-letter:text-5xl sm:first-letter:text-7xl first-letter:pr-3 sm:first-letter:pr-4 first-letter:font-serif first-letter:text-white first-letter:mt-1 sm:first-letter:mt-2 first-letter:leading-[0.8]
             ">
               <p>
-                For years, growth marketing relied on manual A/B testing—a slow, reactive process. Enter Agentic AI, the technology that is proactively optimizing user experiences in real-time.
+                For years, growth marketing relied on manual A/B testing, a slow, reactive process. Enter Agentic AI, the technology that is proactively optimizing user experiences in real-time.
               </p>
               
               <h2>The Limitation of Traditional Testing</h2>

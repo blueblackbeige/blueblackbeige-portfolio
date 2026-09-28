@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Blue Black Beige",
+  title: "Privacy Policy - Blue Black Beige",
   description:
     "How Blue Black Beige collects, uses, and protects the information you share with us through our website and contact form.",
 };
