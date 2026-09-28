@@ -65,12 +65,12 @@ export default function MarketingPortfolio() {
                   </div>
                 </div>
               </ScrollReveal>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-start">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 items-start">
                 {item.images.map((creative, imageIndex) => (
                   <ScrollReveal key={creative.src}>
                     <figure>
                       <button type="button" onClick={() => setSelected({ client: clientIndex, image: imageIndex })} aria-label={`View ${item.name}: ${creative.title}`} aria-haspopup="dialog" className="group relative block w-full aspect-[4/5] rounded-xl overflow-hidden border border-white/10 bg-[#101010] hover:border-accent-beige/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-blue">
-                        <Image src={creative.src} alt={creative.alt} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw" className="object-contain" />
+                        <Image src={creative.src} alt={creative.alt} fill sizes="(max-width: 639px) 50vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, 25vw" className="object-contain" />
                         <span className="absolute bottom-3 right-3 rounded-full bg-black/75 border border-white/20 p-2.5 text-white"><Maximize2 aria-hidden="true" className="w-4 h-4" /></span>
                       </button>
                       <figcaption className="pt-3">

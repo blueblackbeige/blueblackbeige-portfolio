@@ -10,7 +10,7 @@ export default function MarketingPreview() {
       <ScrollReveal>
         <p className="text-xs uppercase tracking-[0.25em] text-accent-blue font-semibold mb-3">Marketing &amp; Social Media</p>
         <h3 className="text-3xl lg:text-4xl font-serif mb-4">Brands we create for<span className="text-accent-blue">.</span></h3>
-        <p className="text-text-secondary max-w-2xl leading-relaxed mb-8">Explore the campaign visuals and social content from our ongoing work with Radhey Foods and Jonex Gym.</p>
+        <p className="text-text-secondary max-w-2xl leading-relaxed mb-8">Explore campaign visuals and social content from our client work and Blue Black Beige studio experiments.</p>
       </ScrollReveal>
       <div className="grid sm:grid-cols-2 gap-6">
         {marketingProjects.map((client) => (

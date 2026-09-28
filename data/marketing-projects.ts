@@ -88,14 +88,6 @@ export const marketingProjects = [
         "height": 1448
       },
       {
-        "src": "/images/marketing/jonex-gym/discipline.webp",
-        "title": "Discipline builds a better you",
-        "type": "Social media creative",
-        "alt": "Jonex Gym: Discipline builds a better you, social media creative",
-        "width": 1144,
-        "height": 1375
-      },
-      {
         "src": "/images/marketing/jonex-gym/stronger-you.webp",
         "title": "Build a stronger you",
         "type": "Concept exploration",
@@ -118,6 +110,226 @@ export const marketingProjects = [
         "alt": "Jonex Gym: Train with purpose, concept exploration",
         "width": 1024,
         "height": 1536
+      }
+    ]
+  },
+  {
+    "slug": "restaurant-client",
+    "name": "Restaurant Client",
+    "industry": "Restaurant & hospitality",
+    "description": "Social media creatives for a restaurant brand, combining food photography, playful lettering and warm hospitality storytelling.",
+    "services": [
+      "Social media creative",
+      "Food promotion campaigns",
+      "Restaurant storytelling"
+    ],
+    "images": [
+      {
+        "src": "/images/marketing/restaurant-client/restaurant-cafe-vibes.jpg",
+        "title": "Cafe Vibes",
+        "type": "Restaurant social creative",
+        "alt": "Restaurant client: Cafe Vibes food and drinks social creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/restaurant-client/restaurant-food-skewers.jpg",
+        "title": "Safe addiction",
+        "type": "Food promotion",
+        "alt": "Restaurant client: grilled food promotion social creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/restaurant-client/restaurant-khaa-pkanna.jpg",
+        "title": "Good food, great vibes",
+        "type": "Restaurant promotion",
+        "alt": "Restaurant client: Khaa Pkanna restaurant promotion social creative",
+        "width": 1086,
+        "height": 1448
+      }
+    ]
+  },
+  {
+    "slug": "coaching-client",
+    "name": "Coaching Client",
+    "industry": "Education & coaching",
+    "description": "Educational social creatives for a NEET coaching brand, focused on exam preparation, study habits and a clear learning approach.",
+    "services": [
+      "Educational content",
+      "Exam campaign creative",
+      "Social media design"
+    ],
+    "images": [
+      {
+        "src": "/images/marketing/coaching-client/neet-difference.jpg",
+        "title": "Our approach",
+        "type": "Education campaign",
+        "alt": "Coaching client: NEET coaching approach campaign creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/coaching-client/neet-habits.jpg",
+        "title": "Five habits of successful aspirants",
+        "type": "Educational content",
+        "alt": "Coaching client: five habits of successful NEET aspirants educational creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/coaching-client/neet-ncert.jpg",
+        "title": "NCERT-first preparation",
+        "type": "Exam preparation creative",
+        "alt": "Coaching client: NCERT-based NEET preparation social creative",
+        "width": 1122,
+        "height": 1402
+      }
+    ]
+  },
+  {
+    "slug": "medical-shop-client",
+    "name": "Medical Shop Client",
+    "industry": "Medical & wellness",
+    "description": "Health awareness creatives that turn common symptom topics into clear, readable social content for a medical shop or wellness brand.",
+    "services": [
+      "Health awareness creative",
+      "Patient education campaigns",
+      "Social media design"
+    ],
+    "images": [
+      {
+        "src": "/images/marketing/medical-shop-client/electric-shock.jpg",
+        "title": "Electric shock-like pain",
+        "type": "Health awareness creative",
+        "alt": "Medical shop client: electric shock-like pain health awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/back-pain.jpg",
+        "title": "When back pain needs care",
+        "type": "Health awareness creative",
+        "alt": "Medical shop client: back pain warning signs health awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/headache-vomiting.jpg",
+        "title": "Headache with vomiting",
+        "type": "Health awareness creative",
+        "alt": "Medical shop client: headache and vomiting awareness creative",
+        "width": 1122,
+        "height": 1402
+      }
+    ]
+  },
+  {
+    "slug": "blue-black-beige",
+    "name": "Blue Black Beige",
+    "industry": "Studio social content",
+    "description": "Our own social media series, using playful characters and sharp marketing ideas to show how distinctive creative can make a brand memorable.",
+    "services": [
+      "Social media strategy",
+      "Campaign creative",
+      "Brand storytelling"
+    ],
+    "images": [
+      {
+        "src": "/images/marketing/blue-black-beige/goat-digital-marketing.jpg",
+        "title": "Be the GOAT of digital marketing",
+        "type": "Studio social post",
+        "alt": "Blue Black Beige: Be the GOAT of digital marketing social media post",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/dont-blend-in.jpg",
+        "title": "Don't blend in",
+        "type": "Campaign creative",
+        "alt": "Blue Black Beige: Don't blend in campaign social media post",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/run-ads-build-brand.jpg",
+        "title": "Run ads or build a brand",
+        "type": "Marketing insight",
+        "alt": "Blue Black Beige: Run ads or build a brand marketing insight post",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/brand-build-karne-ke-liye.jpg",
+        "title": "Brand build karne ke liye",
+        "type": "Brand storytelling",
+        "alt": "Blue Black Beige: Brand build karne ke liye brand storytelling post",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/branding-quick-results.jpg",
+        "title": "Branding takes time",
+        "type": "Marketing insight",
+        "alt": "Blue Black Beige: branding takes time marketing insight post",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/brand-nahi-maggi.jpg",
+        "title": "Brand nahi, Maggi",
+        "type": "Brand storytelling",
+        "alt": "Blue Black Beige: Brand nahi, Maggi brand storytelling post",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/campaign-becomes-growth.jpg",
+        "title": "From campaign to growth",
+        "type": "Campaign storytelling",
+        "alt": "Blue Black Beige: campaign becomes growth social media post",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/attention-interest-trust-action.jpg",
+        "title": "Attention, interest, trust, action",
+        "type": "Marketing framework",
+        "alt": "Blue Black Beige: attention, interest, trust and action marketing framework post",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/brand-difference-content.jpg",
+        "title": "Turn difference into content",
+        "type": "Brand strategy",
+        "alt": "Blue Black Beige: turn your brand difference into content strategy post",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/posting-with-direction.jpg",
+        "title": "Posting with direction",
+        "type": "Social media strategy",
+        "alt": "Blue Black Beige: posting with direction social media strategy post",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/brand-not-invisible.jpg",
+        "title": "Your brand is not invisible",
+        "type": "Brand positioning",
+        "alt": "Blue Black Beige: your brand is not invisible brand positioning post",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/great-strategy-greater-growth.jpg",
+        "title": "Great strategy, greater growth",
+        "type": "Strategy insight",
+        "alt": "Blue Black Beige: great strategy comes greater growth social media post",
+        "width": 1080,
+        "height": 1350
       }
     ]
   }
