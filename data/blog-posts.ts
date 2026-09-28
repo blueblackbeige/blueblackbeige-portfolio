@@ -16,6 +16,7 @@ export type BlogPost = {
   title: string;
   dek: string;
   readTime: string;
+  keywords: string[];
   heroImage: string;
   heroAlt: string;
   sections: BlogSection[];
@@ -29,6 +30,7 @@ export const newBlogPosts: BlogPost[] = [
     title: "Search After AI: What Brands Should Fix First",
     dek: "AI search changes the surface of discovery, but the foundation is still useful content, clear structure and a page experience people trust.",
     readTime: "6 min read",
+    keywords: ["AI search SEO", "SEO content strategy", "digital marketing strategy", "search engine optimization"],
     heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2400&auto=format&fit=crop",
     heroAlt: "Laptop displaying a digital interface in a dark studio",
     sections: [
@@ -84,6 +86,7 @@ export const newBlogPosts: BlogPost[] = [
     title: "The Website Experience Customers Feel",
     dek: "Speed, responsiveness and visual stability are not invisible engineering details. They shape how confident a customer feels about a brand.",
     readTime: "5 min read",
+    keywords: ["website experience", "website performance", "Core Web Vitals", "SEO-friendly website"],
     heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2400&auto=format&fit=crop",
     heroAlt: "Analytics dashboard on a laptop",
     sections: [
@@ -132,6 +135,7 @@ export const newBlogPosts: BlogPost[] = [
     title: "A Content System That Compounds",
     dek: "A durable social presence comes from a repeatable system: one clear idea, several useful formats and a measurement loop that improves the next post.",
     readTime: "5 min read",
+    keywords: ["social media marketing", "content marketing strategy", "social media content strategy", "digital marketing"],
     heroImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2400&auto=format&fit=crop",
     heroAlt: "Notebook and laptop ready for planning content",
     sections: [
@@ -186,6 +190,7 @@ export const newBlogPosts: BlogPost[] = [
     title: "Design for Everyone, Starting with Mobile",
     dek: "Mobile design and accessibility are the same business decision: make the important action clear, reachable and understandable in real conditions.",
     readTime: "4 min read",
+    keywords: ["mobile-first design", "accessible website design", "mobile SEO", "inclusive digital experience"],
     heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2400&auto=format&fit=crop",
     heroAlt: "Person using a smartphone beside a laptop",
     sections: [

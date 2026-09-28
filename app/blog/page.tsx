@@ -10,18 +10,18 @@ import { ArrowDownRight, Clock, ArrowRight } from "lucide-react";
 
 // Data
 const featuredPost = {
-  tag: "Design & Future",
-  title: "The AI-Augmented Director: How Designers are Evolving in 2025",
+  tag: "Digital marketing & social strategy",
+  title: "Digital marketing that makes your brand impossible to ignore",
   excerpt:
-    "We are moving from building pixels to directing systems. Here is how AI is freeing up designers to focus entirely on strategy, storytelling, and deep emotional connection.",
+    "Practical ideas for turning strategy, social content and digital experiences into growth that lasts.",
   readTime: "6 min read",
-  image: "https://images.unsplash.com/photo-1633424683050-61ba4f40f0cd?q=80&w=1600&auto=format&fit=crop",
-  href: "/blog/ai-augmented-director",
+  image: "/images/blog/digital-marketing-hero.png",
+  href: "/blog/content-system",
 };
 
 const posts = [
   {
-    tag: "Technology",
+    tag: "Digital marketing",
     title: "Agentic AI & Predictive Optimization",
     excerpt: "Why run manual A/B tests when AI can proactively identify friction and optimize conversions in real-time?",
     readTime: "5 min read",
@@ -30,7 +30,7 @@ const posts = [
     span: "md:col-span-2 lg:col-span-2",
   },
   {
-    tag: "Search & Strategy",
+    tag: "Search strategy",
     title: "Search After AI: What Brands Should Fix First",
     excerpt: "AI search changes the surface of discovery, but the foundation is still useful content, clear structure and a page experience people trust.",
     readTime: "6 min read",
@@ -39,7 +39,7 @@ const posts = [
     span: "md:col-span-1 lg:col-span-1",
   },
   {
-    tag: "Digital Experience",
+    tag: "Website experience",
     title: "The Website Experience Customers Feel",
     excerpt: "Speed, responsiveness and visual stability are brand signals that shape customer confidence.",
     readTime: "5 min read",
@@ -48,7 +48,7 @@ const posts = [
     span: "md:col-span-2 lg:col-span-2",
   },
   {
-    tag: "Marketing",
+    tag: "Social media marketing",
     title: "A Content System That Compounds",
     excerpt: "Build a repeatable social content system with one clear idea, useful formats and a measurement loop.",
     readTime: "5 min read",
@@ -57,7 +57,7 @@ const posts = [
     span: "md:col-span-1 lg:col-span-1",
   },
   {
-    tag: "Design & Inclusion",
+    tag: "Inclusive design",
     title: "Design for Everyone, Starting with Mobile",
     excerpt: "Mobile design and accessibility make the important action clear, reachable and understandable in real conditions.",
     readTime: "4 min read",
@@ -88,13 +88,14 @@ export default function BlogPage() {
           className="absolute inset-0 z-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop"
-            alt="Editorial Atmosphere"
+            src={featuredPost.image}
+            alt="Digital marketing strategy desk with campaign analytics"
             fill
-            className="object-cover opacity-30 mix-blend-luminosity"
+            className="object-cover opacity-45 mix-blend-luminosity"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/75 to-bg-primary/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/85 via-bg-primary/25 to-transparent" />
         </motion.div>
 
         <div className="relative z-10 w-full max-w-[1440px] px-6 flex flex-col items-center mt-16 sm:mt-20">
@@ -104,7 +105,7 @@ export default function BlogPage() {
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
             <span className="text-xs md:text-sm tracking-[0.4em] text-accent-blue font-semibold uppercase mb-6 block text-center">
-              Editorial
+              Digital marketing & social media
             </span>
           </motion.div>
 
@@ -114,8 +115,16 @@ export default function BlogPage() {
             transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
             className="text-[2.5rem] xs:text-5xl md:text-7xl lg:text-[7rem] font-serif font-medium leading-[1.15] md:leading-[0.9] tracking-tight text-center max-w-5xl"
           >
-            Ideas that shape <br className="hidden md:block" /> the <em className="italic text-accent-beige">digital frontier</em>.
+            Strategy for the <br className="hidden md:block" /> <em className="italic text-accent-beige">scroll, search and sale</em>.
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+            className="mt-8 max-w-2xl text-base sm:text-lg text-text-secondary leading-relaxed text-center"
+          >
+            Explore digital marketing strategy, social media marketing ideas, SEO guidance, content systems and website experience insights for brands that want steady online growth.
+          </motion.p>
         </div>
       </section>
 
@@ -206,8 +215,21 @@ export default function BlogPage() {
                 The Archive
               </span>
               <h2 className="text-4xl md:text-5xl font-serif font-medium">
-                Latest Insights.
+                Field notes for growing brands.
               </h2>
+              <p className="mt-5 max-w-xl text-text-secondary leading-relaxed">
+                Digital marketing, social media marketing and brand systems explained in clear, useful notes you can put to work.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-2" aria-label="Blog topics">
+                {["Digital marketing", "Social media", "Content systems", "Web experience"].map((topic) => (
+                  <span
+                    key={topic}
+                    className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs uppercase tracking-[0.16em] text-text-secondary"
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
 
@@ -254,6 +276,51 @@ export default function BlogPage() {
         </div>
       </section>
 
+      {/* Search-led FAQ */}
+      <section className="py-20 lg:py-28 bg-bg-primary border-t border-border-subtle" aria-labelledby="blog-faq-heading">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs tracking-[0.3em] text-accent-blue font-semibold uppercase block mb-4">
+              Common questions
+            </span>
+            <h2 id="blog-faq-heading" className="text-4xl md:text-5xl font-serif font-medium">
+              Practical answers for better marketing.
+            </h2>
+            <p className="mt-5 text-text-secondary leading-relaxed">
+              Start here for clear guidance on digital marketing, social media content, SEO and building a stronger online brand.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              {
+                question: "What does a digital marketing strategy include?",
+                answer: "A useful digital marketing strategy connects business goals to the right audience, message, channel and measurement plan. It can include SEO, content marketing, social media, paid campaigns, email and website conversion improvements.",
+              },
+              {
+                question: "How can social media marketing help a small business?",
+                answer: "Social media marketing helps a small business build awareness, answer customer questions and create repeat touchpoints. The strongest plans combine useful content, a consistent brand voice and a clear next step such as a website visit, enquiry or booking.",
+              },
+              {
+                question: "What makes website content SEO-friendly?",
+                answer: "SEO-friendly website content uses a clear page title, descriptive headings, natural search language, helpful answers, accessible images, internal links and a fast mobile experience. It should satisfy the visitor first and make the topic easy for search engines to understand.",
+              },
+              {
+                question: "How often should a brand publish social media content?",
+                answer: "There is no universal posting number. Choose a schedule your team can sustain, then use saves, replies, qualified clicks and enquiries to learn what deserves more attention. Consistent, useful content usually beats a high volume of rushed posts.",
+              },
+            ].map((item) => (
+              <details key={item.question} className="group rounded-2xl border border-border-subtle bg-bg-secondary/20 p-6 open:bg-bg-secondary/40 transition-colors">
+                <summary className="cursor-pointer list-none pr-8 text-lg font-medium text-white marker:hidden [&::-webkit-details-marker]:hidden">
+                  {item.question}
+                </summary>
+                <p className="mt-4 text-text-secondary leading-relaxed">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final Massive CTA */}
       <section className="py-20 lg:py-32 bg-bg-secondary/20 border-t border-border-subtle text-center px-6">
         <motion.div
@@ -262,7 +329,7 @@ export default function BlogPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif font-medium mb-8 lg:mb-10">Ready to <span className="italic text-accent-blue">disrupt?</span></h2>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif font-medium mb-8 lg:mb-10">Ready to <span className="italic text-accent-blue">grow with direction?</span></h2>
           <Link
             href="/#contact"
             className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-bg-primary rounded-full text-lg font-semibold hover:bg-accent-blue hover:text-white transition-colors duration-300 group"

@@ -7,6 +7,7 @@ const post = newBlogPosts.find((item) => item.slug === "search-after-ai")!;
 export const metadata: Metadata = {
   title: `${post.title} | Blue Black Beige`,
   description: post.dek,
+  keywords: post.keywords,
   openGraph: { title: post.title, description: post.dek, url: "https://blueblackbeige.in/blog/search-after-ai" }
 };
 

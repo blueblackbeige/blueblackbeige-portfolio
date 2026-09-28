@@ -17,9 +17,29 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.dek,
+    image: [post.heroImage],
+    author: {
+      "@type": "Organization",
+      name: "Blue Black Beige",
+      url: "https://blueblackbeige.in",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Blue Black Beige",
+      url: "https://blueblackbeige.in",
+    },
+    mainEntityOfPage: `https://blueblackbeige.in/blog/${post.slug}`,
+    keywords: post.keywords.join(", "),
+  };
 
   return (
     <main className="bg-bg-primary min-h-screen text-text-primary selection:bg-accent-blue/30">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <Navbar />
 
       <article className="pt-24 pb-16 sm:pt-32 sm:pb-24 max-w-[1440px] mx-auto px-6">
