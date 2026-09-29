@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, MessageCircle, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -23,13 +23,12 @@ const serviceLinks = [
   "Social Media Marketing",
 ];
 
-// Social links - add real URLs here when profiles are live
-// const socials = [
-//   { label: "LinkedIn", href: "https://linkedin.com/company/blueblackbeige" },
-//   { label: "Instagram", href: "https://instagram.com/blueblackbeige" },
-//   { label: "Dribbble",  href: "https://dribbble.com/blueblackbeige" },
-//   { label: "Behance",   href: "https://behance.net/blueblackbeige" },
-// ];
+const socialLinks = [
+  { label: "YouTube", href: "https://youtube.com/@blueblackbeigeofficial", icon: Youtube },
+  { label: "Instagram", href: "https://www.instagram.com/blueblackbeige.in/", icon: Instagram },
+  { label: "Facebook", href: "https://www.facebook.com/blueblackbeige", icon: Facebook },
+  { label: "WhatsApp", href: "https://wa.me/919288182862", icon: MessageCircle },
+];
 
 export default function Footer() {
   return (
@@ -138,6 +137,26 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
+              <div className="mt-8">
+                <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-4">
+                  Follow us
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {socialLinks.map(({ label, href, icon: Icon }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open Blue Black Beige on ${label}`}
+                      className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-3 py-2 text-xs text-text-secondary hover:border-accent-blue hover:text-white transition-colors"
+                    >
+                      <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
 
           </div>
