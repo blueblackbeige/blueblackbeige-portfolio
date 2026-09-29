@@ -10,13 +10,13 @@ import { ArrowDownRight, Clock, ArrowRight } from "lucide-react";
 
 // Data
 const featuredPost = {
-  tag: "Digital marketing & social strategy",
-  title: "Digital marketing that makes your brand impossible to ignore",
+  tag: "Digital marketing strategy",
+  title: "Digital Marketing Strategies That Actually Work",
   excerpt:
-    "Practical ideas for turning strategy, social content and digital experiences into growth that lasts.",
-  readTime: "6 min read",
-  image: "/images/blog/digital-marketing-hero.png",
-  href: "/blog/content-system",
+    "Connect SEO, content, social media, paid campaigns and conversion into one measurable customer journey.",
+  readTime: "8 min read",
+  image: "/images/blog/digital-strategy-hero.png",
+  href: "/blog/digital-marketing-strategies-that-work",
 };
 
 const posts = [
@@ -64,6 +64,42 @@ const posts = [
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
     href: "/blog/mobile-first-accessibility",
     span: "md:col-span-1 lg:col-span-1",
+  },
+  {
+    tag: "Websites & growth",
+    title: "Why Every Business Needs a Website in 2026",
+    excerpt: "A website gives your business a trusted home for its story, services, search visibility and customer journey.",
+    readTime: "7 min read",
+    image: "/images/blog/website-2026-hero.png",
+    href: "/blog/why-businesses-need-website-2026",
+    span: "md:col-span-2 lg:col-span-2",
+  },
+  {
+    tag: "Mobile & UX",
+    title: "Why Mobile-Friendly Websites Matter in 2026",
+    excerpt: "Fast, responsive pages help customers browse, understand and act with confidence wherever they discover your brand.",
+    readTime: "7 min read",
+    image: "/images/blog/mobile-friendly-hero.png",
+    href: "/blog/mobile-friendly-websites-matter-2026",
+    span: "md:col-span-1 lg:col-span-1",
+  },
+  {
+    tag: "Digital products",
+    title: "Mobile App vs Website: Which Is Better for Business?",
+    excerpt: "Choose the digital product that matches how customers discover, use and return to your business.",
+    readTime: "7 min read",
+    image: "/images/blog/app-vs-website-hero.png",
+    href: "/blog/mobile-app-vs-website",
+    span: "md:col-span-1 lg:col-span-1",
+  },
+  {
+    tag: "Digital marketing",
+    title: "Digital Marketing Strategies That Actually Work",
+    excerpt: "Connect SEO, content, social media, paid campaigns and conversion into one measurable customer journey.",
+    readTime: "8 min read",
+    image: "/images/blog/digital-strategy-hero.png",
+    href: "/blog/digital-marketing-strategies-that-work",
+    span: "md:col-span-2 lg:col-span-2",
   }
 ];
 
