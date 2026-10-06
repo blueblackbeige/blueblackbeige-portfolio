@@ -3,7 +3,8 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
-import { useState } from "react";
+import Turnstile from "./Turnstile";
+import { useRef, useState } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
 import { trackMetaPixelEvent } from "@/lib/meta-pixel";
 
@@ -14,19 +15,68 @@ export default function CTASection() {
     service: "Strategy & Branding",
     message: ""
   });
+  const [website, setWebsite] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState("");
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
+  const formStartedAt = useRef(Date.now());
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hi! I'm ${formData.name}.\nEmail: ${formData.email}\nInterested in: ${formData.service}\n\n${formData.message}`;
-    const encodedText = encodeURIComponent(text);
-    if (process.env.NEXT_PUBLIC_GA_ID) {
-      sendGAEvent("event", "whatsapp_enquiry_handoff", { service: formData.service, method: "whatsapp" });
+    setFormStatus("");
+
+    if (!turnstileToken) {
+      setFormStatus("Please complete the security check before sending your enquiry.");
+      return;
     }
-    trackMetaPixelEvent("Lead", {
-      content_name: formData.service,
-      content_category: "Project enquiry",
-    });
-    window.open(`https://wa.me/919288182862?text=${encodedText}`, '_blank');
+
+    setIsSubmitting(true);
+
+    try {
+      const request = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "same-origin",
+        body: JSON.stringify({
+          ...formData,
+          website,
+          turnstileToken,
+          formStartedAt: formStartedAt.current,
+        }),
+      });
+      const result = (await request.json()) as { error?: string; success?: boolean };
+
+      if (!request.ok || !result.success) {
+        throw new Error(result.error || "We could not send your enquiry. Please try again.");
+      }
+
+      if (process.env.NEXT_PUBLIC_GA_ID) {
+        sendGAEvent("event", "contact_form_submit", { service: formData.service, method: "secure_form" });
+      }
+      trackMetaPixelEvent("Lead", {
+        content_name: formData.service,
+        content_category: "Project enquiry",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        service: "Strategy & Branding",
+        message: "",
+      });
+      formStartedAt.current = Date.now();
+      setTurnstileToken(null);
+      setTurnstileResetKey((current) => current + 1);
+      setFormStatus("Thanks — your enquiry has been sent. We’ll be in touch soon.");
+    } catch (error) {
+      setTurnstileToken(null);
+      setTurnstileResetKey((current) => current + 1);
+      setFormStatus(
+        error instanceof Error ? error.message : "We could not send your enquiry. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -96,10 +146,22 @@ export default function CTASection() {
                 Project Enquiry
               </h3>
               <p className="text-sm text-text-secondary mb-6 lg:mb-8">
-                Submit this form to instantly connect with us on WhatsApp.
+                Send us your project details and we&apos;ll get back to you shortly.
               </p>
               
               <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="enquiry-website">Website</label>
+                  <input
+                    id="enquiry-website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5 text-left">
                     <label htmlFor="enquiry-name" className="text-xs font-medium text-text-secondary ml-1">Name</label>
@@ -107,6 +169,8 @@ export default function CTASection() {
                       id="enquiry-name"
                       required
                       type="text" 
+                      autoComplete="name"
+                      maxLength={80}
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       placeholder="Jane Doe"
@@ -119,6 +183,8 @@ export default function CTASection() {
                       id="enquiry-email"
                       required
                       type="email" 
+                      autoComplete="email"
+                      maxLength={254}
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       placeholder="jane@example.com"
@@ -150,6 +216,7 @@ export default function CTASection() {
                     id="enquiry-details"
                     required
                     rows={3}
+                    maxLength={2000}
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     placeholder="Tell us about your goals..."
@@ -157,11 +224,24 @@ export default function CTASection() {
                   />
                 </div>
 
+                <Turnstile onToken={setTurnstileToken} resetKey={turnstileResetKey} />
+
+                {formStatus ? (
+                  <p
+                    className={formStatus.startsWith("Thanks") ? "text-sm text-emerald-300" : "text-sm text-red-300"}
+                    role="status"
+                    aria-live="polite"
+                  >
+                    {formStatus}
+                  </p>
+                ) : null}
+
                 <button
                   type="submit"
-                  className="group flex items-center justify-center gap-3 px-8 py-3.5 bg-[#25D366] text-white rounded-xl text-sm font-semibold tracking-wide hover:bg-[#20b858] hover:shadow-[0_0_30px_rgba(37,211,102,0.3)] transition-all duration-300 w-full mt-2"
+                  disabled={isSubmitting || !turnstileToken}
+                  className="group flex w-full items-center justify-center gap-3 rounded-xl bg-[#25D366] px-8 py-3.5 text-sm font-semibold tracking-wide text-white transition-all duration-300 hover:bg-[#20b858] hover:shadow-[0_0_30px_rgba(37,211,102,0.3)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Send via WhatsApp
+                  {isSubmitting ? "Sending…" : "Send Enquiry"}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>

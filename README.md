@@ -15,6 +15,24 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+## Contact-form security setup
+
+The contact form is deliberately fail-closed: it will not send messages until both
+Resend and Cloudflare Turnstile are configured. Copy `.env.example` to `.env.local`
+for local development, then add the same values to the production host's encrypted
+environment-variable settings:
+
+- `RESEND_API_KEY` — server-only Resend API key.
+- `TURNSTILE_SECRET_KEY` — server-only Cloudflare Turnstile secret.
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY` — Cloudflare Turnstile site key, configured for
+  `blueblackbeige.in` and `www.blueblackbeige.in`.
+
+The application checks the Turnstile token on the server, restricts requests to the
+site's origins, applies a per-instance rate limit, caps request size, validates all
+fields, and HTML-escapes email content. For network-level DDoS protection, enable
+Cloudflare proxying/WAF and rate limiting in front of the deployment; app-level code
+cannot absorb a volumetric attack before it reaches the host.
+
 ## Tech Stack
 
 - **Framework:** Next.js 15+

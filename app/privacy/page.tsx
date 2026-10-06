@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "Information We Collect",
-    body: `The website enquiry form asks for your name, email address, selected service and project details. Submitting it opens WhatsApp with a prepared message; the message is sent only if you choose to send it in WhatsApp. WhatsApp processes messages under its own privacy terms. We do not use this form to subscribe you to marketing updates.`,
+    body: `The website enquiry form asks for your name, email address, selected service and project details. We use Cloudflare Turnstile to help protect the form from automated abuse. We do not use this form to subscribe you to marketing updates.`,
   },
   {
     title: "How We Use Your Data",
@@ -31,7 +31,7 @@ const sections = [
   },
   {
     title: "Data Storage & Security",
-    body: `The website enquiry form prepares a WhatsApp message and does not submit that form content to a Blue Black Beige website database. If you send the message, WhatsApp and the recipient account will process it. Email or other messages you send us may be retained in the relevant communication system while we handle the enquiry.`,
+    body: `Enquiry form submissions are verified for abuse before they are sent to our email service. We do not store form content in a website database. Email or other messages you send us may be retained in the relevant communication system while we handle the enquiry.`,
   },
   {
     title: "Your Rights",

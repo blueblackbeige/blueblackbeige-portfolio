@@ -35,7 +35,7 @@ const sections = [
   },
   {
     title: "Limitation of Liability",
-    body: `Blue Black Beige provides this website on an &quot;as is&quot; basis. We make no warranties, express or implied, regarding the accuracy or completeness of any content. To the maximum extent permitted by law, Blue Black Beige shall not be liable for any indirect, incidental, or consequential damages arising from your use of this website.`,
+    body: `Blue Black Beige provides this website on an "as is" basis. We make no warranties, express or implied, regarding the accuracy or completeness of any content. To the maximum extent permitted by law, Blue Black Beige shall not be liable for any indirect, incidental, or consequential damages arising from your use of this website.`,
   },
   {
     title: "Third-Party Services",
@@ -87,10 +87,9 @@ export default function TermsPage() {
               <h2 className="text-lg font-semibold text-white mb-3">
                 {i + 1}. {s.title}
               </h2>
-              <p
-                className="text-text-secondary text-base leading-relaxed whitespace-pre-line"
-                dangerouslySetInnerHTML={{ __html: s.body }}
-              />
+              <p className="text-text-secondary text-base leading-relaxed whitespace-pre-line">
+                {s.body}
+              </p>
             </div>
           ))}
         </div>
