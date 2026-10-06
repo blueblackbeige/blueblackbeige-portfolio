@@ -61,8 +61,8 @@ export default function ServiceLandingPage({ data }: { data: ServicePageData }) 
                   <p className="mt-2 text-sm leading-relaxed text-text-secondary">{plan.tagline}</p>
                   <div className="mt-6 rounded-xl border border-border-subtle bg-bg-secondary/30 p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary">Monthly investment</p>
-                    <p className="mt-1 text-3xl font-semibold text-white">XXXX <span className="text-sm font-normal text-text-secondary">/ month</span></p>
-                    <p className="mt-1 text-xs text-text-secondary">Ad spend is separate. Contact us for a quote.</p>
+                    <p className="mt-1 text-3xl font-semibold text-white">{plan.monthlyPrice} <span className="text-sm font-normal text-text-secondary">/ month</span></p>
+                    <p className="mt-1 text-xs text-text-secondary">Ad spend is billed separately.</p>
                   </div>
                   <div className="mt-5 flex flex-wrap gap-2 text-xs">
                     <span className="rounded-full border border-border-subtle px-3 py-2 text-text-secondary"><strong className="text-white">Focus:</strong> {plan.focus}</span>

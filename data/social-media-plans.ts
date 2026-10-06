@@ -1,5 +1,6 @@
 export type SocialMediaPlan = {
   name: string;
+  monthlyPrice: string;
   tagline: string;
   audience: string;
   focus: string;
@@ -11,6 +12,7 @@ export type SocialMediaPlan = {
 export const socialMediaPlans: SocialMediaPlan[] = [
   {
     name: "Startup Plan",
+    monthlyPrice: "₹5,500",
     tagline: "Build a polished, consistent social presence from day one.",
     audience: "For new businesses",
     focus: "Brand awareness and organic consistency",
@@ -28,6 +30,7 @@ export const socialMediaPlans: SocialMediaPlan[] = [
   },
   {
     name: "Pilot Plan",
+    monthlyPrice: "₹8,499",
     tagline: "Test organic growth and paid promotion in one balanced plan.",
     audience: "For businesses testing a broader mix",
     focus: "Engagement, page growth and trial ads",
