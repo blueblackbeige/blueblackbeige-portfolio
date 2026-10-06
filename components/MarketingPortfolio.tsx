@@ -40,8 +40,8 @@ export default function MarketingPortfolio() {
         <ScrollReveal>
           <p className="text-xs tracking-[0.3em] uppercase text-accent-blue font-semibold mb-5">Marketing &amp; Social Media</p>
           <h2 id="marketing-title" className="text-3xl lg:text-5xl font-serif leading-tight mb-6">Campaign creative,<br />made for each brand<span className="text-accent-blue">.</span></h2>
-          <p className="text-text-secondary max-w-2xl leading-relaxed">A selection of social content, product stories and promotional visuals from the brands we work with. Explore each client&apos;s collection and select any creative for a closer look.</p>
-          <nav aria-label="Marketing clients" className="flex flex-wrap gap-3 mt-7 mb-12">
+          <p className="text-text-secondary max-w-2xl leading-relaxed">A selection of social content, product stories and promotional visuals from the brands we work with. Explore each campaign collection and select any creative for a closer look.</p>
+          <nav aria-label="Marketing collections" className="flex flex-wrap gap-3 mt-7 mb-12">
             {marketingProjects.map((item) => <a key={item.slug} href={`#${item.slug}`} className="rounded-full border border-white/20 px-5 py-3 text-sm hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-blue">{item.name} <span className="text-text-secondary">({item.images.length})</span></a>)}
           </nav>
         </ScrollReveal>

@@ -19,14 +19,6 @@ export const marketingProjects = [
         "height": 1350
       },
       {
-        "src": "/images/marketing/radhey-foods/chocolate-brownie.webp",
-        "title": "Chocolate brownie",
-        "type": "Product creative",
-        "alt": "Radhey Foods: Chocolate brownie, product creative",
-        "width": 1080,
-        "height": 1350
-      },
-      {
         "src": "/images/marketing/radhey-foods/makhana-pizza.webp",
         "title": "Makhana pizza",
         "type": "Lifestyle creative",
@@ -51,20 +43,44 @@ export const marketingProjects = [
         "height": 1403
       },
       {
-        "src": "/images/marketing/radhey-foods/samastipur-launch.webp",
-        "title": "Samastipur launch",
-        "type": "Launch announcement",
-        "alt": "Radhey Foods: Samastipur launch, launch announcement",
-        "width": 1122,
-        "height": 1402
-      },
-      {
         "src": "/images/marketing/radhey-foods/pudina-makhana.webp",
         "title": "Roasted pudina makhana",
         "type": "Product creative",
         "alt": "Radhey Foods: Roasted pudina makhana, product creative",
         "width": 900,
         "height": 1600
+      },
+      {
+        "src": "/images/marketing/radhey-foods/makhana-idli.jpg",
+        "title": "The Makhana Twist",
+        "type": "Product storytelling",
+        "alt": "Radhey Foods makhana idli product storytelling",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/radhey-foods/roasted-makhana-range.jpg",
+        "title": "Crunch in Every Flavour",
+        "type": "Product range campaign",
+        "alt": "Radhey Foods roasted makhana flavor range",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/radhey-foods/makhana-protein-shake.jpg",
+        "title": "Power in Every Sip",
+        "type": "Nutrition campaign",
+        "alt": "Radhey Foods makhana protein shake",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/radhey-foods/makhana-dhokla.jpg",
+        "title": "Tradition, Reimagined",
+        "type": "Recipe storytelling",
+        "alt": "Radhey Foods makhana dhokla recipe creative",
+        "width": 1080,
+        "height": 1350
       }
     ]
   },
@@ -115,9 +131,9 @@ export const marketingProjects = [
   },
   {
     "slug": "restaurant-client",
-    "name": "Restaurant Client",
+    "name": "Afterglow Social Kitchen",
     "industry": "Restaurant & hospitality",
-    "description": "Social media creatives for a restaurant brand, combining food photography, playful lettering and warm hospitality storytelling.",
+    "description": "A hospitality campaign system built around signature pours, comfort food and warm table-side storytelling.",
     "services": [
       "Social media creative",
       "Food promotion campaigns",
@@ -128,7 +144,7 @@ export const marketingProjects = [
         "src": "/images/marketing/restaurant-client/restaurant-cafe-vibes.jpg",
         "title": "Cafe Vibes",
         "type": "Restaurant social creative",
-        "alt": "Restaurant client: Cafe Vibes food and drinks social creative",
+        "alt": "Afterglow Social Kitchen: cafe vibes food and drinks social creative",
         "width": 1122,
         "height": 1402
       },
@@ -136,7 +152,7 @@ export const marketingProjects = [
         "src": "/images/marketing/restaurant-client/restaurant-food-skewers.jpg",
         "title": "Safe addiction",
         "type": "Food promotion",
-        "alt": "Restaurant client: grilled food promotion social creative",
+        "alt": "Afterglow Social Kitchen: grilled food promotion social creative",
         "width": 1122,
         "height": 1402
       },
@@ -144,17 +160,49 @@ export const marketingProjects = [
         "src": "/images/marketing/restaurant-client/restaurant-khaa-pkanna.jpg",
         "title": "Good food, great vibes",
         "type": "Restaurant promotion",
-        "alt": "Restaurant client: Khaa Pkanna restaurant promotion social creative",
+        "alt": "Afterglow Social Kitchen: Khaa Pkanna restaurant promotion social creative",
         "width": 1086,
         "height": 1448
+      },
+      {
+        "src": "/images/marketing/restaurant-client/cocktail-vibe-night.jpg",
+        "title": "Sip the Vibe",
+        "type": "Hospitality campaign",
+        "alt": "Afterglow Social Kitchen cocktail campaign, Sip the Vibe",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/restaurant-client/cocktail-escape.jpg",
+        "title": "Your Little Escape",
+        "type": "Drinks campaign",
+        "alt": "Afterglow Social Kitchen drinks campaign, your little escape",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/restaurant-client/naan-paneer-choice.jpg",
+        "title": "Naan or Paneer?",
+        "type": "Menu storytelling",
+        "alt": "Afterglow Social Kitchen menu storytelling for naan and paneer",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/restaurant-client/happy-hug-drinks.jpg",
+        "title": "Happy Hug Hour",
+        "type": "Seasonal campaign",
+        "alt": "Afterglow Social Kitchen seasonal drinks campaign, Happy Hug Hour",
+        "width": 1122,
+        "height": 1402
       }
     ]
   },
   {
     "slug": "coaching-client",
-    "name": "Coaching Client",
+    "name": "Northstar Learning Co.",
     "industry": "Education & coaching",
-    "description": "Educational social creatives for a NEET coaching brand, focused on exam preparation, study habits and a clear learning approach.",
+    "description": "An education campaign system for exam confidence, study habits and guided progress.",
     "services": [
       "Educational content",
       "Exam campaign creative",
@@ -165,7 +213,7 @@ export const marketingProjects = [
         "src": "/images/marketing/coaching-client/neet-difference.jpg",
         "title": "Our approach",
         "type": "Education campaign",
-        "alt": "Coaching client: NEET coaching approach campaign creative",
+        "alt": "Northstar Learning Co.: NEET coaching approach campaign creative",
         "width": 1122,
         "height": 1402
       },
@@ -173,7 +221,7 @@ export const marketingProjects = [
         "src": "/images/marketing/coaching-client/neet-habits.jpg",
         "title": "Five habits of successful aspirants",
         "type": "Educational content",
-        "alt": "Coaching client: five habits of successful NEET aspirants educational creative",
+        "alt": "Northstar Learning Co.: five habits of successful NEET aspirants educational creative",
         "width": 1122,
         "height": 1402
       },
@@ -181,17 +229,41 @@ export const marketingProjects = [
         "src": "/images/marketing/coaching-client/neet-ncert.jpg",
         "title": "NCERT-first preparation",
         "type": "Exam preparation creative",
-        "alt": "Coaching client: NCERT-based NEET preparation social creative",
+        "alt": "Northstar Learning Co.: NCERT-based NEET preparation social creative",
         "width": 1122,
         "height": 1402
+      },
+      {
+        "src": "/images/marketing/coaching-client/dream-achieve.jpg",
+        "title": "Dream It. Achieve It.",
+        "type": "Motivation campaign",
+        "alt": "Northstar Learning Co. motivation campaign, Dream It Achieve It",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/coaching-client/guidance-ladder.jpg",
+        "title": "The Right Guidance",
+        "type": "Admissions campaign",
+        "alt": "Northstar Learning Co. guidance and success campaign",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/coaching-client/passion-for-learning.jpg",
+        "title": "Build a Love for Learning",
+        "type": "Brand story",
+        "alt": "Northstar Learning Co. learning motivation campaign",
+        "width": 1121,
+        "height": 1403
       }
     ]
   },
   {
     "slug": "medical-shop-client",
-    "name": "Medical Shop Client",
+    "name": "Clarity Health Network",
     "industry": "Medical & wellness",
-    "description": "Health awareness creatives that turn common symptom topics into clear, readable social content for a medical shop or wellness brand.",
+    "description": "A health education campaign system turning complex care moments into clear, responsible public information.",
     "services": [
       "Health awareness creative",
       "Patient education campaigns",
@@ -202,7 +274,7 @@ export const marketingProjects = [
         "src": "/images/marketing/medical-shop-client/electric-shock.jpg",
         "title": "Electric shock-like pain",
         "type": "Health awareness creative",
-        "alt": "Medical shop client: electric shock-like pain health awareness creative",
+        "alt": "Clarity Health Network: electric shock-like pain health awareness creative",
         "width": 1122,
         "height": 1402
       },
@@ -210,7 +282,7 @@ export const marketingProjects = [
         "src": "/images/marketing/medical-shop-client/back-pain.jpg",
         "title": "When back pain needs care",
         "type": "Health awareness creative",
-        "alt": "Medical shop client: back pain warning signs health awareness creative",
+        "alt": "Clarity Health Network: back pain warning signs health awareness creative",
         "width": 1122,
         "height": 1402
       },
@@ -218,7 +290,39 @@ export const marketingProjects = [
         "src": "/images/marketing/medical-shop-client/headache-vomiting.jpg",
         "title": "Headache with vomiting",
         "type": "Health awareness creative",
-        "alt": "Medical shop client: headache and vomiting awareness creative",
+        "alt": "Clarity Health Network: headache and vomiting awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/diagnosis-before-prescription.jpg",
+        "title": "Diagnosis Comes First",
+        "type": "Health education",
+        "alt": "Clarity Health Network diagnostics and pathology awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/every-second-matters.jpg",
+        "title": "Every Second Matters",
+        "type": "Emergency awareness",
+        "alt": "Clarity Health Network emergency care awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/speech-warning-sign.jpg",
+        "title": "Recognise the Warning Signs",
+        "type": "Neurology awareness",
+        "alt": "Clarity Health Network sudden speech difficulty awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/diagnostic-support.jpg",
+        "title": "From Test to Treatment",
+        "type": "Diagnostics campaign",
+        "alt": "Clarity Health Network diagnostics and pathology support creative",
         "width": 1122,
         "height": 1402
       }
