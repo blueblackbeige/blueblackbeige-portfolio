@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, Plus, Target, Layout, Code2, Waves, TrendingUp, Megaphone, Share2 } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
@@ -17,7 +18,6 @@ const services = [
       "We build strong foundations through deep discovery, market positioning and brand identity systems that make your business immediately recognisable and deeply trusted.",
     icon: Target,
     deliverables: ["Brand Identity", "Positioning Strategy", "Visual System", "Brand Guidelines", "Competitor Analysis"],
-    result: "Brands that launch with a clear strategy see 2× faster market traction.",
   },
   {
     number: "02",
@@ -29,19 +29,17 @@ const services = [
       "Human-centred UI/UX crafted to guide users through experiences that feel effortless. Every screen is designed to reduce friction and drive meaningful action.",
     icon: Layout,
     deliverables: ["User Research", "Wireframing", "UI Design", "Prototype & Testing", "Design System"],
-    result: "Clients typically see a 40–80% improvement in user engagement post-redesign.",
   },
   {
     number: "03",
     title: "Web Development",
     image: "/images/services/web-development.webp",
     imageAlt: "Modular browser architecture built from blue and ivory blocks",
-    tagline: "Fast, scalable, future-proof.",
+    tagline: "Built to evolve.",
     description:
       "We engineer high-performance web products using Next.js, React and modern stacks, optimised for speed, SEO and scale from day one.",
     icon: Code2,
     deliverables: ["Next.js / React", "CMS Integration", "API Development", "Performance Optimisation", "QA & Testing"],
-    result: "100/100 Lighthouse scores. Sub-second load times. Production-grade security.",
   },
   {
     number: "04",
@@ -53,7 +51,6 @@ const services = [
       "Purposeful motion design that brings interfaces to life, from micro-interactions to full page transitions, creating moments that elevate your brand story.",
     icon: Waves,
     deliverables: ["Micro-interactions", "Page Transitions", "Scroll Animations", "Lottie / SVG", "Video Direction"],
-    result: "Motion-first sites see 35% longer session durations on average.",
   },
   {
     number: "05",
@@ -65,7 +62,6 @@ const services = [
       "Data-driven SEO, conversion rate optimisation and marketing infrastructure that turns traffic into revenue and keeps compounding over time.",
     icon: TrendingUp,
     deliverables: ["Technical SEO", "CRO Audits", "Analytics Setup", "A/B Testing", "Growth Strategy"],
-    result: "Clients on our growth plan see 3× more organic leads within 6 months.",
   },
   {
     number: "06",
@@ -74,10 +70,9 @@ const services = [
     imageAlt: "A cobalt megaphone surrounded by abstract campaign panels",
     tagline: "Drive measurable growth.",
     description:
-      "Data-driven SEO, Google Ads/PPC, email campaigns, and performance reporting designed to dominate search and maximize ROI.",
+      "Connect SEO, Google Ads/PPC, email campaigns and performance reporting to clear audience and business goals.",
     icon: Megaphone,
     deliverables: ["Technical SEO", "Google Ads / PPC", "Email Marketing", "Performance Analytics", "Conversion Tracking"],
-    result: "Clients see an average 250% ROI on paid campaigns within the first quarter.",
   },
   {
     number: "07",
@@ -86,10 +81,9 @@ const services = [
     imageAlt: "Connected speech bubbles and a glass phone frame",
     tagline: "Build vibrant communities.",
     description:
-      "End-to-end social strategy, from viral short-form content (Reels/TikTok) to robust community management and analytics.",
+      "Social strategy, short-form content, community management and analytics shaped around your audience and capacity.",
     icon: Share2,
     deliverables: ["Content Strategy", "Reels & Post Production", "Community Management", "Social Analytics", "Influencer Partnerships"],
-    result: "Consistent engagement growth and 40% increase in brand awareness metrics.",
   },
 ];
 
@@ -128,6 +122,7 @@ export default function ServicesSection() {
           {services.map((service, i) => {
             const isActive = active === i;
             const Icon = service.icon;
+            const serviceHref = i === 0 ? "/services" : i <= 3 ? "/web-design-development" : i === 4 ? "/seo-organic-growth" : "/digital-marketing";
             const panelId = `service-details-${service.number}`;
             const buttonId = `service-toggle-${service.number}`;
 
@@ -156,6 +151,9 @@ export default function ServicesSection() {
                     <p className="text-text-secondary text-sm sm:text-base leading-relaxed max-w-2xl">
                       {service.description}
                     </p>
+                    <Link href={serviceHref} className="mt-3 inline-flex items-center gap-2 text-sm text-accent-beige hover:text-white transition-colors">
+                      Explore {service.title.toLowerCase()} <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                    </Link>
                     <button
                       id={buttonId}
                       type="button"
@@ -187,9 +185,6 @@ export default function ServicesSection() {
                                   </li>
                                 ))}
                               </ul>
-                              <p className="mt-5 pt-4 border-t border-white/10 text-sm leading-relaxed text-text-secondary">
-                                {service.result}
-                              </p>
                             </div>
                           </motion.div>
                         )}

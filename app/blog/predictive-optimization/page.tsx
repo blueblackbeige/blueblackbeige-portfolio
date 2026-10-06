@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowLeft, Clock, Share2, Twitter, Linkedin, BarChart3 } from "lucide-react";
+import { ArrowLeft, Clock } from "lucide-react";
+import ArticleShareLinks from "@/components/ArticleShareLinks";
 
 export default function Blog2() {
   const containerRef = useRef(null);
@@ -42,10 +43,10 @@ export default function Blog2() {
           </div>
           
           <h1 className="text-[2.1rem] xs:text-5xl md:text-7xl lg:text-8xl font-serif font-medium leading-[1.15] md:leading-[1.1] mb-6 sm:mb-8">
-            Agentic AI & <br className="hidden md:block"/> Predictive Optimization
+            Predictive Optimization <br className="hidden md:block"/> for Digital Experiences
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary font-serif italic max-w-2xl mx-auto">
-            The end of A/B testing and the rise of real-time interface evolution.
+            Where automation may help experimentation—and where careful measurement and human review remain necessary.
           </p>
         </motion.div>
 
@@ -78,17 +79,7 @@ export default function Blog2() {
               
               <div>
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-4">Share Article</p>
-                <div className="flex gap-4">
-                  <button className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors">
-                    <Twitter className="w-4 h-4" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors">
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors">
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                </div>
+                <ArticleShareLinks url="https://blueblackbeige.in/blog/predictive-optimization" title="Predictive Optimization for Digital Experiences" />
               </div>
             </div>
           </div>
@@ -105,147 +96,39 @@ export default function Blog2() {
               first-letter:float-left first-letter:text-5xl sm:first-letter:text-7xl first-letter:pr-3 sm:first-letter:pr-4 first-letter:font-serif first-letter:text-white first-letter:mt-1 sm:first-letter:mt-2 first-letter:leading-[0.8]
             ">
               <p>
-                For years, growth marketing relied on manual A/B testing, a slow, reactive process. Enter Agentic AI, the technology that is proactively optimizing user experiences in real-time.
+                Teams use experimentation to compare changes to a digital experience. Automation can assist with analysis and workflow tasks, but performance claims depend on the particular system, experiment design and data quality.
               </p>
               
               <h2>The Limitation of Traditional Testing</h2>
               <p>
-                Setting up an A/B test requires formulating a hypothesis, building variations, routing traffic, and waiting weeks for statistical significance. By the time a winner is declared, user behavior might have already shifted. It is a lagging indicator of what your audience wants.
+                A useful controlled test starts with a clear hypothesis, a defined audience and a measure tied to the business goal. Duration depends on traffic, variance and the size of the effect being measured; teams should avoid declaring a winner before the evidence is sufficient.
               </p>
 
-              {/* Data Table */}
-              <div className="my-12 not-prose bg-bg-secondary/20 luxury-border rounded-2xl p-6 md:p-8 overflow-x-auto">
-                <div className="flex items-center gap-3 mb-6">
-                  <BarChart3 className="w-5 h-5 text-accent-beige" />
-                  <h3 className="text-xl font-serif text-white font-medium">Methodology Comparison</h3>
-                </div>
-                <table className="w-full text-left text-sm md:text-base border-collapse">
-                  <thead>
-                    <tr className="border-b border-border-subtle text-text-secondary font-medium">
-                      <th className="py-4 pr-4 uppercase tracking-wider text-xs">Metric</th>
-                      <th className="py-4 px-4 uppercase tracking-wider text-xs text-center">Manual A/B Testing</th>
-                      <th className="py-4 pl-4 uppercase tracking-wider text-xs text-right text-accent-beige">Agentic AI</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-white/80">
-                    <tr className="border-b border-border-subtle/50 hover:bg-white/5 transition-colors">
-                      <td className="py-4 pr-4 font-medium">Time to Significance</td>
-                      <td className="py-4 px-4 text-center text-text-secondary">2-4 Weeks</td>
-                      <td className="py-4 pl-4 text-right text-accent-beige font-semibold">Real-time</td>
-                    </tr>
-                    <tr className="border-b border-border-subtle/50 hover:bg-white/5 transition-colors">
-                      <td className="py-4 pr-4 font-medium">Variables Tested</td>
-                      <td className="py-4 px-4 text-center text-text-secondary">1 to 3 (Max)</td>
-                      <td className="py-4 pl-4 text-right text-accent-beige font-semibold">10,000+</td>
-                    </tr>
-                    <tr className="border-b border-border-subtle/50 hover:bg-white/5 transition-colors">
-                      <td className="py-4 pr-4 font-medium">User Context</td>
-                      <td className="py-4 px-4 text-center text-text-secondary">Ignored</td>
-                      <td className="py-4 pl-4 text-right text-accent-beige font-semibold">Hyper-specific</td>
-                    </tr>
-                    <tr className="hover:bg-white/5 transition-colors">
-                      <td className="py-4 pr-4 font-medium">Avg. Conversion Uplift</td>
-                      <td className="py-4 px-4 text-center text-text-secondary">2.5%</td>
-                      <td className="py-4 pl-4 text-right text-white font-semibold">14.8%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-              <h2>Enter Agentic AI</h2>
+              <p>Traditional experiments can take time and enough eligible traffic to distinguish meaningful differences. Automated tools may help teams prioritise analysis or test variations, but they do not make every experiment real-time or eliminate the need for sound measurement.</p>
+              <h2>Where automation may help</h2>
               <p>
-                Agentic AI models don&apos;t just wait for instructions; they observe, analyze, and act autonomously. In the context of premium web experiences, these AI agents constantly monitor user flows, identifying micro-frictions such as cursor hesitation, slow scroll rates, or drop-offs at specific form fields.
+                More autonomous systems may monitor allowed product signals and suggest or apply changes within set rules. Teams need human oversight, privacy safeguards, logging and a way to reverse changes. The actual capabilities depend on the tools and integrations in use.
               </p>
               
               <blockquote>
-                &quot;Instead of simply reporting issues to a dashboard, Agentic AI predictively optimizes the interface, running thousands of micro-experiments simultaneously.&quot;
+                Automated recommendations still need a valid measurement plan, safe rollout and human review.
               </blockquote>
               
               <h2>Hyper-Personalized Journeys</h2>
               <p>
-                The result is a website that evolves in real-time. If the AI detects a user prefers reading long-form text over watching video, it dynamically adjusts the layout to surface textual case studies. If it notices hesitation at a pricing tier, it might proactively surface a relevant social proof testimonial.
+                Personalisation can adapt content to a user segment or context when the business has a valid use case and appropriate consent. Avoid inferring sensitive traits, making unsupported assumptions from sparse behaviour or changing a page in ways that reduce user control.
               </p>
 
-              {/* Trend Chart Mockup using Tailwind */}
-              <div className="my-12 not-prose bg-bg-secondary/20 luxury-border rounded-2xl p-6 md:p-8">
-                <h3 className="text-xl font-serif text-white font-medium mb-6">30-Day Conversion Growth Curve</h3>
-                
-                <div className="relative h-56 sm:h-64 w-full flex items-end justify-between gap-2 md:gap-4 mt-10">
-                  {/* Y-Axis Labels */}
-                  <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-text-secondary pb-8">
-                    <span>15%</span>
-                    <span>10%</span>
-                    <span>5%</span>
-                    <span>0%</span>
-                  </div>
-                  
-                  {/* Grid Lines */}
-                  <div className="absolute inset-0 ml-8 border-b border-border-subtle flex flex-col justify-between pb-8 pointer-events-none">
-                    <div className="w-full border-t border-border-subtle/30 h-0"></div>
-                    <div className="w-full border-t border-border-subtle/30 h-0"></div>
-                    <div className="w-full border-t border-border-subtle/30 h-0"></div>
-                    <div className="w-full h-0"></div>
-                  </div>
-
-                  {/* Bars - Weeks 1 to 4 */}
-                  <div className="w-full pl-10 flex justify-around items-end h-[calc(100%-2rem)] relative z-10">
-                    {/* Week 1 */}
-                    <div className="flex flex-col items-center gap-2 group w-1/5">
-                      <div className="w-full flex justify-center gap-1 items-end h-full relative">
-                        {/* A/B Test */}
-                        <div className="w-1/2 bg-text-secondary/20 rounded-t-sm transition-all duration-500" style={{ height: '20%' }}></div>
-                        {/* Agentic AI */}
-                        <div className="w-1/2 bg-accent-beige rounded-t-sm transition-all duration-500 group-hover:bg-accent-blue" style={{ height: '35%' }}></div>
-                      </div>
-                      <span className="text-xs text-text-secondary mt-2">Week 1</span>
-                    </div>
-
-                    {/* Week 2 */}
-                    <div className="flex flex-col items-center gap-2 group w-1/5">
-                      <div className="w-full flex justify-center gap-1 items-end h-full relative">
-                        <div className="w-1/2 bg-text-secondary/20 rounded-t-sm transition-all duration-500" style={{ height: '20%' }}></div>
-                        <div className="w-1/2 bg-accent-beige rounded-t-sm transition-all duration-500 group-hover:bg-accent-blue" style={{ height: '55%' }}></div>
-                      </div>
-                      <span className="text-xs text-text-secondary mt-2">Week 2</span>
-                    </div>
-
-                    {/* Week 3 */}
-                    <div className="flex flex-col items-center gap-2 group w-1/5">
-                      <div className="w-full flex justify-center gap-1 items-end h-full relative">
-                        <div className="w-1/2 bg-text-secondary/40 rounded-t-sm transition-all duration-500" style={{ height: '25%' }}></div>
-                        <div className="w-1/2 bg-accent-beige rounded-t-sm transition-all duration-500 group-hover:bg-accent-blue" style={{ height: '80%' }}></div>
-                      </div>
-                      <span className="text-xs text-text-secondary mt-2">Week 3</span>
-                    </div>
-
-                    {/* Week 4 */}
-                    <div className="flex flex-col items-center gap-2 group w-1/5">
-                      <div className="w-full flex justify-center gap-1 items-end h-full relative">
-                        <div className="w-1/2 bg-text-secondary/40 rounded-t-sm transition-all duration-500" style={{ height: '25%' }}></div>
-                        <div className="w-1/2 bg-accent-beige rounded-t-sm transition-all duration-500 group-hover:bg-accent-blue" style={{ height: '100%' }}></div>
-                      </div>
-                      <span className="text-xs text-text-secondary mt-2">Week 4</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-center gap-6 mt-6">
-                  <div className="flex items-center gap-2 text-xs text-text-secondary">
-                    <span className="w-3 h-3 bg-text-secondary/30 rounded-sm"></span> A/B Testing
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-text-secondary">
-                    <span className="w-3 h-3 bg-accent-beige rounded-sm"></span> Agentic AI
-                  </div>
-                </div>
-              </div>
+              <p>Conversion charts should use real, documented experiment data. There is no customer or Blue Black Beige performance result represented on this page.</p>
 
               <ul>
-                <li><strong>Dynamic Layouts:</strong> Sections rearrange based on demonstrated user intent.</li>
-                <li><strong>Real-time Copywriting:</strong> Headlines adapt to match the exact search context the user arrived from.</li>
-                <li><strong>Frictionless Conversion:</strong> CTAs appear at the exact moment of highest user intent.</li>
+                <li><strong>Variation review:</strong> Teams can draft and compare page or copy options before choosing whether to test them.</li>
+                <li><strong>Audience-aware content:</strong> Any adaptation should use appropriate signals, respect privacy choices and remain useful to the visitor.</li>
+                <li><strong>Careful measurement:</strong> Test changes against a defined outcome and avoid claiming a lift without reliable evidence.</li>
               </ul>
               
               <p>
-                At Blue Black Beige, we are implementing these predictive models to ensure that our premium designs aren&apos;t just visually stunning, but functionally perfect, offering a uniquely tailored journey for every single visitor.
+                Predictive and generative tools continue to evolve. Before using one in a customer journey, teams should check whether it solves a real problem, how it uses data, how changes are measured and how a person can review or reverse them.
               </p>
             </div>
           </div>

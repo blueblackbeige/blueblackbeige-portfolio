@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { useState } from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function CTASection() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,9 @@ export default function CTASection() {
     e.preventDefault();
     const text = `Hi! I'm ${formData.name}.\nEmail: ${formData.email}\nInterested in: ${formData.service}\n\n${formData.message}`;
     const encodedText = encodeURIComponent(text);
+    if (process.env.NEXT_PUBLIC_GA_ID) {
+      sendGAEvent("event", "whatsapp_enquiry_handoff", { service: formData.service, method: "whatsapp" });
+    }
     window.open(`https://wa.me/919288182862?text=${encodedText}`, '_blank');
   };
 
@@ -75,48 +79,6 @@ export default function CTASection() {
                     +91 92881 82862 (WhatsApp)
                   </a>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent-blue/40" />
-                  <span>Typical response: under 2 hours</span>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Trust signals */}
-            <ScrollReveal delay={0.4}>
-              <div className="flex flex-wrap items-center gap-6 mt-8 lg:mt-10 pt-8 lg:pt-10 border-t border-border-subtle">
-                <div className="flex items-center gap-2">
-                  <div className="flex -space-x-2">
-                    {["RM", "SC", "AO", "JK"].map((initials) => (
-                      <div
-                        key={initials}
-                        className="w-8 h-8 rounded-full border-2 border-bg-primary bg-gradient-to-br from-accent-blue/30 to-accent-beige/30 flex items-center justify-center"
-                      >
-                        <span className="text-[8px] font-bold text-white/70">
-                          {initials}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  <span className="text-xs text-text-secondary ml-1">
-                    Trusted by clients
-                  </span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-3.5 h-3.5 text-accent-beige"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                  <span className="text-xs text-text-secondary ml-1">
-                    4.9/5 rating
-                  </span>
-                </div>
               </div>
             </ScrollReveal>
           </div>
@@ -134,8 +96,9 @@ export default function CTASection() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5 text-left">
-                    <label className="text-xs font-medium text-text-secondary ml-1">Name</label>
+                    <label htmlFor="enquiry-name" className="text-xs font-medium text-text-secondary ml-1">Name</label>
                     <input 
+                      id="enquiry-name"
                       required
                       type="text" 
                       value={formData.name}
@@ -145,8 +108,9 @@ export default function CTASection() {
                     />
                   </div>
                   <div className="space-y-1.5 text-left">
-                    <label className="text-xs font-medium text-text-secondary ml-1">Email</label>
+                    <label htmlFor="enquiry-email" className="text-xs font-medium text-text-secondary ml-1">Email</label>
                     <input 
+                      id="enquiry-email"
                       required
                       type="email" 
                       value={formData.email}
@@ -158,8 +122,9 @@ export default function CTASection() {
                 </div>
 
                 <div className="space-y-1.5 text-left">
-                  <label className="text-xs font-medium text-text-secondary ml-1">Interested In</label>
+                  <label htmlFor="enquiry-service" className="text-xs font-medium text-text-secondary ml-1">Interested In</label>
                   <select 
+                    id="enquiry-service"
                     value={formData.service}
                     onChange={(e) => setFormData({...formData, service: e.target.value})}
                     className="w-full bg-bg-primary/50 border border-border-subtle rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-blue/50 transition-colors appearance-none"
@@ -174,8 +139,9 @@ export default function CTASection() {
                 </div>
 
                 <div className="space-y-1.5 text-left">
-                  <label className="text-xs font-medium text-text-secondary ml-1">Project Details</label>
+                  <label htmlFor="enquiry-details" className="text-xs font-medium text-text-secondary ml-1">Project Details</label>
                   <textarea 
+                    id="enquiry-details"
                     required
                     rows={3}
                     value={formData.message}

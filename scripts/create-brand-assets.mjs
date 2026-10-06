@@ -1,0 +1,11 @@
+import sharp from "sharp";
+import { mkdir } from "node:fs/promises";
+
+await mkdir("public/images", { recursive: true });
+
+const posterSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><radialGradient id="g"><stop stop-color="#19354d" stop-opacity=".82"/><stop offset=".62" stop-color="#080d13" stop-opacity=".45"/><stop offset="1" stop-color="#050505"/></radialGradient><linearGradient id="b"><stop stop-color="#a9ccf0" stop-opacity=".22"/><stop offset="1" stop-color="#a9ccf0" stop-opacity="0"/></linearGradient></defs><rect width="1600" height="900" fill="#050505"/><rect width="1600" height="900" fill="url(#g)"/><circle cx="1180" cy="420" r="470" fill="none" stroke="url(#b)" stroke-width="2"/><circle cx="1180" cy="420" r="360" fill="none" stroke="#d7e6f4" stroke-opacity=".09"/><path d="M900 860C1060 600 1300 570 1600 650V900H900Z" fill="#15283a" fill-opacity=".32"/><path d="M0 0H1600V900H0Z" fill="url(#g)"/></svg>`;
+
+const ogSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><defs><radialGradient id="glow" cx="78%" cy="22%" r="85%"><stop stop-color="#18334b"/><stop offset="1" stop-color="#070809"/></radialGradient></defs><rect width="1200" height="630" fill="url(#glow)"/><circle cx="990" cy="160" r="225" fill="none" stroke="#9cc5ef" stroke-opacity=".16" stroke-width="2"/><circle cx="990" cy="160" r="168" fill="none" stroke="#f0dfc5" stroke-opacity=".1"/><path d="M0 505H1200" stroke="#9cc5ef" stroke-opacity=".24"/><text x="84" y="220" fill="#9cc5ef" font-family="Arial,sans-serif" font-size="18" letter-spacing="7">PATNA · INDIA</text><text x="80" y="330" fill="#f4f0e9" font-family="Georgia,serif" font-size="68" font-weight="bold">BLUE BLACK BEIGE</text><text x="86" y="398" fill="#d1d2d4" font-family="Arial,sans-serif" font-size="25">Web design · SEO · Digital marketing</text><text x="86" y="555" fill="#d1d2d4" font-family="Arial,sans-serif" font-size="19">Working with businesses across India</text></svg>`;
+
+await sharp(Buffer.from(posterSvg)).jpeg({ quality: 78, mozjpeg: true }).toFile("public/images/hero-poster.jpg");
+await sharp(Buffer.from(ogSvg)).png({ compressionLevel: 9 }).toFile("public/images/og-studio.png");

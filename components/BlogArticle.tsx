@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowLeft, ArrowRight, Clock, Linkedin, Share2, Twitter } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
+import ArticleShareLinks from "@/components/ArticleShareLinks";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import type { BlogPost } from "@/data/blog-posts";
@@ -22,19 +23,22 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
     "@type": "Article",
     headline: post.title,
     description: post.dek,
-    image: [post.heroImage],
+    image: [new URL(post.heroImage, "https://blueblackbeige.in").toString()],
     author: {
       "@type": "Organization",
       name: "Blue Black Beige",
-      url: "https://blueblackbeige.in",
+      "@id": "https://blueblackbeige.in/#organization",
     },
     publisher: {
       "@type": "Organization",
       name: "Blue Black Beige",
+      "@id": "https://blueblackbeige.in/#organization",
       url: "https://blueblackbeige.in",
+      logo: { "@type": "ImageObject", url: "https://blueblackbeige.in/logo.png" },
     },
-    mainEntityOfPage: `https://blueblackbeige.in/blog/${post.slug}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://blueblackbeige.in/blog/${post.slug}` },
     keywords: post.keywords.join(", "),
+    inLanguage: "en-IN",
   };
 
   return (
@@ -62,6 +66,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
             {post.title}
           </h1>
           <p className="text-xl md:text-2xl text-text-secondary font-serif italic max-w-3xl mx-auto">{post.dek}</p>
+          <p className="mt-5 text-xs uppercase tracking-[0.2em] text-text-secondary/70">By Blue Black Beige</p>
         </motion.div>
 
         <div ref={containerRef} className="relative w-full aspect-[4/3] sm:aspect-[21/9] md:aspect-[2.5/1] rounded-3xl overflow-hidden mb-14 sm:mb-24 luxury-border">
@@ -81,11 +86,7 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
               <div className="h-px w-full bg-border-subtle" />
               <div>
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-4">Share Article</p>
-                <div className="flex gap-4">
-                  <button type="button" aria-label="Share on Twitter" className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors"><Twitter className="w-4 h-4" /></button>
-                  <button type="button" aria-label="Share on LinkedIn" className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors"><Linkedin className="w-4 h-4" /></button>
-                  <button type="button" aria-label="Share article" className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors"><Share2 className="w-4 h-4" /></button>
-                </div>
+                <ArticleShareLinks url={`https://blueblackbeige.in/blog/${post.slug}`} title={post.title} />
               </div>
             </div>
           </aside>

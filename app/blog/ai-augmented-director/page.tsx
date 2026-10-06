@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowLeft, Clock, Share2, Twitter, Linkedin, TrendingUp } from "lucide-react";
+import { ArrowLeft, Clock } from "lucide-react";
+import ArticleShareLinks from "@/components/ArticleShareLinks";
 
 export default function Blog1() {
   const containerRef = useRef(null);
@@ -53,7 +54,7 @@ export default function Blog1() {
         <div ref={containerRef} className="relative w-full aspect-[4/3] sm:aspect-[21/9] md:aspect-[2.5/1] rounded-3xl overflow-hidden mb-14 sm:mb-24 luxury-border">
           <motion.div style={{ y, opacity }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
             <Image
-              src="https://images.unsplash.com/photo-1633424683050-61ba4f40f0cd?q=80&w=2400&auto=format&fit=crop"
+              src="/images/blog/digital-strategy-hero.png"
               alt="AI augmenting design"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
@@ -78,17 +79,7 @@ export default function Blog1() {
               
               <div>
                 <p className="text-xs uppercase tracking-widest text-text-secondary mb-4">Share Article</p>
-                <div className="flex gap-4">
-                  <button className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors">
-                    <Twitter className="w-4 h-4" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors">
-                    <Linkedin className="w-4 h-4" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center hover:bg-white hover:text-bg-primary transition-colors">
-                    <Share2 className="w-4 h-4" />
-                  </button>
-                </div>
+                <ArticleShareLinks url="https://blueblackbeige.in/blog/ai-augmented-director" title="The AI-Augmented Director" />
               </div>
             </div>
           </div>
@@ -104,106 +95,28 @@ export default function Blog1() {
               first-letter:float-left first-letter:text-5xl sm:first-letter:text-7xl first-letter:pr-3 sm:first-letter:pr-4 first-letter:font-serif first-letter:text-white first-letter:mt-1 sm:first-letter:mt-2 first-letter:leading-[0.8]
             ">
               <p>
-                For decades, achieving a truly premium digital experience required sacrificing speed for quality. Every layout change, every micro-animation, and every responsive breakpoint required manual, painstaking execution. But we are entering a new era where Artificial Intelligence acts as a foundational partner.
+                AI tools are becoming part of some design and development workflows. Their usefulness depends on the task, the quality of the output and the review a team applies before anything reaches a customer.
               </p>
               
               <h2>From Builder to Director</h2>
               <p>
-                The role of the web designer has fundamentally evolved into that of an <strong>AI Director</strong>. With advanced tools integrating deeply into our workflows, designers now use strategic prompts to generate complex layouts, elegant typography, and cohesive color palettes. 
+                AI can help a designer explore layout or copy options, but it does not replace user research, design decisions, accessibility checks or implementation review. A more useful role for the designer is to direct the work, verify suggestions and make the experience fit its audience.
               </p>
               
-              {/* Data Table */}
-              <div className="my-12 not-prose bg-bg-secondary/20 luxury-border rounded-2xl p-6 md:p-8 overflow-x-auto">
-                <div className="flex items-center gap-3 mb-6">
-                  <TrendingUp className="w-5 h-5 text-accent-blue" />
-                  <h3 className="text-xl font-serif text-white font-medium">Time Allocation Shift: Traditional vs. AI-Augmented</h3>
-                </div>
-                <table className="w-full text-left text-sm md:text-base border-collapse">
-                  <thead>
-                    <tr className="border-b border-border-subtle text-text-secondary font-medium">
-                      <th className="py-4 pr-4 uppercase tracking-wider text-xs">Project Phase</th>
-                      <th className="py-4 px-4 uppercase tracking-wider text-xs text-center">Traditional</th>
-                      <th className="py-4 px-4 uppercase tracking-wider text-xs text-center">AI-Augmented</th>
-                      <th className="py-4 pl-4 uppercase tracking-wider text-xs text-right text-accent-blue">Time Saved</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-white/80">
-                    <tr className="border-b border-border-subtle/50 hover:bg-white/5 transition-colors">
-                      <td className="py-4 pr-4">Wireframing & Ideation</td>
-                      <td className="py-4 px-4 text-center">12 hrs</td>
-                      <td className="py-4 px-4 text-center text-white font-medium">2 hrs</td>
-                      <td className="py-4 pl-4 text-right text-accent-beige">-83%</td>
-                    </tr>
-                    <tr className="border-b border-border-subtle/50 hover:bg-white/5 transition-colors">
-                      <td className="py-4 pr-4">Asset Creation</td>
-                      <td className="py-4 px-4 text-center">24 hrs</td>
-                      <td className="py-4 px-4 text-center text-white font-medium">4 hrs</td>
-                      <td className="py-4 pl-4 text-right text-accent-beige">-83%</td>
-                    </tr>
-                    <tr className="border-b border-border-subtle/50 hover:bg-white/5 transition-colors">
-                      <td className="py-4 pr-4">Coding & Layout</td>
-                      <td className="py-4 px-4 text-center">40 hrs</td>
-                      <td className="py-4 px-4 text-center text-white font-medium">10 hrs</td>
-                      <td className="py-4 pl-4 text-right text-accent-beige">-75%</td>
-                    </tr>
-                    <tr className="hover:bg-white/5 transition-colors">
-                      <td className="py-4 pr-4 text-accent-blue font-medium">Strategy & Polish</td>
-                      <td className="py-4 px-4 text-center text-text-secondary">4 hrs</td>
-                      <td className="py-4 px-4 text-center text-accent-blue font-semibold">24 hrs</td>
-                      <td className="py-4 pl-4 text-right text-accent-blue">+500%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <p>
-                At Blue Black Beige, we no longer start from an entirely blank canvas. Instead, we spend our time refining, curating, and injecting the <em>soul</em> into the output. As the data above illustrates, the hours previously spent pushing pixels are now reallocated to deep strategic thinking and high-end polish. We focus on storytelling and emotional connection, areas where human intuition is irreplaceable.
-              </p>
-              
+              <p>AI can support draft generation, variant exploration and routine production tasks. Teams still need to check originality, accessibility, facts, brand fit and implementation quality. The time saved varies by team, tools and scope, so it should be measured on real projects rather than assumed.</p>
               <h2>The Human Touch Advantage</h2>
               <p>
-                It is a common misconception that AI creates a homogenized web. In reality, when applied correctly, AI frees us from the &quot;grunt work&quot; of development. This liberation allows us to craft deeper, more meaningful brand identities. 
+                Generated drafts can be useful starting points, but they may also repeat familiar patterns or miss important context. A clear brief and careful review help a team decide what to keep, change or discard.
+              </p>
+
+              
+
+              <p>
+                AI tools can assist with parts of a workflow; people remain responsible for the final design, facts, accessibility and user experience.
               </p>
               
-              {/* Custom Bar Chart */}
-              <div className="my-12 not-prose bg-bg-secondary/20 luxury-border rounded-2xl p-6 md:p-8">
-                <h3 className="text-xl font-serif text-white font-medium mb-6">Designer Energy Distribution</h3>
-                <div className="space-y-6">
-                  <div>
-                    <div className="flex justify-between text-sm mb-2 text-text-secondary">
-                      <span>Execution (Manual Coding/Drafting)</span>
-                      <span>2020 vs 2025</span>
-                    </div>
-                    <div className="h-10 w-full bg-bg-primary rounded-full overflow-hidden flex">
-                      <div className="h-full bg-text-secondary/30 flex items-center px-4 text-xs font-semibold text-white/50" style={{ width: '80%' }}>2020: 80%</div>
-                    </div>
-                    <div className="h-10 w-full bg-bg-primary rounded-full overflow-hidden flex mt-2">
-                      <div className="h-full bg-accent-blue/50 flex items-center px-4 text-xs font-semibold text-white" style={{ width: '20%' }}>2025: 20%</div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <div className="flex justify-between text-sm mb-2 text-text-secondary">
-                      <span>Strategy, Emotion & Polish</span>
-                      <span>2020 vs 2025</span>
-                    </div>
-                    <div className="h-10 w-full bg-bg-primary rounded-full overflow-hidden flex">
-                      <div className="h-full bg-text-secondary/30 flex items-center px-4 text-xs font-semibold text-white/50" style={{ width: '20%' }}>2020: 20%</div>
-                    </div>
-                    <div className="h-10 w-full bg-bg-primary rounded-full overflow-hidden flex mt-2 relative">
-                      <div className="absolute inset-0 bg-gradient-to-r from-accent-blue to-accent-beige opacity-50" style={{ width: '80%' }}></div>
-                      <div className="h-full flex items-center px-4 text-xs font-semibold text-white z-10" style={{ width: '80%' }}>2025: 80%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <blockquote>
-                &quot;AI doesn&apos;t lower the ceiling of what&apos;s possible; it raises the floor of what&apos;s expected. The difference between good and great is still purely human.&quot;
-              </blockquote>
-              
               <p>
-                Premium design in 2025 emphasizes depth. AI-powered 3D graphics, parallax scrolling, and sophisticated micro-interactions are now seamlessly integrated, creating rich, tactile environments that feel overwhelmingly human and immersive. The future belongs to brands that harness this synergy to launch faster while setting entirely new standards for digital excellence.
+                For a digital product, choose AI-assisted techniques only when they improve the user experience and can be maintained. Review generated copy and visuals for accuracy, rights, accessibility, privacy and brand fit before publication.
               </p>
             </div>
           </div>

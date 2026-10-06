@@ -9,7 +9,7 @@ const steps = [
   {
     number: "01",
     title: "Discover",
-    phase: "Week 1–2",
+    phase: "Kickoff",
     description:
       "We immerse ourselves in your business, audience and goals. Through workshops, research and competitor analysis, we define a strategy that sets the foundation for everything that follows.",
     icon: Search,
@@ -19,32 +19,32 @@ const steps = [
   {
     number: "02",
     title: "Design",
-    phase: "Week 2–4",
+    phase: "Design",
     description:
       "We craft purposeful designs that balance beauty with function. Every screen and interaction is designed to guide users toward meaningful action while reflecting your brand's identity.",
     icon: Palette,
     deliverables: ["Wireframes", "Visual Design", "Interactive Prototype", "Design System"],
-    outcome: "A pixel-perfect prototype you can test, share with investors and hand off to developers.",
+    outcome: "A reviewable prototype aligned to the agreed scope and ready for feedback.",
   },
   {
     number: "03",
     title: "Build",
-    phase: "Week 4–8",
+    phase: "Build",
     description:
-      "We develop scalable, high-performance web products using Next.js and modern stacks. AI-augmented workflows ensure quality and speed without compromise.",
+      "We develop web products using Next.js and modern stacks. AI-assisted tools may support selected tasks, with the finished work reviewed against the agreed requirements.",
     icon: Code2,
     deliverables: ["Frontend Development", "CMS Integration", "API & Backend", "QA & Testing"],
-    outcome: "A production-ready product scoring 100/100 on Lighthouse, secured and optimised for launch.",
+    outcome: "A production-ready product reviewed for performance, accessibility and launch readiness.",
   },
   {
     number: "04",
     title: "Grow",
     phase: "Ongoing",
     description:
-      "We optimise, iterate and scale your product for long-term success. Through analytics, SEO and conversion optimisation, we ensure growth compounds well beyond launch day.",
+      "We review analytics, organic visibility and conversion paths to identify what to test and improve after launch.",
     icon: Rocket,
     deliverables: ["Technical SEO", "Analytics Setup", "CRO Audits", "Growth Strategy"],
-    outcome: "Measurable, compounding growth with a partner who treats your metrics like their own.",
+    outcome: "A plan for continued improvement using analytics, search and conversion reviews, based on the data available.",
   },
 ];
 
@@ -74,8 +74,8 @@ export default function ProcessSection() {
           <ScrollReveal delay={0.15}>
             <div>
               <p className="text-text-secondary text-base leading-relaxed mb-6">
-                Every project follows a proven four-phase process that ensures
-                alignment, quality and measurable results at each milestone.
+                Projects can move through discovery, design, build and growth.
+                The scope and milestones are agreed to fit each project.
               </p>
               <a
                 href="#contact"

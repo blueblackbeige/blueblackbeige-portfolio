@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -59,23 +59,23 @@ export default function HeroSection() {
       }
 
       if (!isDesktop) {
-        // Mobile/tablet: manually scrubbing currentTime while the video stays
-        // paused doesn't reliably repaint on iOS Safari / mobile Chrome - the
-        // decoder needs the element to actually be playing to keep painting
-        // frames, otherwise it visually freezes ("gets stuck"). A plain native
-        // forward loop is smooth, reliable, and cheaper on battery.
-        video.loop = true;
-        const playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === "function") {
-          playPromise.catch(() => {
-            // Autoplay can be blocked in rare cases (e.g. low-power mode);
-            // the poster frame remains visible, which is an acceptable fallback.
-          });
-        }
+        // Keep the large decorative video off mobile data; the optimized poster
+        // provides the same background composition without downloading 5 MB.
+        video.pause();
+        video.preload = "none";
+        return;
+      }
+
+      const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+      if (connection?.saveData || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        video.pause();
+        video.preload = "none";
         return;
       }
 
       // Desktop: custom reverse/forward ping-pong scrub for a cinematic loop
+      video.preload = "metadata";
+      video.load();
       video.loop = false;
       video.pause();
 
@@ -121,9 +121,9 @@ export default function HeroSection() {
           ref={videoRef}
           muted
           playsInline
-          preload="auto"
+          preload="none"
           className="absolute top-0 right-0 w-full lg:w-[80%] h-full object-cover object-[65%_center] lg:object-center"
-          poster="/frames/hero-video_000.svg"
+          poster="/images/hero-poster.jpg"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
@@ -194,12 +194,8 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
             className="text-[1.7rem] xs:text-[1.9rem] sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-7xl font-serif font-medium leading-[1.15] sm:leading-[1.1] tracking-tight mb-5 lg:mb-8"
           >
-            We design digital <br />
-            <em className="gradient-text not-italic font-serif italic">
-              experiences
-            </em>
-            <br />
-            that drive real impact
+            Web design and digital growth <br />
+            <em className="gradient-text not-italic font-serif italic">for ambitious brands</em>
             <span className="text-accent-blue">.</span>
           </motion.h1>
 
@@ -210,7 +206,7 @@ export default function HeroSection() {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="text-text-secondary text-sm md:text-lg leading-relaxed max-w-lg mb-7 lg:mb-10"
           >
-            We combine strategy, design, digital marketing, and technology
+            Based in Patna, India and working with businesses across the country, we combine strategy, design, digital marketing, and technology
             <br className="hidden md:block" />
             to create and grow intelligent digital products for ambitious brands.
           </motion.p>
@@ -239,15 +235,6 @@ export default function HeroSection() {
           </motion.div>
         </div>
       </div>
-
-      {/* ── Floating Play Button ── */}
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden sm:flex absolute bottom-8 right-6 lg:bottom-12 lg:right-20 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/20 bg-white/10 backdrop-blur-md items-center justify-center cursor-pointer hover:bg-white/20 transition-all duration-300 group"
-      >
-        <Play className="w-4 h-4 lg:w-5 lg:h-5 text-white ml-0.5 group-hover:scale-110 transition-transform" />
-      </motion.div>
 
       {/* ── Vertical Text ── */}
       <div className="hidden lg:block absolute right-6 top-1/2 -translate-y-1/2 z-20">

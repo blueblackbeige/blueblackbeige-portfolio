@@ -14,15 +14,15 @@ const values = [
   },
   {
     icon: Globe,
-    title: "Global thinking",
+    title: "India-wide perspective",
     description:
-      "We build for audiences worldwide, with a clear understanding of local context.",
+      "We shape each digital experience around its customers, sector and local context.",
   },
   {
     icon: Zap,
-    title: "Speed without sacrifice",
+    title: "Thoughtful delivery",
     description:
-      "AI-augmented workflows let us deliver premium quality faster than anyone else.",
+      "We use modern tools where they fit and review the work against agreed project requirements.",
   },
 ];
 
@@ -77,14 +77,13 @@ export default function AboutSection() {
             <div className="space-y-4 lg:max-w-lg">
               <p className="text-text-secondary text-base leading-relaxed">
                 Blue Black Beige is an AI-powered digital studio based in
-                Patna, India. We partner with founders, startups and
-                established brands to create digital products that are
-                beautiful, intelligent and built to perform.
+                Patna, India. We work with founders, startups and established
+                brands across the country to plan and create digital products,
+                websites and marketing experiences.
               </p>
               <p className="text-text-secondary text-base leading-relaxed">
-                Our process blends strategic thinking, premium design and
-                cutting-edge technology, delivered at a pace and quality that
-                was previously reserved for teams 10× our size.
+                Our process brings strategy, design, development and marketing
+                together around the audience and goals of each project.
               </p>
               <div className="flex gap-6 mt-4">
                 <Link
@@ -111,7 +110,7 @@ export default function AboutSection() {
             <div className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/7]">
               <Image
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop"
-                alt="Blue Black Beige Studio"
+                alt="Shared creative workspace with desks and seating"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1440px) 100vw, 1440px"
@@ -123,10 +122,8 @@ export default function AboutSection() {
             {/* Floating stat pills */}
             <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-wrap gap-2 sm:gap-3">
               {[
-                { value: "40+", label: "Projects Delivered" },
-                { value: "3×", label: "Avg. Conversion Uplift" },
-                { value: "2019", label: "Founded" },
-                { value: "India", label: "Based in" },
+                { value: "Patna", label: "Studio base" },
+                { value: "India", label: "Working across" },
               ].map((item) => (
                 <div
                   key={item.label}

@@ -68,7 +68,7 @@ export default function WorkPage() {
                 muted
                 playsInline
                 preload="metadata"
-                poster="/frames/hero-video_000.svg"
+                poster="/images/hero-poster.jpg"
                 className="absolute inset-0 w-full h-full object-cover"
               >
                 <source src="/hero-video.mp4" type="video/mp4" />

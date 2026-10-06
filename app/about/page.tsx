@@ -89,7 +89,7 @@ export default function AboutPage() {
                 <p className="text-3xl font-serif text-white mb-2">Patna, India</p>
                 <p className="text-xs text-text-secondary uppercase tracking-widest flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-accent-blue animate-pulse" />
-                  Global Reach
+                  Working across India
                 </p>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function AboutPage() {
                   Powered by <span className="text-accent-beige">Intelligence</span>.
                 </h2>
                 <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
-                  We are not just a traditional agency. We are an AI-augmented studio. By integrating advanced machine learning into our creative workflows, we eliminate the mundane and focus entirely on the magical. We deliver premium quality at unprecedented speed.
+                  We use AI-assisted tools for selected research and creative tasks when they fit the project. People review the output for accuracy, usability, accessibility and fit with the client&apos;s goals.
                 </p>
               </motion.div>
 
@@ -163,9 +163,9 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Sparkles, title: "Craft-First", desc: "Every pixel is intentional. We treat design as a discipline, not a decoration." },
-              { icon: Globe, title: "Global Thinking", desc: "We build for audiences worldwide, with a clear understanding of local context." },
-              { icon: Zap, title: "Speed & Scale", desc: "AI-augmented workflows let us deliver premium quality faster than anyone else." },
-              { icon: Cpu, title: "Tech Agnostic", desc: "We choose the right stack for the job, ensuring performance is never compromised. We leverage the edge to deliver lightning-fast experiences.", span: "md:col-span-2 lg:col-span-3 lg:flex lg:items-center lg:gap-12" }
+              { icon: Globe, title: "India-wide perspective", desc: "We shape each digital experience around its customers, sector and local context." },
+              { icon: Zap, title: "Thoughtful delivery", desc: "We use modern tools where they fit and review the work against agreed project requirements." },
+              { icon: Cpu, title: "Practical technology choices", desc: "We choose a stack to match required functionality, maintainability, accessibility and performance objectives.", span: "md:col-span-2 lg:col-span-3 lg:flex lg:items-center lg:gap-12" }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -189,33 +189,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Global Impact Stats */}
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-blue/5 rounded-full blur-[120px] -z-10" />
-        <div className="max-w-[1440px] mx-auto px-6 text-center">
-          <div className="grid md:grid-cols-3 gap-10 sm:gap-16 lg:gap-24">
-            {[
-              { label: "Projects Shipped", value: "40+" },
-              { label: "Avg. Conversion Uplift", value: "3x" },
-              { label: "Lines of Perfect Code", value: "1M+" }
-            ].map((stat, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2, duration: 0.8 }}
-                className="flex flex-col items-center"
-              >
-                <span className="text-6xl md:text-7xl lg:text-[6.5rem] font-serif font-medium text-white mb-6 block">
-                  {stat.value}
-                </span>
-                <span className="text-sm uppercase tracking-widest text-text-secondary/70">
-                  {stat.label}
-                </span>
-              </motion.div>
-            ))}
-          </div>
+      <section className="border-y border-border-subtle bg-bg-secondary/10 py-16 lg:py-24">
+        <div className="mx-auto grid max-w-5xl gap-8 px-6 md:grid-cols-3">
+          {[
+            { title: "Based in Patna", body: "Our studio is based in Bihar, India." },
+            { title: "Working across India", body: "We collaborate remotely with businesses around the country." },
+            { title: "Connected digital work", body: "Strategy, design, development and marketing can be planned together." },
+          ].map((item) => <article key={item.title} className="rounded-2xl border border-border-subtle p-6">
+            <h2 className="font-serif text-2xl text-white">{item.title}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary">{item.body}</p>
+          </article>)}
         </div>
       </section>
 

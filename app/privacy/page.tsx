@@ -7,24 +7,31 @@ export const metadata: Metadata = {
   title: "Privacy Policy - Blue Black Beige",
   description:
     "How Blue Black Beige collects, uses, and protects the information you share with us through our website and contact form.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy | Blue Black Beige",
+    description: "How Blue Black Beige handles contact enquiries and website analytics.",
+    url: "https://blueblackbeige.in/privacy",
+    type: "website",
+  },
 };
 
 const sections = [
   {
     title: "Information We Collect",
-    body: `When you fill out our contact form, we collect your name, email address, and phone number. We use this information solely to respond to your enquiry and, if you agree, to send you relevant updates about our services. We do not sell or rent this information to any third party.`,
+    body: `The website enquiry form asks for your name, email address, selected service and project details. Submitting it opens WhatsApp with a prepared message; the message is sent only if you choose to send it in WhatsApp. WhatsApp processes messages under its own privacy terms. We do not use this form to subscribe you to marketing updates.`,
   },
   {
     title: "How We Use Your Data",
-    body: `Your details are used to:\n• Respond to project enquiries and schedule discovery calls\n• Send occasional updates about Blue Black Beige (you can unsubscribe at any time)\n• Improve our website experience through aggregated, anonymous analytics (Google Analytics)`,
+    body: `We use information you choose to send to respond to your project enquiry. We may use website analytics, if configured, to understand visits and improve the site. We do not include enquiry form content in analytics events.`,
   },
   {
     title: "Cookies & Analytics",
-    body: `We use Google Analytics to understand how visitors navigate our site. This collects anonymised data such as pages visited and time on site. No personally identifiable information is shared with Google Analytics. You can opt out via your browser settings or a browser extension such as the Google Analytics Opt-out Add-on.`,
+    body: `Google Analytics may be loaded when the site analytics measurement ID is configured. Analytics services can use cookies or similar technologies and may process information under their own terms. You can manage cookies through your browser settings.`,
   },
   {
     title: "Data Storage & Security",
-    body: `Your information is stored securely and accessed only by the Blue Black Beige team. We take reasonable technical and organisational measures to protect it from unauthorised access, loss, or disclosure. We do not store payment card information.`,
+    body: `The website enquiry form prepares a WhatsApp message and does not submit that form content to a Blue Black Beige website database. If you send the message, WhatsApp and the recipient account will process it. Email or other messages you send us may be retained in the relevant communication system while we handle the enquiry.`,
   },
   {
     title: "Your Rights",
@@ -58,7 +65,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-text-secondary text-sm mb-12">
-          Last updated: September 2026
+          Last updated: October 2026
         </p>
 
         <div className="h-px bg-border-subtle mb-12" />

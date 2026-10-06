@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Terms of Service - Blue Black Beige",
   description:
     "Terms governing your use of the Blue Black Beige website and engagement with our design, development, and marketing services.",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Service | Blue Black Beige",
+    description: "Terms for using the Blue Black Beige website and engaging its services.",
+    url: "https://blueblackbeige.in/terms",
+    type: "website",
+  },
 };
 
 const sections = [

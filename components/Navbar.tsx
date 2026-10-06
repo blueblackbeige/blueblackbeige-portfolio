@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
@@ -36,6 +36,7 @@ export default function Navbar() {
       else if (hash === "#contact") setActiveLink("Contact");
       else if (!hash || hash === "#home") setActiveLink("Home");
     }
+    if (pathname === "/services" || pathname.startsWith("/web-design") || pathname.startsWith("/seo-") || pathname.startsWith("/digital-marketing")) setActiveLink("Services");
   }, [pathname]);
 
   useEffect(() => {

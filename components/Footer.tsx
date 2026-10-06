@@ -14,13 +14,9 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  "Strategy & Branding",
-  "Digital Experience",
-  "Web Development",
-  "Motion & Interaction",
-  "Growth & Optimization",
-  "Digital Marketing",
-  "Social Media Marketing",
+  { label: "Web Design & Development", href: "/web-design-development" },
+  { label: "SEO & Organic Growth", href: "/seo-organic-growth" },
+  { label: "Digital Marketing", href: "/digital-marketing" },
 ];
 
 const socialLinks = [
@@ -103,12 +99,12 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3 lg:space-y-4">
                 {serviceLinks.map((s) => (
-                  <li key={s}>
+                  <li key={s.href}>
                     <Link
-                      href="/#services"
+                      href={s.href}
                       className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors"
                     >
-                      {s}
+                      {s.label}
                     </Link>
                   </li>
                 ))}
@@ -166,11 +162,11 @@ export default function Footer() {
         <div className="w-full border-t border-border-subtle pt-10 lg:pt-12 pb-6">
           {/* Giant Typography */}
           <div className="w-full mb-8 lg:mb-12">
-            <h1 className="w-full flex justify-center text-[7vw] sm:text-[8vw] leading-none font-serif font-bold tracking-tighter select-none">
+            <p aria-label="Blue Black Beige" className="w-full flex justify-center text-[7vw] sm:text-[8vw] leading-none font-serif font-bold tracking-tighter select-none">
               <span className="text-accent-blue">BLUE</span>
               <span style={{ WebkitTextStroke: "2px rgba(255,255,255,0.8)", color: "transparent" }}>BLACK</span>
               <span className="text-accent-beige italic pr-2">BEIGE</span>
-            </h1>
+            </p>
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-text-secondary/50 font-medium">
@@ -180,7 +176,7 @@ export default function Footer() {
             <div className="flex items-center gap-8">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-accent-blue animate-pulse" />
-                Based in Patna, Global Reach
+                Based in Patna, working across India
               </span>
               <div className="hidden md:flex items-center gap-6">
                 <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
