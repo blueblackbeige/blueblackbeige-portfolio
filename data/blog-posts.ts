@@ -191,8 +191,8 @@ export const newBlogPosts: BlogPost[] = [
     dek: "Mobile design and accessibility are the same business decision: make the important action clear, reachable and understandable in real conditions.",
     readTime: "4 min read",
     keywords: ["mobile-first design", "accessible website design", "mobile SEO", "inclusive digital experience"],
-    heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2400&auto=format&fit=crop",
-    heroAlt: "Person using a smartphone beside a laptop",
+    heroImage: "/images/blog/mobile-first-accessibility-hero.jpg",
+    heroAlt: "Responsive business website shown on mobile, desktop and tablet devices",
     sections: [
       {
         heading: "Small screens reveal weak priorities",
@@ -240,8 +240,8 @@ export const newBlogPosts: BlogPost[] = [
     dek: "A website gives a business a trusted home for its story, services, search visibility and customer journey, even when social algorithms change.",
     readTime: "7 min read",
     keywords: ["business website 2026", "website development", "online presence for business", "SEO website", "digital storefront"],
-    heroImage: "/images/blog/website-2026-hero.png",
-    heroAlt: "Laptop showing a modern business website beside a lit storefront",
+    heroImage: "/images/blog/website-2026-hero.jpg",
+    heroAlt: "Illustration of how a business website builds trust, visibility and growth",
     sections: [
       {
         heading: "A website is your digital storefront",
@@ -353,8 +353,8 @@ export const newBlogPosts: BlogPost[] = [
     dek: "A website and a mobile app solve different customer problems. The right first investment depends on how people discover, use and return to your business.",
     readTime: "7 min read",
     keywords: ["mobile app vs website", "website or app for business", "mobile app development", "digital product strategy", "website development"],
-    heroImage: "/images/blog/app-vs-website-hero.png",
-    heroAlt: "Laptop and smartphone showing connected web and app experiences",
+    heroImage: "/images/blog/app-vs-website-hero.jpg",
+    heroAlt: "Side-by-side comparison of a mobile app and a business website",
     sections: [
       {
         heading: "Start with the customer behaviour",
@@ -408,8 +408,8 @@ export const newBlogPosts: BlogPost[] = [
     dek: "The strongest digital marketing plans connect SEO, content, social media, paid campaigns and conversion into one measurable customer journey.",
     readTime: "8 min read",
     keywords: ["digital marketing strategies", "digital marketing plan", "SEO and social media marketing", "content marketing", "Google Ads and Meta Ads"],
-    heroImage: "/images/blog/digital-strategy-hero.png",
-    heroAlt: "Creative marketing workspace with campaign cards and analytics",
+    heroImage: "/images/blog/digital-strategy-hero.jpg",
+    heroAlt: "Digital marketing strategy connecting SEO, social media, content, ads and analytics",
     sections: [
       {
         heading: "Move from random posting to a connected plan",

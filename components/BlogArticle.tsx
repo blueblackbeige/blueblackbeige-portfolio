@@ -69,9 +69,15 @@ export default function BlogArticle({ post }: { post: BlogPost }) {
           <p className="mt-5 text-xs uppercase tracking-[0.2em] text-text-secondary/70">By Blue Black Beige</p>
         </motion.div>
 
-        <div ref={containerRef} className="relative w-full aspect-[4/3] sm:aspect-[21/9] md:aspect-[2.5/1] rounded-3xl overflow-hidden mb-14 sm:mb-24 luxury-border">
+        <div ref={containerRef} className={`relative w-full ${post.heroImage.endsWith(".jpg") ? "aspect-[3/2]" : "aspect-[4/3] sm:aspect-[21/9] md:aspect-[2.5/1]"} rounded-3xl overflow-hidden mb-14 sm:mb-24 luxury-border`}>
           <motion.div style={{ y, opacity }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
-            <Image src={post.heroImage} alt={post.heroAlt} fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" priority />
+            <Image
+              src={post.heroImage}
+              alt={post.heroAlt}
+              fill
+              className={`${post.heroImage.endsWith(".jpg") ? "object-contain" : "object-cover grayscale hover:grayscale-0"} transition-all duration-1000`}
+              priority
+            />
           </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent" />
         </div>

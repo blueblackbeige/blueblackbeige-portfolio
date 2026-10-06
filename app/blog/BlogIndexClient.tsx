@@ -15,7 +15,7 @@ const featuredPost = {
   excerpt:
     "Connect SEO, content, social media, paid campaigns and conversion into one measurable customer journey.",
   readTime: "8 min read",
-  image: "/images/blog/digital-strategy-hero.png",
+  image: "/images/blog/digital-strategy-hero.jpg",
   href: "/blog/digital-marketing-strategies-that-work",
 };
 
@@ -61,7 +61,7 @@ const posts = [
     title: "Design for Everyone, Starting with Mobile",
     excerpt: "Mobile design and accessibility make the important action clear, reachable and understandable in real conditions.",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+    image: "/images/blog/mobile-first-accessibility-hero.jpg",
     href: "/blog/mobile-first-accessibility",
     span: "md:col-span-1 lg:col-span-1",
   },
@@ -70,7 +70,7 @@ const posts = [
     title: "Why Every Business Needs a Website in 2026",
     excerpt: "A website gives your business a trusted home for its story, services, search visibility and customer journey.",
     readTime: "7 min read",
-    image: "/images/blog/website-2026-hero.png",
+    image: "/images/blog/website-2026-hero.jpg",
     href: "/blog/why-businesses-need-website-2026",
     span: "md:col-span-2 lg:col-span-2",
   },
@@ -88,7 +88,7 @@ const posts = [
     title: "Mobile App vs Website: Which Is Better for Business?",
     excerpt: "Choose the digital product that matches how customers discover, use and return to your business.",
     readTime: "7 min read",
-    image: "/images/blog/app-vs-website-hero.png",
+    image: "/images/blog/app-vs-website-hero.jpg",
     href: "/blog/mobile-app-vs-website",
     span: "md:col-span-1 lg:col-span-1",
   },
@@ -97,7 +97,7 @@ const posts = [
     title: "Digital Marketing Strategies That Actually Work",
     excerpt: "Connect SEO, content, social media, paid campaigns and conversion into one measurable customer journey.",
     readTime: "8 min read",
-    image: "/images/blog/digital-strategy-hero.png",
+    image: "/images/blog/digital-strategy-hero.jpg",
     href: "/blog/digital-marketing-strategies-that-work",
     span: "md:col-span-2 lg:col-span-2",
   }
@@ -175,7 +175,7 @@ export default function BlogPage() {
                 src={featuredPost.image}
                 alt={featuredPost.title}
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105 grayscale hover:grayscale-0"
+                className={`${featuredPost.image.endsWith(".jpg") ? "object-contain" : "object-cover grayscale hover:grayscale-0"} transition-transform duration-1000 group-hover:scale-105`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/90 via-bg-primary/20 to-transparent" />
               <div className="absolute bottom-10 left-10 right-10">
@@ -204,7 +204,7 @@ export default function BlogPage() {
                     src={featuredPost.image}
                     alt={featuredPost.title}
                     fill
-                    className="object-cover grayscale"
+                    className={featuredPost.image.endsWith(".jpg") ? "object-contain" : "object-cover grayscale"}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-primary to-transparent" />
                 </div>
@@ -285,7 +285,7 @@ export default function BlogPage() {
                       src={post.image}
                       alt={post.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0"
+                      className={`object-cover transition-transform duration-700 group-hover:scale-105 ${post.image.endsWith(".jpg") ? "" : "grayscale hover:grayscale-0"}`}
                     />
                   </div>
                   <div className="p-6 sm:p-8 flex flex-col flex-grow">

@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/ensure-windows-local-next-cache.js",
     "dev": "next dev",
+    "prebuild": "node scripts/ensure-windows-local-next-cache.js",
     "build": "next build",
+    "prestart": "node scripts/ensure-windows-local-next-cache.js",
     "start": "next start",
     "lint": "next lint"
   },
