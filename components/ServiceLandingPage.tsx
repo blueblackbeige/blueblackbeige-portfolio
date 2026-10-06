@@ -46,42 +46,51 @@ export default function ServiceLandingPage({ data }: { data: ServicePageData }) 
       </header>
 
       {data.packages && data.packages.length > 0 && (
-        <section id="social-plans" aria-labelledby="social-plans-heading" className="scroll-mt-24 border-b border-border-subtle bg-bg-secondary/10">
-          <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
-            <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-blue">Social media management</p>
-              <h2 id="social-plans-heading" className="mt-4 font-serif text-3xl text-white sm:text-4xl">Plans shaped around your stage</h2>
-              <p className="mt-4 leading-relaxed text-text-secondary">Choose a starting scope for your social channels. We&apos;ll confirm the final deliverables and quote after learning about your goals.</p>
+        <section id="social-plans" aria-labelledby="social-plans-heading" className="scroll-mt-24 border-y border-border-subtle bg-bg-secondary/10">
+          <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+              <div className="max-w-3xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-blue">Pricing · Social media · India</p>
+                <h2 id="social-plans-heading" className="mt-3 font-serif text-3xl text-white sm:text-4xl">Choose how much momentum you need.</h2>
+                <p className="mt-4 leading-relaxed text-text-secondary">Start with a steady foundation or put more production and growth support behind your brand. Monthly fees are shown clearly; ad spend is separate.</p>
+              </div>
+              <Link href="/#contact" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-accent-beige px-5 py-3 text-sm font-semibold text-bg-primary transition-colors hover:bg-accent-beige/90">Talk through your goals</Link>
             </div>
-            <div className="mt-10 grid gap-6 lg:grid-cols-2">
-              {data.packages.map((plan) => (
-                <article key={plan.name} className="flex flex-col rounded-2xl border border-border-subtle bg-bg-primary/70 p-6 sm:p-8">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-blue">{plan.audience}</p>
-                  <h3 className="mt-3 font-serif text-2xl text-white">{plan.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">{plan.tagline}</p>
-                  <div className="mt-6 rounded-xl border border-border-subtle bg-bg-secondary/30 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary">Monthly investment</p>
-                    <p className="mt-1 text-3xl font-semibold text-white">{plan.monthlyPrice} <span className="text-sm font-normal text-text-secondary">/ month</span></p>
-                    <p className="mt-1 text-xs text-text-secondary">Ad spend is billed separately.</p>
+            <div className="mt-9 grid items-stretch gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+              {data.packages.map((plan, index) => {
+                const isPilot = index === 1;
+                return <article key={plan.name} className={`relative overflow-hidden rounded-2xl border p-6 shadow-2xl sm:p-8 ${isPilot ? "border-accent-blue/50 bg-gradient-to-br from-[#1d2b62] via-[#17234b] to-[#0d142b] shadow-accent-blue/15 lg:p-9" : "border-accent-beige/70 bg-gradient-to-br from-[#e9dccd] via-[#d8c1a7] to-[#c5a989] text-bg-primary shadow-black/30 lg:mt-8"}`}>
+                  {isPilot && <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-accent-blue/30 blur-[80px]" />}
+                  <div className="relative">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div><p className={`text-xs font-semibold uppercase tracking-[0.18em] ${isPilot ? "text-accent-beige" : "text-accent-blue"}`}>0{index + 1} · {plan.audience}</p><h3 className={`mt-3 font-serif text-2xl ${isPilot ? "text-white sm:text-3xl" : "text-bg-primary"}`}>{plan.name}</h3></div>
+                      {isPilot && <span className="rounded-full border border-accent-beige/40 bg-white/[0.07] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-accent-beige">Best for momentum</span>}
+                    </div>
+                    <p className={`mt-2 max-w-lg text-sm leading-relaxed ${isPilot ? "text-white/75" : "text-bg-primary/75"}`}>{plan.tagline}</p>
+                    <div className={`mt-6 border-y py-4 ${isPilot ? "border-white/15" : "border-bg-primary/15"}`}>
+                      <p className={`text-[10px] font-semibold uppercase tracking-[0.16em] ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>Monthly plan fee</p>
+                      <p className={`mt-1 font-semibold tracking-tight ${isPilot ? "text-white text-4xl sm:text-5xl" : "text-bg-primary text-3xl"}`}>{plan.monthlyPrice} <span className={`text-sm font-normal ${isPilot ? "text-white/70" : "text-bg-primary/70"}`}>/ month</span></p>
+                      <p className={`mt-1 text-xs ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>Ad spend is billed separately.</p>
+                    </div>
+                    <div className={`mt-5 flex flex-wrap gap-2 text-xs ${isPilot ? "text-white/80" : "text-bg-primary/80"}`}>
+                      <span className={`rounded-full border px-3 py-2 ${isPilot ? "border-white/15" : "border-bg-primary/20"}`}><strong className={isPilot ? "text-white" : "text-bg-primary"}>Platforms:</strong> {plan.platforms}</span>
+                      <span className={`rounded-full border px-3 py-2 ${isPilot ? "border-white/15" : "border-bg-primary/20"}`}><strong className={isPilot ? "text-white" : "text-bg-primary"}>Focus:</strong> {plan.focus}</span>
+                    </div>
+                    <h4 className={`mt-7 text-xs font-semibold uppercase tracking-[0.16em] ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>What&apos;s included</h4>
+                    <ul className={`mt-4 grid gap-3 ${isPilot ? "sm:grid-cols-2" : ""}`}>
+                      {plan.deliverables.map((item) => (
+                        <li key={item.title} className={`rounded-xl border p-4 ${isPilot ? "border-white/15 bg-white/[0.04]" : "border-bg-primary/15 bg-white/20"}`}>
+                          <p className={`text-sm font-medium ${isPilot ? "text-white" : "text-bg-primary"}`}>{item.title}</p>
+                          <p className={`mt-1 text-xs leading-relaxed ${isPilot ? "text-white/75" : "text-bg-primary/75"}`}>{item.description}</p>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link href="/#contact" aria-label={`Contact us about the ${plan.name}`} className={`mt-7 inline-flex min-h-11 w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors ${isPilot ? "bg-accent-beige text-bg-primary hover:bg-accent-beige/90" : "bg-bg-primary text-white hover:bg-bg-primary/85"}`}>
+                      Discuss this plan
+                    </Link>
                   </div>
-                  <div className="mt-5 flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full border border-border-subtle px-3 py-2 text-text-secondary"><strong className="text-white">Focus:</strong> {plan.focus}</span>
-                    <span className="rounded-full border border-border-subtle px-3 py-2 text-text-secondary"><strong className="text-white">Platforms:</strong> {plan.platforms}</span>
-                  </div>
-                  <h4 className="mt-7 text-sm font-semibold text-white">What&apos;s included</h4>
-                  <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-                    {plan.deliverables.map((item) => (
-                      <li key={item.title} className="rounded-xl border border-border-subtle/70 p-4">
-                        <p className="text-sm font-medium text-white">{item.title}</p>
-                        <p className="mt-1 text-xs leading-relaxed text-text-secondary">{item.description}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/#contact" aria-label={`Contact us for a quote on the ${plan.name}`} className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-accent-beige px-6 py-3 text-sm font-semibold text-bg-primary transition-colors hover:bg-accent-beige/90">
-                    Contact for a quote
-                  </Link>
-                </article>
-              ))}
+                </article>;
+              })}
             </div>
           </div>
         </section>
