@@ -5,6 +5,7 @@ import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { useState } from "react";
 import { sendGAEvent } from "@next/third-parties/google";
+import { trackMetaPixelEvent } from "@/lib/meta-pixel";
 
 export default function CTASection() {
   const [formData, setFormData] = useState({
@@ -21,6 +22,10 @@ export default function CTASection() {
     if (process.env.NEXT_PUBLIC_GA_ID) {
       sendGAEvent("event", "whatsapp_enquiry_handoff", { service: formData.service, method: "whatsapp" });
     }
+    trackMetaPixelEvent("Lead", {
+      content_name: formData.service,
+      content_category: "Project enquiry",
+    });
     window.open(`https://wa.me/919288182862?text=${encodedText}`, '_blank');
   };
 
@@ -74,6 +79,7 @@ export default function CTASection() {
                     href="https://wa.me/919288182862"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackMetaPixelEvent("Contact", { content_name: "WhatsApp", content_category: "Direct contact" })}
                     className="hover:text-white transition-colors"
                   >
                     +91 92881 82862 (WhatsApp)

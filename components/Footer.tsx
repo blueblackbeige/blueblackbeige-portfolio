@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Facebook, Instagram, MessageCircle, Youtube } from "lucide-react";
+import { trackMetaPixelEvent } from "@/lib/meta-pixel";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -118,17 +119,17 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3 lg:space-y-4">
                 <li>
-                  <a href="mailto:nayan@blueblackbeige.in" className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
+                  <a href="mailto:nayan@blueblackbeige.in" onClick={() => trackMetaPixelEvent("Contact", { content_name: "Email", content_category: "Direct contact" })} className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
                     nayan@blueblackbeige.in
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:alok@blueblackbeige.in" className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
+                  <a href="mailto:alok@blueblackbeige.in" onClick={() => trackMetaPixelEvent("Contact", { content_name: "Email", content_category: "Direct contact" })} className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
                     alok@blueblackbeige.in
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+919288182862" className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
+                  <a href="tel:+919288182862" onClick={() => trackMetaPixelEvent("Contact", { content_name: "Phone", content_category: "Direct contact" })} className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
                     +91 92881 82862
                   </a>
                 </li>
@@ -144,6 +145,11 @@ export default function Footer() {
                       href={href}
                       target="_blank"
                       rel="noreferrer"
+                      onClick={() => {
+                        if (label === "WhatsApp") {
+                          trackMetaPixelEvent("Contact", { content_name: "WhatsApp", content_category: "Direct contact" });
+                        }
+                      }}
                       aria-label={`Open Blue Black Beige on ${label}`}
                       className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-3 py-2 text-xs text-text-secondary hover:border-accent-blue hover:text-white transition-colors"
                     >

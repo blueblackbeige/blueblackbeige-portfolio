@@ -27,7 +27,7 @@ const sections = [
   },
   {
     title: "Cookies & Analytics",
-    body: `Google Analytics may be loaded when the site analytics measurement ID is configured. Analytics services can use cookies or similar technologies and may process information under their own terms. You can manage cookies through your browser settings.`,
+    body: `We use Google Analytics and the Meta Pixel to understand website visits and meaningful interactions such as service-page views and contact actions. These analytics services can use cookies or similar technologies and may process information under their own terms. We do not send enquiry form content, names, email addresses or phone numbers in analytics events. You can manage cookies through your browser settings.`,
   },
   {
     title: "Data Storage & Security",
