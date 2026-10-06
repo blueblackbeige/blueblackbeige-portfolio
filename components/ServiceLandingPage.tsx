@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import type { SocialMediaPlan } from "@/data/social-media-plans";
 
 type ServicePageData = {
   slug: string;
@@ -12,14 +13,7 @@ type ServicePageData = {
   process: { title: string; body: string }[];
   questions: { question: string; answer: string }[];
   related: { title: string; href: string }[];
-  packages?: {
-    name: string;
-    tagline: string;
-    audience: string;
-    focus: string;
-    platforms: string;
-    deliverables: { title: string; description: string }[];
-  }[];
+  packages?: SocialMediaPlan[];
 };
 
 export default function ServiceLandingPage({ data }: { data: ServicePageData }) {
@@ -52,7 +46,7 @@ export default function ServiceLandingPage({ data }: { data: ServicePageData }) 
       </header>
 
       {data.packages && data.packages.length > 0 && (
-        <section aria-labelledby="social-plans-heading" className="border-b border-border-subtle bg-bg-secondary/10">
+        <section id="social-plans" aria-labelledby="social-plans-heading" className="scroll-mt-24 border-b border-border-subtle bg-bg-secondary/10">
           <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-blue">Social media management</p>
