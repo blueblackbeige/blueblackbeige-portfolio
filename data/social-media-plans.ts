@@ -17,7 +17,14 @@ export const socialMediaPlans: SocialMediaPlan[] = [
     audience: "For new businesses",
     focus: "Brand awareness and organic consistency",
     platforms: "Choice of 2 platforms",
-    highlights: ["8-10 posts per month", "4-5 Reels or Shorts", "Choice of 2 platforms"],
+    highlights: [
+      "8-10 monthly posts, including static and carousel content",
+      "4-5 Reels or Shorts using stock or client-provided footage",
+      "Content calendar prepared one week in advance",
+      "Captions and targeted hashtag research",
+      "One-time profile optimisation and monthly reach report",
+      "Meta campaign setup",
+    ],
     deliverables: [
       { title: "Post frequency", description: "8-10 posts per month, including static and carousel content." },
       { title: "Reels and video editing", description: "4-5 Reels or Shorts monthly, using stock or client-provided footage." },
@@ -35,7 +42,14 @@ export const socialMediaPlans: SocialMediaPlan[] = [
     audience: "For businesses testing a broader mix",
     focus: "Engagement, page growth and trial ads",
     platforms: "Up to 3 platforms",
-    highlights: ["12 posts per month", "7-8 Reels or Shorts", "Up to 3 platforms"],
+    highlights: [
+      "12 posts, including 3-4 carousels",
+      "7-8 Reels or Shorts with two team shoots each month",
+      "Ads management with lead-generation campaign setup",
+      "5 designed stories per month",
+      "Comments and DMs checked twice a week",
+      "Monthly report plus 30-minute performance review",
+    ],
     deliverables: [
       { title: "Post frequency", description: "12 posts per month, including 3-4 carousel posts." },
       { title: "Reels and video editing", description: "7-8 Reels or Shorts per month, produced by our team with two shoots each month." },
