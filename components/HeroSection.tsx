@@ -59,23 +59,18 @@ export default function HeroSection() {
       }
 
       if (!isDesktop) {
-        // Keep the large decorative video off mobile data; the optimized poster
-        // provides the same background composition without downloading 5 MB.
-        video.pause();
-        video.preload = "none";
-        return;
-      }
-
-      const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-      if (connection?.saveData || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        video.pause();
-        video.preload = "none";
+        // Native playback keeps the video frames painting reliably on mobile.
+        video.loop = true;
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {
+            // If autoplay is blocked, the poster remains visible.
+          });
+        }
         return;
       }
 
       // Desktop: custom reverse/forward ping-pong scrub for a cinematic loop
-      video.preload = "metadata";
-      video.load();
       video.loop = false;
       video.pause();
 
@@ -121,7 +116,7 @@ export default function HeroSection() {
           ref={videoRef}
           muted
           playsInline
-          preload="none"
+          preload="auto"
           className="absolute top-0 right-0 w-full lg:w-[80%] h-full object-cover object-[65%_center] lg:object-center"
           poster="/images/hero-poster.jpg"
         >
