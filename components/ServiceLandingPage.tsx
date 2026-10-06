@@ -12,6 +12,14 @@ type ServicePageData = {
   process: { title: string; body: string }[];
   questions: { question: string; answer: string }[];
   related: { title: string; href: string }[];
+  packages?: {
+    name: string;
+    tagline: string;
+    audience: string;
+    focus: string;
+    platforms: string;
+    deliverables: { title: string; description: string }[];
+  }[];
 };
 
 export default function ServiceLandingPage({ data }: { data: ServicePageData }) {
@@ -42,6 +50,48 @@ export default function ServiceLandingPage({ data }: { data: ServicePageData }) 
           </div>
         </div>
       </header>
+
+      {data.packages && data.packages.length > 0 && (
+        <section aria-labelledby="social-plans-heading" className="border-b border-border-subtle bg-bg-secondary/10">
+          <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-blue">Social media management</p>
+              <h2 id="social-plans-heading" className="mt-4 font-serif text-3xl text-white sm:text-4xl">Plans shaped around your stage</h2>
+              <p className="mt-4 leading-relaxed text-text-secondary">Choose a starting scope for your social channels. We&apos;ll confirm the final deliverables and quote after learning about your goals.</p>
+            </div>
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              {data.packages.map((plan) => (
+                <article key={plan.name} className="flex flex-col rounded-2xl border border-border-subtle bg-bg-primary/70 p-6 sm:p-8">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-blue">{plan.audience}</p>
+                  <h3 className="mt-3 font-serif text-2xl text-white">{plan.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">{plan.tagline}</p>
+                  <div className="mt-6 rounded-xl border border-border-subtle bg-bg-secondary/30 p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary">Monthly investment</p>
+                    <p className="mt-1 text-3xl font-semibold text-white">XXXX <span className="text-sm font-normal text-text-secondary">/ month</span></p>
+                    <p className="mt-1 text-xs text-text-secondary">Ad spend is separate. Contact us for a quote.</p>
+                  </div>
+                  <div className="mt-5 flex flex-wrap gap-2 text-xs">
+                    <span className="rounded-full border border-border-subtle px-3 py-2 text-text-secondary"><strong className="text-white">Focus:</strong> {plan.focus}</span>
+                    <span className="rounded-full border border-border-subtle px-3 py-2 text-text-secondary"><strong className="text-white">Platforms:</strong> {plan.platforms}</span>
+                  </div>
+                  <h4 className="mt-7 text-sm font-semibold text-white">What&apos;s included</h4>
+                  <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+                    {plan.deliverables.map((item) => (
+                      <li key={item.title} className="rounded-xl border border-border-subtle/70 p-4">
+                        <p className="text-sm font-medium text-white">{item.title}</p>
+                        <p className="mt-1 text-xs leading-relaxed text-text-secondary">{item.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href="/#contact" aria-label={`Contact us for a quote on the ${plan.name}`} className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-accent-beige px-6 py-3 text-sm font-semibold text-bg-primary transition-colors hover:bg-accent-beige/90">
+                    Contact for a quote
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="mx-auto grid max-w-5xl gap-10 px-6 py-16 md:grid-cols-[0.7fr_1fr] md:py-24">
         <div>
