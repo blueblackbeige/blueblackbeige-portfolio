@@ -19,22 +19,6 @@ export const marketingProjects = [
         "height": 1350
       },
       {
-        "src": "/images/marketing/radhey-foods/makhana-pizza.webp",
-        "title": "Makhana pizza",
-        "type": "Lifestyle creative",
-        "alt": "Radhey Foods: Makhana pizza, lifestyle creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
-        "src": "/images/marketing/radhey-foods/brownie-pour.webp",
-        "title": "The brownie moment",
-        "type": "Product creative",
-        "alt": "Radhey Foods: The brownie moment, product creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
         "src": "/images/marketing/radhey-foods/pudina-makhana.webp",
         "title": "Roasted pudina makhana",
         "type": "Product creative",
@@ -51,20 +35,12 @@ export const marketingProjects = [
         "height": 1350
       },
       {
-        "src": "/images/marketing/radhey-foods/pizza-social.webp",
-        "title": "Pizza, made for the feed",
-        "type": "Social media creative",
-        "alt": "Radhey Foods: Pizza, made for the feed, social media creative",
-        "width": 1121,
-        "height": 1403
-      },
-      {
-        "src": "/images/marketing/radhey-foods/roasted-makhana-range.jpg",
-        "title": "Crunch in Every Flavour",
-        "type": "Product range campaign",
-        "alt": "Radhey Foods roasted makhana flavor range",
-        "width": 1080,
-        "height": 1350
+        "src": "/images/marketing/radhey-foods/makhana-pizza.webp",
+        "title": "Makhana pizza",
+        "type": "Lifestyle creative",
+        "alt": "Radhey Foods: Makhana pizza, lifestyle creative",
+        "width": 1122,
+        "height": 1402
       },
       {
         "src": "/images/marketing/radhey-foods/makhana-protein-shake.jpg",
@@ -75,12 +51,36 @@ export const marketingProjects = [
         "height": 1350
       },
       {
+        "src": "/images/marketing/radhey-foods/pizza-social.webp",
+        "title": "Pizza, made for the feed",
+        "type": "Social media creative",
+        "alt": "Radhey Foods: Pizza, made for the feed, social media creative",
+        "width": 1121,
+        "height": 1403
+      },
+      {
         "src": "/images/marketing/radhey-foods/makhana-dhokla.jpg",
         "title": "Tradition, Reimagined",
         "type": "Recipe storytelling",
         "alt": "Radhey Foods makhana dhokla recipe creative",
         "width": 1080,
         "height": 1350
+      },
+      {
+        "src": "/images/marketing/radhey-foods/roasted-makhana-range.jpg",
+        "title": "Crunch in Every Flavour",
+        "type": "Product range campaign",
+        "alt": "Radhey Foods roasted makhana flavor range",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/radhey-foods/brownie-pour.webp",
+        "title": "The brownie moment",
+        "type": "Product creative",
+        "alt": "Radhey Foods: The brownie moment, product creative",
+        "width": 1122,
+        "height": 1402
       }
     ]
   },
@@ -104,14 +104,6 @@ export const marketingProjects = [
         "height": 1448
       },
       {
-        "src": "/images/marketing/jonex-gym/stronger-you.webp",
-        "title": "Build a stronger you",
-        "type": "Concept exploration",
-        "alt": "Jonex Gym: Build a stronger you, concept exploration",
-        "width": 1024,
-        "height": 1536
-      },
-      {
         "src": "/images/marketing/jonex-gym/stronger-everyday.webp",
         "title": "Stronger every day",
         "type": "Concept exploration",
@@ -124,6 +116,14 @@ export const marketingProjects = [
         "title": "Train with purpose",
         "type": "Concept exploration",
         "alt": "Jonex Gym: Train with purpose, concept exploration",
+        "width": 1024,
+        "height": 1536
+      },
+      {
+        "src": "/images/marketing/jonex-gym/stronger-you.webp",
+        "title": "Build a stronger you",
+        "type": "Concept exploration",
+        "alt": "Jonex Gym: Build a stronger you, concept exploration",
         "width": 1024,
         "height": 1536
       }
@@ -149,26 +149,26 @@ export const marketingProjects = [
         "height": 1402
       },
       {
-        "src": "/images/marketing/restaurant-client/restaurant-food-skewers.jpg",
-        "title": "Safe addiction",
-        "type": "Food promotion",
-        "alt": "Afterglow Social Kitchen: grilled food promotion social creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
-        "src": "/images/marketing/restaurant-client/restaurant-khaa-pkanna.jpg",
-        "title": "Good food, great vibes",
-        "type": "Restaurant promotion",
-        "alt": "Afterglow Social Kitchen: Khaa Pkanna restaurant promotion social creative",
-        "width": 1086,
-        "height": 1448
-      },
-      {
         "src": "/images/marketing/restaurant-client/cocktail-vibe-night.jpg",
         "title": "Sip the Vibe",
         "type": "Hospitality campaign",
         "alt": "Afterglow Social Kitchen cocktail campaign, Sip the Vibe",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/restaurant-client/naan-paneer-choice.jpg",
+        "title": "Naan or Paneer?",
+        "type": "Menu storytelling",
+        "alt": "Afterglow Social Kitchen menu storytelling for naan and paneer",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/restaurant-client/restaurant-food-skewers.jpg",
+        "title": "Safe addiction",
+        "type": "Food promotion",
+        "alt": "Afterglow Social Kitchen: grilled food promotion social creative",
         "width": 1122,
         "height": 1402
       },
@@ -181,12 +181,12 @@ export const marketingProjects = [
         "height": 1402
       },
       {
-        "src": "/images/marketing/restaurant-client/naan-paneer-choice.jpg",
-        "title": "Naan or Paneer?",
-        "type": "Menu storytelling",
-        "alt": "Afterglow Social Kitchen menu storytelling for naan and paneer",
-        "width": 1122,
-        "height": 1402
+        "src": "/images/marketing/restaurant-client/restaurant-khaa-pkanna.jpg",
+        "title": "Good food, great vibes",
+        "type": "Restaurant promotion",
+        "alt": "Afterglow Social Kitchen: Khaa Pkanna restaurant promotion social creative",
+        "width": 1086,
+        "height": 1448
       },
       {
         "src": "/images/marketing/restaurant-client/happy-hug-drinks.jpg",
@@ -218,26 +218,18 @@ export const marketingProjects = [
         "height": 1402
       },
       {
-        "src": "/images/marketing/coaching-client/neet-habits.jpg",
-        "title": "Five habits of successful aspirants",
-        "type": "Educational content",
-        "alt": "Northstar Learning Co.: five habits of successful NEET aspirants educational creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
-        "src": "/images/marketing/coaching-client/neet-ncert.jpg",
-        "title": "NCERT-first preparation",
-        "type": "Exam preparation creative",
-        "alt": "Northstar Learning Co.: NCERT-based NEET preparation social creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
         "src": "/images/marketing/coaching-client/dream-achieve.jpg",
         "title": "Dream It. Achieve It.",
         "type": "Motivation campaign",
         "alt": "Northstar Learning Co. motivation campaign, Dream It Achieve It",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/coaching-client/neet-habits.jpg",
+        "title": "Five habits of successful aspirants",
+        "type": "Educational content",
+        "alt": "Northstar Learning Co.: five habits of successful NEET aspirants educational creative",
         "width": 1122,
         "height": 1402
       },
@@ -256,6 +248,14 @@ export const marketingProjects = [
         "alt": "Northstar Learning Co. learning motivation campaign",
         "width": 1121,
         "height": 1403
+      },
+      {
+        "src": "/images/marketing/coaching-client/neet-ncert.jpg",
+        "title": "NCERT-first preparation",
+        "type": "Exam preparation creative",
+        "alt": "Northstar Learning Co.: NCERT-based NEET preparation social creative",
+        "width": 1122,
+        "height": 1402
       }
     ]
   },
@@ -270,30 +270,6 @@ export const marketingProjects = [
       "Social media design"
     ],
     "images": [
-      {
-        "src": "/images/marketing/medical-shop-client/electric-shock.jpg",
-        "title": "Electric shock-like pain",
-        "type": "Health awareness creative",
-        "alt": "Clarity Health Network: electric shock-like pain health awareness creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
-        "src": "/images/marketing/medical-shop-client/back-pain.jpg",
-        "title": "When back pain needs care",
-        "type": "Health awareness creative",
-        "alt": "Clarity Health Network: back pain warning signs health awareness creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
-        "src": "/images/marketing/medical-shop-client/headache-vomiting.jpg",
-        "title": "Headache with vomiting",
-        "type": "Health awareness creative",
-        "alt": "Clarity Health Network: headache and vomiting awareness creative",
-        "width": 1122,
-        "height": 1402
-      },
       {
         "src": "/images/marketing/medical-shop-client/diagnosis-before-prescription.jpg",
         "title": "Diagnosis Comes First",
@@ -311,10 +287,18 @@ export const marketingProjects = [
         "height": 1402
       },
       {
-        "src": "/images/marketing/medical-shop-client/speech-warning-sign.jpg",
-        "title": "Recognise the Warning Signs",
-        "type": "Neurology awareness",
-        "alt": "Clarity Health Network sudden speech difficulty awareness creative",
+        "src": "/images/marketing/medical-shop-client/back-pain.jpg",
+        "title": "When back pain needs care",
+        "type": "Health awareness creative",
+        "alt": "Clarity Health Network: back pain warning signs health awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/electric-shock.jpg",
+        "title": "Electric shock-like pain",
+        "type": "Health awareness creative",
+        "alt": "Clarity Health Network: electric shock-like pain health awareness creative",
         "width": 1122,
         "height": 1402
       },
@@ -323,6 +307,22 @@ export const marketingProjects = [
         "title": "From Test to Treatment",
         "type": "Diagnostics campaign",
         "alt": "Clarity Health Network diagnostics and pathology support creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/speech-warning-sign.jpg",
+        "title": "Recognise the Warning Signs",
+        "type": "Neurology awareness",
+        "alt": "Clarity Health Network sudden speech difficulty awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/headache-vomiting.jpg",
+        "title": "Headache with vomiting",
+        "type": "Health awareness creative",
+        "alt": "Clarity Health Network: headache and vomiting awareness creative",
         "width": 1122,
         "height": 1402
       }
@@ -348,10 +348,18 @@ export const marketingProjects = [
         "height": 1402
       },
       {
-        "src": "/images/marketing/blue-black-beige/dont-blend-in.jpg",
-        "title": "Don't blend in",
-        "type": "Campaign creative",
-        "alt": "Blue Black Beige: Don't blend in campaign social media post",
+        "src": "/images/marketing/blue-black-beige/brand-nahi-maggi.jpg",
+        "title": "Brand nahi, Maggi",
+        "type": "Brand storytelling",
+        "alt": "Blue Black Beige: Brand nahi, Maggi brand storytelling post",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/attention-interest-trust-action.jpg",
+        "title": "Attention, interest, trust, action",
+        "type": "Marketing framework",
+        "alt": "Blue Black Beige: attention, interest, trust and action marketing framework post",
         "width": 1080,
         "height": 1350
       },
@@ -362,6 +370,22 @@ export const marketingProjects = [
         "alt": "Blue Black Beige: Run ads or build a brand marketing insight post",
         "width": 1122,
         "height": 1402
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/brand-difference-content.jpg",
+        "title": "Turn difference into content",
+        "type": "Brand strategy",
+        "alt": "Blue Black Beige: turn your brand difference into content strategy post",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/blue-black-beige/dont-blend-in.jpg",
+        "title": "Don't blend in",
+        "type": "Campaign creative",
+        "alt": "Blue Black Beige: Don't blend in campaign social media post",
+        "width": 1080,
+        "height": 1350
       },
       {
         "src": "/images/marketing/blue-black-beige/brand-build-karne-ke-liye.jpg",
@@ -380,34 +404,10 @@ export const marketingProjects = [
         "height": 1402
       },
       {
-        "src": "/images/marketing/blue-black-beige/brand-nahi-maggi.jpg",
-        "title": "Brand nahi, Maggi",
-        "type": "Brand storytelling",
-        "alt": "Blue Black Beige: Brand nahi, Maggi brand storytelling post",
-        "width": 1122,
-        "height": 1402
-      },
-      {
         "src": "/images/marketing/blue-black-beige/campaign-becomes-growth.jpg",
         "title": "From campaign to growth",
         "type": "Campaign storytelling",
         "alt": "Blue Black Beige: campaign becomes growth social media post",
-        "width": 1080,
-        "height": 1350
-      },
-      {
-        "src": "/images/marketing/blue-black-beige/attention-interest-trust-action.jpg",
-        "title": "Attention, interest, trust, action",
-        "type": "Marketing framework",
-        "alt": "Blue Black Beige: attention, interest, trust and action marketing framework post",
-        "width": 1080,
-        "height": 1350
-      },
-      {
-        "src": "/images/marketing/blue-black-beige/brand-difference-content.jpg",
-        "title": "Turn difference into content",
-        "type": "Brand strategy",
-        "alt": "Blue Black Beige: turn your brand difference into content strategy post",
         "width": 1080,
         "height": 1350
       },
