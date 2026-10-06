@@ -58,7 +58,7 @@ export default function ServicesPage() {
     <section id="pricing" aria-labelledby="pricing-heading" className="scroll-mt-24 border-y border-border-subtle bg-bg-secondary/10">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-blue">Pricing · Social media · India</p><h2 id="pricing-heading" className="mt-3 max-w-3xl font-serif text-3xl text-white sm:text-4xl">Choose how much momentum you need.</h2><p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-secondary">Start with a steady foundation or put more production and growth support behind your brand. Monthly fees are shown clearly; ad spend is separate.</p></div>
+          <div><p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent-blue">Pricing · Social media · India</p><h2 id="pricing-heading" className="mt-3 max-w-3xl font-serif text-3xl text-white sm:text-4xl">Choose how much momentum you need.</h2><p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-secondary">Start with a steady foundation or put more production and growth support behind your brand. Contact us for a tailored quote; ad spend is separate.</p></div>
           <Link href="/#contact" className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-accent-beige px-5 py-3 text-sm font-semibold text-bg-primary transition-colors hover:bg-accent-beige/90">Talk through your goals <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link>
         </div>
         <div className="mt-9 grid items-stretch gap-5 lg:grid-cols-[0.85fr_1.15fr]">
@@ -73,8 +73,9 @@ export default function ServicesPage() {
                 </div>
                 <p className={`mt-2 max-w-lg text-sm leading-relaxed ${isPilot ? "text-white/75" : "text-bg-primary/75"}`}>{plan.tagline}</p>
                 <div className={`mt-6 border-y py-4 ${isPilot ? "border-white/15" : "border-bg-primary/15"}`}>
-                  <p className={`text-[10px] font-semibold uppercase tracking-[0.16em] ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>Monthly plan fee</p>
-                  <p className={`mt-1 font-semibold tracking-tight ${isPilot ? "text-white text-4xl sm:text-5xl" : "text-bg-primary text-3xl"}`}>{plan.monthlyPrice} <span className={`text-sm font-normal ${isPilot ? "text-white/70" : "text-bg-primary/70"}`}>/ month</span></p>
+                  <p className={`text-[10px] font-semibold uppercase tracking-[0.16em] ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>Pricing</p>
+                  <p className={`mt-1 font-semibold tracking-tight ${isPilot ? "text-white text-2xl sm:text-3xl" : "text-bg-primary text-2xl"}`}>Contact for a quote</p>
+                  <p className={`mt-1 text-xs ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>Scope tailored to your goals and deliverables.</p>
                 </div>
                 <div className={`mt-5 flex flex-wrap gap-2 text-xs ${isPilot ? "text-white/80" : "text-bg-primary/80"}`}><span className={`rounded-full border px-3 py-2 ${isPilot ? "border-white/15" : "border-bg-primary/20"}`}><strong className={isPilot ? "text-white" : "text-bg-primary"}>Platforms:</strong> {plan.platforms}</span><span className={`rounded-full border px-3 py-2 ${isPilot ? "border-white/15" : "border-bg-primary/20"}`}><strong className={isPilot ? "text-white" : "text-bg-primary"}>Focus:</strong> {plan.focus}</span></div>
                 <p className={`mt-6 text-xs font-semibold uppercase tracking-[0.16em] ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>What&apos;s included</p>
