@@ -11,10 +11,10 @@ export const marketingProjects = [
     ],
     "images": [
       {
-        "src": "/images/marketing/radhey-foods/makhana-muffins.webp",
-        "title": "Makhana muffins",
-        "type": "Product creative",
-        "alt": "Radhey Foods: Makhana muffins, product creative",
+        "src": "/images/marketing/radhey-foods/makhana-idli.jpg",
+        "title": "The Makhana Twist",
+        "type": "Product storytelling",
+        "alt": "Radhey Foods makhana idli product storytelling",
         "width": 1080,
         "height": 1350
       },
@@ -27,44 +27,20 @@ export const marketingProjects = [
         "height": 1402
       },
       {
-        "src": "/images/marketing/radhey-foods/brownie-pour.webp",
-        "title": "The brownie moment",
-        "type": "Product creative",
-        "alt": "Radhey Foods: The brownie moment, product creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
-        "src": "/images/marketing/radhey-foods/pizza-social.webp",
-        "title": "Pizza, made for the feed",
-        "type": "Social media creative",
-        "alt": "Radhey Foods: Pizza, made for the feed, social media creative",
-        "width": 1121,
-        "height": 1403
-      },
-      {
-        "src": "/images/marketing/radhey-foods/pudina-makhana.webp",
-        "title": "Roasted pudina makhana",
-        "type": "Product creative",
-        "alt": "Radhey Foods: Roasted pudina makhana, product creative",
-        "width": 900,
-        "height": 1600
-      },
-      {
-        "src": "/images/marketing/radhey-foods/makhana-idli.jpg",
-        "title": "The Makhana Twist",
-        "type": "Product storytelling",
-        "alt": "Radhey Foods makhana idli product storytelling",
-        "width": 1080,
-        "height": 1350
-      },
-      {
         "src": "/images/marketing/radhey-foods/roasted-makhana-range.jpg",
         "title": "Crunch in Every Flavour",
         "type": "Product range campaign",
         "alt": "Radhey Foods roasted makhana flavor range",
         "width": 1080,
         "height": 1350
+      },
+      {
+        "src": "/images/marketing/radhey-foods/brownie-pour.webp",
+        "title": "The brownie moment",
+        "type": "Product creative",
+        "alt": "Radhey Foods: The brownie moment, product creative",
+        "width": 1122,
+        "height": 1402
       },
       {
         "src": "/images/marketing/radhey-foods/makhana-protein-shake.jpg",
@@ -75,12 +51,36 @@ export const marketingProjects = [
         "height": 1350
       },
       {
+        "src": "/images/marketing/radhey-foods/pizza-social.webp",
+        "title": "Pizza, made for the feed",
+        "type": "Social media creative",
+        "alt": "Radhey Foods: Pizza, made for the feed, social media creative",
+        "width": 1121,
+        "height": 1403
+      },
+      {
         "src": "/images/marketing/radhey-foods/makhana-dhokla.jpg",
         "title": "Tradition, Reimagined",
         "type": "Recipe storytelling",
         "alt": "Radhey Foods makhana dhokla recipe creative",
         "width": 1080,
         "height": 1350
+      },
+      {
+        "src": "/images/marketing/radhey-foods/makhana-muffins.webp",
+        "title": "Makhana muffins",
+        "type": "Product creative",
+        "alt": "Radhey Foods: Makhana muffins, product creative",
+        "width": 1080,
+        "height": 1350
+      },
+      {
+        "src": "/images/marketing/radhey-foods/pudina-makhana.webp",
+        "title": "Roasted pudina makhana",
+        "type": "Product creative",
+        "alt": "Radhey Foods: Roasted pudina makhana, product creative",
+        "width": 900,
+        "height": 1600
       }
     ]
   },
@@ -271,34 +271,18 @@ export const marketingProjects = [
     ],
     "images": [
       {
-        "src": "/images/marketing/medical-shop-client/electric-shock.jpg",
-        "title": "Electric shock-like pain",
-        "type": "Health awareness creative",
-        "alt": "Clarity Health Network: electric shock-like pain health awareness creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
-        "src": "/images/marketing/medical-shop-client/back-pain.jpg",
-        "title": "When back pain needs care",
-        "type": "Health awareness creative",
-        "alt": "Clarity Health Network: back pain warning signs health awareness creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
-        "src": "/images/marketing/medical-shop-client/headache-vomiting.jpg",
-        "title": "Headache with vomiting",
-        "type": "Health awareness creative",
-        "alt": "Clarity Health Network: headache and vomiting awareness creative",
-        "width": 1122,
-        "height": 1402
-      },
-      {
         "src": "/images/marketing/medical-shop-client/diagnosis-before-prescription.jpg",
         "title": "Diagnosis Comes First",
         "type": "Health education",
         "alt": "Clarity Health Network diagnostics and pathology awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/electric-shock.jpg",
+        "title": "Electric shock-like pain",
+        "type": "Health awareness creative",
+        "alt": "Clarity Health Network: electric shock-like pain health awareness creative",
         "width": 1122,
         "height": 1402
       },
@@ -311,10 +295,10 @@ export const marketingProjects = [
         "height": 1402
       },
       {
-        "src": "/images/marketing/medical-shop-client/speech-warning-sign.jpg",
-        "title": "Recognise the Warning Signs",
-        "type": "Neurology awareness",
-        "alt": "Clarity Health Network sudden speech difficulty awareness creative",
+        "src": "/images/marketing/medical-shop-client/headache-vomiting.jpg",
+        "title": "Headache with vomiting",
+        "type": "Health awareness creative",
+        "alt": "Clarity Health Network: headache and vomiting awareness creative",
         "width": 1122,
         "height": 1402
       },
@@ -323,6 +307,22 @@ export const marketingProjects = [
         "title": "From Test to Treatment",
         "type": "Diagnostics campaign",
         "alt": "Clarity Health Network diagnostics and pathology support creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/back-pain.jpg",
+        "title": "When back pain needs care",
+        "type": "Health awareness creative",
+        "alt": "Clarity Health Network: back pain warning signs health awareness creative",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/medical-shop-client/speech-warning-sign.jpg",
+        "title": "Recognise the Warning Signs",
+        "type": "Neurology awareness",
+        "alt": "Clarity Health Network sudden speech difficulty awareness creative",
         "width": 1122,
         "height": 1402
       }
