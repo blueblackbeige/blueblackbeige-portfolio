@@ -2,12 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, Maximize2, X } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, Maximize2, X } from "lucide-react";
 import { marketingProjects } from "@/data/marketing-projects";
 import ScrollReveal from "./ScrollReveal";
 
 export default function MarketingPortfolio() {
   const [selected, setSelected] = useState<{ client: number; image: number } | null>(null);
+  const [expandedClients, setExpandedClients] = useState<Record<string, boolean>>({});
   const dialogRef = useRef<HTMLDialogElement>(null);
   const isOpen = selected !== null;
   const client = selected ? marketingProjects[selected.client] : null;
@@ -65,8 +66,8 @@ export default function MarketingPortfolio() {
                   </div>
                 </div>
               </ScrollReveal>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 items-start">
-                {item.images.map((creative, imageIndex) => (
+              <div id={`${item.slug}-gallery`} className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 items-start">
+                {item.images.slice(0, expandedClients[item.slug] ? item.images.length : 3).map((creative, imageIndex) => (
                   <ScrollReveal key={creative.src}>
                     <figure>
                       <button type="button" onClick={() => setSelected({ client: clientIndex, image: imageIndex })} aria-label={`View ${item.name}: ${creative.title}`} aria-haspopup="dialog" className="group relative block w-full aspect-[4/5] rounded-xl overflow-hidden border border-white/10 bg-[#101010] hover:border-accent-beige/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-blue">
@@ -81,6 +82,21 @@ export default function MarketingPortfolio() {
                   </ScrollReveal>
                 ))}
               </div>
+              {item.images.length > 3 && <div className="mt-7 flex flex-col items-center gap-2">
+                <button
+                  type="button"
+                  aria-expanded={Boolean(expandedClients[item.slug])}
+                  aria-controls={`${item.slug}-gallery`}
+                  onClick={() => setExpandedClients((current) => ({ ...current, [item.slug]: !current[item.slug] }))}
+                  className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-accent-beige px-6 py-3 text-sm font-semibold text-bg-primary transition-colors hover:bg-accent-beige/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-blue"
+                >
+                  {expandedClients[item.slug] ? "Show fewer" : `View more creatives (${item.images.length - 3})`}
+                  <ArrowDown aria-hidden="true" className={`h-4 w-4 transition-transform ${expandedClients[item.slug] ? "rotate-180" : "group-hover:translate-y-0.5"}`} />
+                </button>
+                <span className="text-xs text-text-secondary" aria-live="polite">
+                  Showing {expandedClients[item.slug] ? item.images.length : Math.min(3, item.images.length)} of {item.images.length} creatives
+                </span>
+              </div>}
             </article>
           ))}
         </div>
