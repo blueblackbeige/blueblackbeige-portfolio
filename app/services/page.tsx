@@ -64,24 +64,24 @@ export default function ServicesPage() {
         <div className="mt-9 grid items-stretch gap-5 lg:grid-cols-[0.85fr_1.15fr]">
           {socialMediaPlans.map((plan, index) => {
             const isPilot = index === 1;
-            return <article key={plan.name} className={`relative overflow-hidden rounded-2xl border p-6 sm:p-8 ${isPilot ? "border-accent-blue/50 bg-accent-blue/[0.08] lg:p-9" : "border-border-subtle bg-bg-primary/70 lg:mt-8"}`}>
-              {isPilot && <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-accent-blue/[0.12] blur-[80px]" />}
+            return <article key={plan.name} className={`relative overflow-hidden rounded-2xl border p-6 shadow-2xl sm:p-8 ${isPilot ? "border-accent-blue/50 bg-gradient-to-br from-[#1d2b62] via-[#17234b] to-[#0d142b] shadow-accent-blue/15 lg:p-9" : "border-accent-beige/70 bg-gradient-to-br from-[#e9dccd] via-[#d8c1a7] to-[#c5a989] text-bg-primary shadow-black/30 lg:mt-8"}`}>
+              {isPilot && <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-accent-blue/30 blur-[80px]" />}
               <div className="relative">
                 <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-blue">0{index + 1} · {plan.audience}</p><h3 className={`mt-3 font-serif text-2xl text-white ${isPilot ? "sm:text-3xl" : ""}`}>{plan.name}</h3></div>
-                  {isPilot && <span className="rounded-full border border-accent-blue/40 bg-accent-blue/[0.1] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-accent-blue">Best for momentum</span>}
+                  <div><p className={`text-xs font-semibold uppercase tracking-[0.18em] ${isPilot ? "text-accent-beige" : "text-accent-blue"}`}>0{index + 1} · {plan.audience}</p><h3 className={`mt-3 font-serif text-2xl ${isPilot ? "text-white sm:text-3xl" : "text-bg-primary"}`}>{plan.name}</h3></div>
+                  {isPilot && <span className="rounded-full border border-accent-beige/40 bg-white/[0.07] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-accent-beige">Best for momentum</span>}
                 </div>
-                <p className="mt-2 max-w-lg text-sm leading-relaxed text-text-secondary">{plan.tagline}</p>
-                <div className="mt-6 border-y border-border-subtle py-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-text-secondary">Monthly plan fee</p>
-                  <p className={`mt-1 font-semibold tracking-tight text-white ${isPilot ? "text-4xl sm:text-5xl" : "text-3xl"}`}>{plan.monthlyPrice} <span className="text-sm font-normal text-text-secondary">/ month</span></p>
+                <p className={`mt-2 max-w-lg text-sm leading-relaxed ${isPilot ? "text-white/75" : "text-bg-primary/75"}`}>{plan.tagline}</p>
+                <div className={`mt-6 border-y py-4 ${isPilot ? "border-white/15" : "border-bg-primary/15"}`}>
+                  <p className={`text-[10px] font-semibold uppercase tracking-[0.16em] ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>Monthly plan fee</p>
+                  <p className={`mt-1 font-semibold tracking-tight ${isPilot ? "text-white text-4xl sm:text-5xl" : "text-bg-primary text-3xl"}`}>{plan.monthlyPrice} <span className={`text-sm font-normal ${isPilot ? "text-white/70" : "text-bg-primary/70"}`}>/ month</span></p>
                 </div>
-                <div className="mt-5 flex flex-wrap gap-2 text-xs"><span className="rounded-full border border-border-subtle px-3 py-2 text-text-secondary"><strong className="text-white">Platforms:</strong> {plan.platforms}</span><span className="rounded-full border border-border-subtle px-3 py-2 text-text-secondary"><strong className="text-white">Focus:</strong> {plan.focus}</span></div>
-                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-text-secondary">What&apos;s included</p>
-                <ul className={`mt-4 grid gap-3 ${isPilot ? "sm:grid-cols-2" : ""}`}>{plan.highlights.map((highlight) => <li key={highlight} className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary"><Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-accent-beige" />{highlight}</li>)}</ul>
+                <div className={`mt-5 flex flex-wrap gap-2 text-xs ${isPilot ? "text-white/80" : "text-bg-primary/80"}`}><span className={`rounded-full border px-3 py-2 ${isPilot ? "border-white/15" : "border-bg-primary/20"}`}><strong className={isPilot ? "text-white" : "text-bg-primary"}>Platforms:</strong> {plan.platforms}</span><span className={`rounded-full border px-3 py-2 ${isPilot ? "border-white/15" : "border-bg-primary/20"}`}><strong className={isPilot ? "text-white" : "text-bg-primary"}>Focus:</strong> {plan.focus}</span></div>
+                <p className={`mt-6 text-xs font-semibold uppercase tracking-[0.16em] ${isPilot ? "text-white/65" : "text-bg-primary/65"}`}>What&apos;s included</p>
+                <ul className={`mt-4 grid gap-3 ${isPilot ? "sm:grid-cols-2" : ""}`}>{plan.highlights.map((highlight) => <li key={highlight} className={`flex items-start gap-2 text-sm leading-relaxed ${isPilot ? "text-white/80" : "text-bg-primary/80"}`}><Check aria-hidden="true" className={`mt-0.5 h-4 w-4 shrink-0 ${isPilot ? "text-accent-beige" : "text-accent-blue"}`} />{highlight}</li>)}</ul>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                  <Link href="/digital-marketing#social-plans" className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full border border-white/20 px-4 py-3 text-sm font-medium text-white transition-colors hover:border-white/40">View full inclusions</Link>
-                  <Link href="/#contact" aria-label={`Contact us about the ${plan.name}`} className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-accent-beige px-4 py-3 text-sm font-semibold text-bg-primary transition-colors hover:bg-accent-beige/90">Discuss this plan</Link>
+                  <Link href="/digital-marketing#social-plans" className={`inline-flex min-h-11 flex-1 items-center justify-center rounded-full border px-4 py-3 text-sm font-medium transition-colors ${isPilot ? "border-white/25 text-white hover:border-white/50" : "border-bg-primary/25 text-bg-primary hover:border-bg-primary/50"}`}>View full inclusions</Link>
+                  <Link href="/#contact" aria-label={`Contact us about the ${plan.name}`} className={`inline-flex min-h-11 flex-1 items-center justify-center rounded-full px-4 py-3 text-sm font-semibold transition-colors ${isPilot ? "bg-accent-beige text-bg-primary hover:bg-accent-beige/90" : "bg-bg-primary text-white hover:bg-bg-primary/85"}`}>Discuss this plan</Link>
                 </div>
               </div>
             </article>;
