@@ -135,6 +135,16 @@ export default function CTASection() {
                     +91 92881 82862 (WhatsApp)
                   </a>
                 </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent-blue" />
+                  <a
+                    href="tel:+919229922102"
+                    onClick={() => trackMetaPixelEvent("Contact", { content_name: "Phone", content_category: "Direct contact" })}
+                    className="hover:text-white transition-colors"
+                  >
+                    +91 92299 22102
+                  </a>
+                </div>
               </div>
             </ScrollReveal>
           </div>

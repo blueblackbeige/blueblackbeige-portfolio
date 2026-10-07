@@ -47,7 +47,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: `For any privacy-related questions, contact us at nayan@blueblackbeige.in or call +91 92881 82862.`,
+    body: `For any privacy-related questions, contact us at nayan@blueblackbeige.in or call +91 92881 82862 or +91 92299 22102.`,
   },
 ];
 

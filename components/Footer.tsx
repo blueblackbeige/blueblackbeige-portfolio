@@ -133,6 +133,11 @@ export default function Footer() {
                     +91 92881 82862
                   </a>
                 </li>
+                <li>
+                  <a href="tel:+919229922102" onClick={() => trackMetaPixelEvent("Contact", { content_name: "Phone", content_category: "Direct contact" })} className="text-base lg:text-lg text-text-secondary hover:text-white transition-colors">
+                    +91 92299 22102
+                  </a>
+                </li>
               </ul>
               <div className="mt-8">
                 <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-4">
