@@ -23,7 +23,11 @@ export default function ServiceLandingPage({ data }: { data: ServicePageData }) 
     name: data.title,
     description: data.description,
     provider: { "@id": "https://blueblackbeige.in/#organization" },
-    areaServed: { "@type": "Country", name: "India" },
+    areaServed: [
+      { "@type": "City", name: "Patna" },
+      { "@type": "State", name: "Bihar" },
+      { "@type": "Country", name: "India" },
+    ],
     url: `https://blueblackbeige.in/${data.slug}`,
   };
 

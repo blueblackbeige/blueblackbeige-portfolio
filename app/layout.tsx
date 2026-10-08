@@ -38,7 +38,11 @@ const organizationJsonLd = {
   name: "Blue Black Beige", url: "https://blueblackbeige.in/", logo: "https://blueblackbeige.in/logo.png",
   email: "nayan@blueblackbeige.in", telephone: "+91-92881-82862",
   address: { "@type": "PostalAddress", addressLocality: "Patna", addressRegion: "Bihar", addressCountry: "IN" },
-  areaServed: { "@type": "Country", name: "India" },
+  areaServed: [
+    { "@type": "City", name: "Patna" },
+    { "@type": "State", name: "Bihar" },
+    { "@type": "Country", name: "India" },
+  ],
   sameAs: ["https://www.instagram.com/blueblackbeige.in/", "https://www.facebook.com/blueblackbeige", "https://youtube.com/@blueblackbeigeofficial"],
 };
 const websiteJsonLd = {
