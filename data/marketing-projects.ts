@@ -126,6 +126,22 @@ export const marketingProjects = [
         "alt": "Jonex Gym: Build a stronger you, concept exploration",
         "width": 1024,
         "height": 1536
+      },
+      {
+        "src": "/images/marketing/jonex-gym/stronger-every-day.jpg",
+        "title": "Stronger Every Day",
+        "type": "Gym campaign",
+        "alt": "Jonex Gym: Stronger Every Day fitness campaign",
+        "width": 1122,
+        "height": 1402
+      },
+      {
+        "src": "/images/marketing/jonex-gym/achieve-your-dream-physique.png",
+        "title": "Achieve Your Dream Physique",
+        "type": "Fitness campaign",
+        "alt": "Jonex Gym: Achieve Your Dream Physique personal training campaign",
+        "width": 1024,
+        "height": 1536
       }
     ]
   },

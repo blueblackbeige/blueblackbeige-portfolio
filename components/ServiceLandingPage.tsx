@@ -63,7 +63,7 @@ export default function ServiceLandingPage({ data }: { data: ServicePageData }) 
             <div className="mt-9 grid items-stretch gap-5 lg:grid-cols-[0.85fr_1.15fr]">
               {data.packages.map((plan, index) => {
                 const isPilot = index === 1;
-                return <article key={plan.name} className={`relative overflow-hidden rounded-2xl border p-6 shadow-2xl sm:p-8 ${isPilot ? "border-accent-blue/50 bg-gradient-to-br from-[#1d2b62] via-[#17234b] to-[#0d142b] shadow-accent-blue/15 lg:p-9" : "border-accent-beige/70 bg-gradient-to-br from-[#e9dccd] via-[#d8c1a7] to-[#c5a989] text-bg-primary shadow-black/30 lg:mt-8"}`}>
+                return <article key={plan.name} className={`pricing-card ${isPilot ? "pricing-card-pilot" : "pricing-card-startup"} relative overflow-hidden rounded-2xl border p-6 shadow-2xl sm:p-8 ${isPilot ? "border-accent-blue/50 bg-gradient-to-br from-[#1d2b62] via-[#17234b] to-[#0d142b] shadow-accent-blue/15 lg:p-9" : "border-accent-beige/70 bg-gradient-to-br from-[#e9dccd] via-[#d8c1a7] to-[#c5a989] text-bg-primary shadow-black/30 lg:mt-8"}`}>
                   {isPilot && <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-accent-blue/30 blur-[80px]" />}
                   <div className="relative">
                     <div className="flex flex-wrap items-start justify-between gap-3">

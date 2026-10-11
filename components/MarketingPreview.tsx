@@ -16,8 +16,8 @@ export default function MarketingPreview() {
         {marketingProjects.map((client) => (
           <ScrollReveal key={client.slug} className="h-full">
             <Link href={`/work#${client.slug}`} className="group block h-full rounded-2xl border border-white/10 overflow-hidden bg-bg-secondary/20 hover:border-accent-beige/40 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-blue">
-              <div className="grid grid-cols-3 gap-2 p-3 bg-white/[0.03]">
-                {client.images.slice(0, 3).map((image) => (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 bg-white/[0.03]">
+                {client.images.slice(0, 4).map((image) => (
                   <div key={image.src} className="relative aspect-[4/5] overflow-hidden rounded-lg bg-black">
                     <Image src={image.src} alt={image.alt} fill sizes="(max-width: 639px) 50vw, 25vw" className="object-contain" />
                   </div>

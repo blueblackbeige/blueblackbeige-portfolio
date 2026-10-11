@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ArrowDown, ArrowLeft, ArrowRight, Maximize2, X } from "lucide-react";
 import { marketingProjects } from "@/data/marketing-projects";
+import { marketingVideos } from "@/data/marketing-videos";
 import ScrollReveal from "./ScrollReveal";
 
 export default function MarketingPortfolio() {
@@ -67,7 +68,7 @@ export default function MarketingPortfolio() {
                 </div>
               </ScrollReveal>
               <div id={`${item.slug}-gallery`} className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 items-start">
-                {item.images.slice(0, expandedClients[item.slug] ? item.images.length : 3).map((creative, imageIndex) => (
+                {item.images.slice(0, expandedClients[item.slug] ? item.images.length : 4).map((creative, imageIndex) => (
                   <ScrollReveal key={creative.src}>
                     <figure>
                       <button type="button" onClick={() => setSelected({ client: clientIndex, image: imageIndex })} aria-label={`View ${item.name}: ${creative.title}`} aria-haspopup="dialog" className="group relative block w-full aspect-[4/5] rounded-xl overflow-hidden border border-white/10 bg-[#101010] hover:border-accent-beige/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-blue">
@@ -82,7 +83,7 @@ export default function MarketingPortfolio() {
                   </ScrollReveal>
                 ))}
               </div>
-              {item.images.length > 3 && <div className="mt-7 flex flex-col items-center gap-2">
+              {item.images.length > 4 && <div className="mt-7 flex flex-col items-center gap-2">
                 <button
                   type="button"
                   aria-expanded={Boolean(expandedClients[item.slug])}
@@ -90,16 +91,45 @@ export default function MarketingPortfolio() {
                   onClick={() => setExpandedClients((current) => ({ ...current, [item.slug]: !current[item.slug] }))}
                   className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-accent-beige px-6 py-3 text-sm font-semibold text-bg-primary transition-colors hover:bg-accent-beige/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-blue"
                 >
-                  {expandedClients[item.slug] ? "Show fewer" : `View more creatives (${item.images.length - 3})`}
+                  {expandedClients[item.slug] ? "Show fewer" : `View all creatives (${item.images.length - 4})`}
                   <ArrowDown aria-hidden="true" className={`h-4 w-4 transition-transform ${expandedClients[item.slug] ? "rotate-180" : "group-hover:translate-y-0.5"}`} />
                 </button>
                 <span className="text-xs text-text-secondary" aria-live="polite">
-                  Showing {expandedClients[item.slug] ? item.images.length : Math.min(3, item.images.length)} of {item.images.length} creatives
+                  Showing {expandedClients[item.slug] ? item.images.length : Math.min(4, item.images.length)} of {item.images.length} creatives
                 </span>
               </div>}
             </article>
           ))}
         </div>
+
+        <section aria-labelledby="marketing-videos-title" className="mt-20 border-t border-white/10 pt-12 lg:mt-28 lg:pt-16">
+          <ScrollReveal>
+            <p className="text-xs tracking-[0.3em] uppercase text-accent-blue font-semibold mb-5">Video creative</p>
+            <h2 id="marketing-videos-title" className="text-3xl lg:text-4xl font-serif leading-tight">Ideas that move<span className="text-accent-blue">.</span></h2>
+            <p className="mt-4 max-w-2xl text-text-secondary leading-relaxed">Short-form campaign pieces for social feeds, launches and brand storytelling. Watch the creative direction in motion.</p>
+          </ScrollReveal>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {marketingVideos.map((video) => (
+              <article key={video.id} className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+                <div className="relative aspect-video overflow-hidden bg-black">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0`}
+                    title={video.title}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="absolute inset-0 h-full w-full"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-serif text-xl text-white">{video.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-secondary">{video.description}</p>
+                  <a href={`https://youtu.be/${video.id}`} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-accent-beige hover:text-white">Open on YouTube <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" /></a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-5 sm:items-center sm:justify-between">
           <p className="font-serif text-2xl">Ready to give your brand a consistent voice?</p>
