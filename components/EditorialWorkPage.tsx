@@ -168,7 +168,7 @@ export default function EditorialWorkPage() {
 
             <div className="space-y-5">
               {[featuredProjects[0], featuredProjects[2]].map((project, index) => (
-                <ScrollReveal key={project.image} direction={index === 0 ? "right" : "up"} delay={index * 0.1} className="h-full">
+                <ScrollReveal key={project.image} direction={index === 0 ? "right" : "up"} delay={index * 0.1}>
                   <article className="group overflow-hidden rounded-2xl border border-white/10 bg-bg-secondary/40 transition-colors duration-500 hover:border-white/25">
                     <div className={`grid lg:grid-cols-[1.12fr_0.88fr] ${index === 1 ? "lg:grid-cols-[0.88fr_1.12fr]" : ""}`}>
                       <div className={`relative aspect-[1.12] overflow-hidden bg-white/5 lg:aspect-auto lg:min-h-[390px] ${index === 1 ? "lg:order-2" : ""}`}>
