@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Work - Blue Black Beige | Portfolio & Case Studies",
   description:
-    "Explore selected website, brand, motion and marketing projects from Blue Black Beige, a digital studio based in Patna and working across India.",
+    "Explore the Blue Black Beige casebook: websites, campaign systems, social creative and motion work built for ambitious brands across India.",
   alternates: { canonical: "/work" },
   openGraph: {
     title: "Work - Blue Black Beige | Portfolio & Case Studies",
     description:
-      "Explore selected websites, brand identities, motion design and marketing projects from our studio in India.",
+      "A curated casebook of websites, campaign worlds, brand identities and motion design from Blue Black Beige.",
     url: "https://blueblackbeige.in/work",
   },
 };
