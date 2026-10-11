@@ -189,7 +189,9 @@ export default function EditorialWorkPage() {
                 {featuredProjects.filter((_, index) => index === 1 || index === 3).map((project, index) => (
                   <ScrollReveal key={project.image} direction="up" delay={0.08 + index * 0.08}>
                     <article className="group overflow-hidden rounded-2xl border border-white/10 bg-bg-secondary/30 transition-colors duration-500 hover:border-white/25">
-                      <div className="relative aspect-[1.55] overflow-hidden bg-white/5"><Image src={project.image} alt={`${project.title} website project`} fill sizes="(max-width: 639px) 100vw, 50vw" className="object-cover transition duration-700 group-hover:scale-105" /></div>
+                      <div className="relative aspect-[1.55] overflow-hidden bg-[#111]">
+                        <Image src={project.image} alt={`${project.title} website project`} fill sizes="(max-width: 639px) 100vw, 50vw" className="object-contain p-3 transition duration-700 group-hover:scale-[1.02] sm:p-4" />
+                      </div>
                       <div className="p-5 sm:p-6"><p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-blue">{project.category}</p><div className="flex items-start justify-between gap-4"><h3 className="font-serif text-2xl text-white">{project.title}</h3><ArrowUpRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-text-secondary transition-colors group-hover:text-accent-blue" /></div><p className="mt-3 line-clamp-2 text-sm leading-relaxed text-text-secondary">{project.description}</p></div>
                     </article>
                   </ScrollReveal>
