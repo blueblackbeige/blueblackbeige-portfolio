@@ -171,9 +171,9 @@ export default function EditorialWorkPage() {
                 <ScrollReveal key={project.image} direction={index === 0 ? "right" : "up"} delay={index * 0.1}>
                   <article className="group overflow-hidden rounded-2xl border border-white/10 bg-bg-secondary/40 transition-colors duration-500 hover:border-white/25">
                     <div className={`grid lg:grid-cols-[1.12fr_0.88fr] ${index === 1 ? "lg:grid-cols-[0.88fr_1.12fr]" : ""}`}>
-                      <div className={`relative aspect-[1.12] overflow-hidden bg-white/5 lg:aspect-auto lg:min-h-[390px] ${index === 1 ? "lg:order-2" : ""}`}>
-                        <Image src={project.image} alt={`${project.title} website project`} fill sizes="(max-width: 1023px) 100vw, 55vw" className="object-cover transition duration-700 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-gradient-to-tr from-black/55 via-transparent to-transparent" />
+                      <div className={`relative aspect-[1.12] overflow-hidden bg-[#111] lg:aspect-auto lg:min-h-[390px] ${index === 1 ? "lg:order-2" : ""}`}>
+                        <Image src={project.image} alt={`${project.title} website project`} fill sizes="(max-width: 1023px) 100vw, 55vw" className="object-contain p-3 transition duration-700 group-hover:scale-[1.02] sm:p-5" />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent" />
                         <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/35 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">Featured website · 0{index + 1}</span>
                       </div>
                       <div className={`flex flex-col justify-between p-6 sm:p-8 lg:p-10 ${index === 1 ? "lg:order-1" : ""}`}>
