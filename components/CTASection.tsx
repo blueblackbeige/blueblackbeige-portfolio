@@ -22,6 +22,18 @@ export default function CTASection() {
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const formStartedAt = useRef(Date.now());
 
+  const openEmailFallback = () => {
+    const subject = encodeURIComponent(`Project enquiry from ${formData.name || "website visitor"}`);
+    const body = encodeURIComponent([
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Interested in: ${formData.service}`,
+      "",
+      formData.message,
+    ].join("\n"));
+    window.location.href = `mailto:alok@blueblackbeige.in?subject=${subject}&body=${body}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus("");
@@ -71,9 +83,13 @@ export default function CTASection() {
     } catch (error) {
       setTurnstileToken(null);
       setTurnstileResetKey((current) => current + 1);
-      setFormStatus(
-        error instanceof Error ? error.message : "We could not send your enquiry. Please try again."
-      );
+      const message = error instanceof Error ? error.message : "We could not send your enquiry. Please try again.";
+      if (message.includes("contact service")) {
+        setFormStatus("Your email app should open with the enquiry details. If it does not, email alok@blueblackbeige.in directly.");
+        openEmailFallback();
+      } else {
+        setFormStatus(message);
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -234,7 +250,10 @@ export default function CTASection() {
                   />
                 </div>
 
-                <Turnstile onToken={setTurnstileToken} resetKey={turnstileResetKey} />
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <Turnstile onToken={setTurnstileToken} resetKey={turnstileResetKey} />
+                  <a href="mailto:alok@blueblackbeige.in" className="text-xs text-text-secondary underline decoration-white/20 underline-offset-4 transition-colors hover:text-white">Prefer email? alok@blueblackbeige.in</a>
+                </div>
 
                 {formStatus ? (
                   <p

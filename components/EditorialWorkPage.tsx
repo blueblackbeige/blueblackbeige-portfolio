@@ -153,46 +153,49 @@ export default function EditorialWorkPage() {
         </div>
       </section>
 
-      <section id="casebook" className="scroll-mt-24 border-t border-white/10 py-16 lg:py-24">
-        <div className="mx-auto max-w-[1440px] section-padding">
-          <ScrollReveal>
-            <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-accent-blue">The casebook</p>
-                <h2 className="max-w-3xl font-serif text-4xl leading-[1.05] text-white sm:text-6xl">A few of the stories behind the screens<span className="text-accent-blue">.</span></h2>
+      <section id="casebook" className="relative scroll-mt-24 overflow-hidden border-t border-white/10 py-16 lg:py-28">
+        <div className="pointer-events-none absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-accent-blue/[0.04] blur-[120px]" />
+        <div className="relative mx-auto max-w-[1440px] section-padding">
+          <div className="grid gap-12 lg:grid-cols-[0.34fr_1fr] lg:gap-16">
+            <ScrollReveal direction="left" className="lg:sticky lg:top-28 lg:self-start">
+              <div className="border-l border-accent-blue/60 pl-5 lg:pl-7">
+                <div className="mb-8 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-accent-blue"><span>01</span><span className="h-px w-8 bg-accent-blue/70" /><span>Casebook</span></div>
+                <h2 className="max-w-sm font-serif text-4xl leading-[1.02] text-white sm:text-5xl">A few of the stories behind the screens<span className="text-accent-blue">.</span></h2>
+                <p className="mt-6 max-w-xs text-sm leading-relaxed text-text-secondary">Every project starts with a sharp question and ends with a clearer reason to choose the brand.</p>
+                <a href="#marketing-work" className="group mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-beige transition-colors hover:text-white">Continue to campaign worlds <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-1" /></a>
               </div>
-              <p className="max-w-xs text-sm leading-relaxed text-text-secondary">Every project starts with a sharp question and ends with a clearer reason to choose the brand.</p>
+            </ScrollReveal>
+
+            <div className="space-y-5">
+              {[featuredProjects[0], featuredProjects[2]].map((project, index) => (
+                <ScrollReveal key={project.image} direction={index === 0 ? "right" : "up"} delay={index * 0.1} className="h-full">
+                  <article className="group overflow-hidden rounded-2xl border border-white/10 bg-bg-secondary/40 transition-colors duration-500 hover:border-white/25">
+                    <div className={`grid lg:grid-cols-[1.12fr_0.88fr] ${index === 1 ? "lg:grid-cols-[0.88fr_1.12fr]" : ""}`}>
+                      <div className={`relative aspect-[1.12] overflow-hidden bg-white/5 lg:aspect-auto lg:min-h-[390px] ${index === 1 ? "lg:order-2" : ""}`}>
+                        <Image src={project.image} alt={`${project.title} website project`} fill sizes="(max-width: 1023px) 100vw, 55vw" className="object-cover transition duration-700 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-black/55 via-transparent to-transparent" />
+                        <span className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/35 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">Featured website · 0{index + 1}</span>
+                      </div>
+                      <div className={`flex flex-col justify-between p-6 sm:p-8 lg:p-10 ${index === 1 ? "lg:order-1" : ""}`}>
+                        <div><p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-accent-beige">{project.category} · Digital experience</p><h3 className="mt-4 font-serif text-4xl leading-none text-white sm:text-5xl">{project.title}</h3><p className="mt-5 max-w-md text-sm leading-relaxed text-text-secondary">{project.description}</p></div>
+                        <div className="mt-10 flex items-center justify-between gap-4 border-t border-white/10 pt-4 text-xs uppercase tracking-[0.18em] text-white/50"><span>Strategy · Design · Build</span><span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white transition duration-300 group-hover:border-accent-blue group-hover:bg-accent-blue"><ArrowUpRight aria-hidden="true" className="h-4 w-4" /></span></div>
+                      </div>
+                    </div>
+                  </article>
+                </ScrollReveal>
+              ))}
+
+              <div className="grid gap-5 pt-1 sm:grid-cols-2">
+                {featuredProjects.filter((_, index) => index === 1 || index === 3).map((project, index) => (
+                  <ScrollReveal key={project.image} direction="up" delay={0.08 + index * 0.08}>
+                    <article className="group overflow-hidden rounded-2xl border border-white/10 bg-bg-secondary/30 transition-colors duration-500 hover:border-white/25">
+                      <div className="relative aspect-[1.55] overflow-hidden bg-white/5"><Image src={project.image} alt={`${project.title} website project`} fill sizes="(max-width: 639px) 100vw, 50vw" className="object-cover transition duration-700 group-hover:scale-105" /></div>
+                      <div className="p-5 sm:p-6"><p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-blue">{project.category}</p><div className="flex items-start justify-between gap-4"><h3 className="font-serif text-2xl text-white">{project.title}</h3><ArrowUpRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-text-secondary transition-colors group-hover:text-accent-blue" /></div><p className="mt-3 line-clamp-2 text-sm leading-relaxed text-text-secondary">{project.description}</p></div>
+                    </article>
+                  </ScrollReveal>
+                ))}
+              </div>
             </div>
-          </ScrollReveal>
-
-          <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-            {[featuredProjects[0], featuredProjects[2]].map((project, index) => (
-              <ScrollReveal key={project.image} delay={index * 0.08} className="h-full">
-                <article className={`group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-bg-secondary/40 ${index === 0 ? "lg:min-h-[590px]" : "lg:min-h-[590px]"}`}>
-                  <div className="absolute inset-0">
-                    <Image src={project.image} alt={`${project.title} website project`} fill sizes="(max-width: 1023px) 100vw, 60vw" className="object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-95" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-black/5" />
-                  </div>
-                  <div className="relative flex h-full min-h-[450px] flex-col justify-end p-6 sm:p-8 lg:min-h-[590px] lg:p-10">
-                    <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-accent-beige">Featured website · 0{index + 1}</p>
-                    <h3 className="max-w-xl font-serif text-4xl leading-none text-white sm:text-5xl">{project.title}</h3>
-                    <p className="mt-4 max-w-lg text-sm leading-relaxed text-white/70">{project.description}</p>
-                    <div className="mt-6 flex items-center justify-between gap-4 border-t border-white/20 pt-4 text-xs uppercase tracking-[0.18em] text-white/60"><span>{project.category} · Digital experience</span><span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition group-hover:bg-accent-blue"><ArrowUpRight aria-hidden="true" className="h-4 w-4" /></span></div>
-                  </div>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredProjects.filter((_, index) => index === 1 || index === 3).map((project, index) => (
-              <ScrollReveal key={project.image} delay={index * 0.05}>
-                <article className="group overflow-hidden rounded-2xl border border-white/10 bg-bg-secondary/30">
-                  <div className="relative aspect-[1.15] overflow-hidden bg-white/5"><Image src={project.image} alt={`${project.title} website project`} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw" className="object-cover transition duration-700 group-hover:scale-105" /></div>
-                  <div className="p-5"><p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-blue">{project.category}</p><h3 className="font-serif text-xl text-white">{project.title}</h3><p className="mt-2 line-clamp-2 text-sm leading-relaxed text-text-secondary">{project.description}</p></div>
-                </article>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>

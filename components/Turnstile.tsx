@@ -33,6 +33,7 @@ export default function Turnstile({ onToken, resetKey }: TurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const isDevelopment = process.env.NODE_ENV === "development";
 
   const renderWidget = useCallback(() => {
     if (!siteKey || !containerRef.current || !window.turnstile || widgetIdRef.current) return;
@@ -62,10 +63,23 @@ export default function Turnstile({ onToken, resetKey }: TurnstileProps) {
     }
   }, [resetKey]);
 
+  useEffect(() => {
+    if (!siteKey && isDevelopment) {
+      onToken("development-preview-token");
+      return () => onToken(null);
+    }
+  }, [isDevelopment, onToken, siteKey]);
+
   if (!siteKey) {
     return (
-      <p className="text-xs text-red-300" role="alert">
-        The secure contact form is temporarily unavailable.
+      <p className={`text-xs ${isDevelopment ? "text-accent-beige" : "text-red-300"}`} role="status">
+        {isDevelopment ? (
+          "Local preview mode: security check is bypassed. Configure Turnstile before publishing."
+        ) : (
+          <>
+            The secure check is unavailable. <a href="mailto:alok@blueblackbeige.in" className="underline underline-offset-2">Email us directly</a> instead.
+          </>
+        )}
       </p>
     );
   }
